@@ -28,8 +28,11 @@ C -->|Yes| D[End]
 
 ## equipotentials
 
-![](10_100001.png)
-
+![](10_100001.png)  
+![](10_99991.png)  
+![](10_99981.png)  
+![](10_99971.png)  
+![](10_99961.png)  
 
 Text output of the program:   
 
