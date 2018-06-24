@@ -1,6 +1,22 @@
 TOC
 
 
+
+# dictionary
+
+##traceing 
+
+```mermaid
+graph TD
+A[Start point] --> B(Compute next point)
+B --> C{meet stop criteria ? }
+C --> |No|B
+C -->|Yes| D[End]
+
+```
+
+
+
 # cases
 * trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
 * trace a curve in complex 2D plane ( compute each point)
@@ -23,7 +39,7 @@ TOC
 * [Boundary Scanning by Robert P. Munafo](http://mrob.com/pub/muency/boundaryscanning.html)
 * [How to “inform” successive ContourPlot calculations in Mathematica?](https://mathematica.stackexchange.com/questions/103673/how-to-inform-successive-contourplot-calculations/103681)
 * [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)
-
+* [Drawing M-set by contour lines method](https://groups.google.com/forum/#!topic/sci.fractals/t9Udefcs20Q)
 
 # Key words
 * discrete complex dynamics
