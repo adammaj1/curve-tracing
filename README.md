@@ -4,7 +4,7 @@ TOC
 
 # dictionary
 
-##traceing 
+## tracing 
 
 ```mermaid
 graph TD
@@ -33,6 +33,7 @@ C -->|Yes| D[End]
 
 
 # links
+* [Argument tracing by Wolf Jung](http://www.mndynamics.com/indexp.html#XR)
 * [The Boundary Tracing algorithm by Evgeny Demidov](https://www.ibiblio.org/e-notes/MSet/big_m.htm)
 
 # see also
