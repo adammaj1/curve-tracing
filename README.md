@@ -28,68 +28,115 @@ C -->|Yes| D[End]
 
 ## equipotentials
 
-![](10_100001.png)  
+Exterior is coloured with potential ( grayscale)   
 ![](10_99991.png)  
+
+Exterior is white with black equipotential curves    
 ![](10_99981.png)  
+
+Boundary using noise detection  
 ![](10_99971.png)  
+
+Noise pixels  
 ![](10_99961.png)  
 
 Text output of the program:   
 
 
 ```bash
-time ./a.out
-memory is OK 
 render image = compute and write image data bytes to the array 
-File 10_100000.pgm saved. 
+File 10_99991.pgm saved. 
+ClearExterior =  make exterior solid color = white
 
 draw equipotential curve thru point c = (1.0300000000000000; 1.7000000000000000) pixel = (1988, 56)
- 	start point	c is inside the array : iy = 1988 iy = 56	and outside M set
+ 	start point
+	for c = (1.030000;1.700000)	noise measure =         0.000723	potential = 2.356168
+	c is inside the array : iy = 1988 iy = 56	and outside M set
 	end point	ix = 1988 iy = 56 i = 113988 potential = 2.3577207229474340
 	curve is closed = stop ( good) after 30 steps (pixels)
 
 
 draw equipotential curve thru point c = (1.0500000000000000; 0.0000000000000000) pixel = (1999, 1000)
- 	start point	c is on the array boundary: ix = 1999 iy = 1000	and outside M set
+ 	start point
+		error  from giv_i : bad input: ix = 2000 
+	error  from giv_i : bad input: ix = 2000 
+	error  from giv_i : bad input: ix = 2000 
+for c = (1.050000;0.000000)	noise measure =              inf	potential = 0.000000
+	c is on the array boundary: ix = 1999 iy = 1000	and outside M set
+	error  from giv_i : bad input: ix = 2000 
 	error  from giv_i : bad input: ix = 2000 
 	error  from giv_i : bad input: ix = 2000 
 	error  from giv_i : bad input: ix = 2000 
 	drawing stopped because of bad FCCode = -2 after 0 steps ( pixels)
  
 draw equipotential curve thru point c = (0.9000000000000000; 0.0000000000000000) pixel = (1916, 1000)
- 	start point	c is inside the array : iy = 1916 iy = 1000	and outside M set
+ 	start point
+	for c = (0.900000;0.000000)	noise measure =         0.002595	potential = 0.990101
+	c is inside the array : iy = 1916 iy = 1000	and outside M set
 	end point	ix = 1916 iy = 1000 i = 2001916 potential = 0.9901033608952807
 	curve is closed = stop ( good) after 4357 steps (pixels)
 
 
 draw equipotential curve thru point c = (0.7000000000000000; 0.0000000000000000) pixel = (1805, 1000)
- 	start point	c is inside the array : iy = 1805 iy = 1000	and outside M set
+ 	start point
+	for c = (0.700000;0.000000)	noise measure =         0.004516	potential = 0.598991
+	c is inside the array : iy = 1805 iy = 1000	and outside M set
 	end point	ix = 1805 iy = 1000 i = 2001805 potential = 0.5989911428328348
 	curve is closed = stop ( good) after 3825 steps (pixels)
 
 
 draw equipotential curve thru point c = (0.5000000000000000; 0.0000000000000000) pixel = (1694, 1000)
- 	start point	c is inside the array : iy = 1694 iy = 1000	and outside M set
+ 	start point
+	for c = (0.500000;0.000000)	noise measure =         0.011120	potential = 0.212801
+	c is inside the array : iy = 1694 iy = 1000	and outside M set
 	end point	ix = 1694 iy = 1000 i = 2001694 potential = 0.2127903458916913
 	curve is closed = stop ( good) after 3687 steps (pixels)
 
 
 draw equipotential curve thru point c = (0.4000000000000000; 0.0000000000000000) pixel = (1638, 1000)
- 	start point	c is inside the array : iy = 1638 iy = 1000	and outside M set
+ 	start point
+	for c = (0.400000;0.000000)	noise measure =         0.024412	potential = 0.063219
+	c is inside the array : iy = 1638 iy = 1000	and outside M set
 	end point	ix = 1638 iy = 1000 i = 2001638 potential = 0.0631906592052049
 	curve is closed = stop ( good) after 4125 steps (pixels)
 
 
 draw equipotential curve thru point c = (0.3500000000000000; 0.0000000000000000) pixel = (1610, 1000)
- 	start point	c is inside the array : iy = 1610 iy = 1000	and outside M set
+ 	start point
+	for c = (0.350000;0.000000)	noise measure =         0.045792	potential = 0.018384
+	c is inside the array : iy = 1610 iy = 1000	and outside M set
 	problem: FCCode not found 
 	drawing stopped because of bad FCCode = -1 after 9237 steps ( pixels)
  
 draw equipotential curve thru point c = (0.3000000000000000; 0.0000000000000000) pixel = (1583, 1000)
- 	start point	c is inside the array : iy = 1583 iy = 1000	and outside M set
+ 	start point
+	for c = (0.300000;0.000000)	noise measure =         0.129012	potential = 0.001244
+	c is inside the array : iy = 1583 iy = 1000	and outside M set
 	problem: FCCode not found 
 	drawing stopped because of bad FCCode = -1 after 407 steps ( pixels)
- File 10_99999.pgm saved. 
+ File 10_99981.pgm saved. 
+Find boundary of Mandelbrot set using  noise measure
+File 10_99971.pgm saved. 
+Find noisy pixels
+File 10_99961.pgm saved. 
+for c = (0.000000;0.000000)	noise measure =         0.000000	potential = 2.000000
+for c = (0.100000;0.000000)	noise measure =         0.000000	potential = 2.000000
+for c = (0.200000;0.000000)	noise measure =         0.000000	potential = 2.000000
+for c = (0.250000;0.000000)	noise measure =         0.250000	potential = 2.000000
+for c = (0.260000;0.000000)	noise measure = 376231582.043187	potential = 0.000000
+for c = (0.270000;0.000000)	noise measure =         0.557260	potential = 0.000004
+for c = (0.280000;0.000000)	noise measure =         0.307864	potential = 0.000059
+for c = (0.290000;0.000000)	noise measure =         0.187233	potential = 0.000371
+for c = (0.300000;0.000000)	noise measure =         0.129012	potential = 0.001244
+for c = (0.350000;0.000000)	noise measure =         0.045792	potential = 0.018384
+for c = (0.400000;0.000000)	noise measure =         0.024412	potential = 0.063219
+for c = (0.450000;0.000000)	noise measure =         0.015637	potential = 0.130537
+for c = (0.500000;0.000000)	noise measure =         0.011120	potential = 0.212801
+for c = (0.600000;0.000000)	noise measure =         0.006643	potential = 0.398419
+for c = (0.700000;0.000000)	noise measure =         0.004516	potential = 0.598991
+for c = (0.800000;0.000000)	noise measure =         0.003336	potential = 0.795892
+for c = (0.900000;0.000000)	noise measure =         0.002595	potential = 0.990101
+for c = (1.000000;0.000000)	noise measure =         0.002091	potential = 1.174337
 
 
 Parameter plane with Mandelbrot set
@@ -99,10 +146,6 @@ exterior = CPM/M
 IterationMax = 100001
 EscapeRadius = 10
 iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels 
-
-real	0m32,784s
-user	4m11,839s
-sys	0m0,167s
 ```
 
 
