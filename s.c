@@ -32,7 +32,8 @@ OpenMP
   
   ./a.out
   time ./a.out
-  
+  time ./a.out>a.txt
+
   
   
 ============ git ========== 
@@ -45,6 +46,7 @@ git push -u origin master
 
 
 =============================
+convert 10_100001.pgm -resize 600x600 10_100001.png
 
 
 
@@ -225,6 +227,9 @@ unsigned char *AColor;
 double *APotential;
 int *ABoundary; 
 
+
+double NoiseMeasureThreshold = 1.0; // arbitrary 
+
 // ----------------------  functions ===========================================
 
  double cnorm(double complex z)
@@ -285,7 +290,7 @@ int iPlotBigPoint(int ixSeed, int iySeed, unsigned char iColor, unsigned char A[
        			
        					//printf(" ix = %d iy = %d i = %d\n", ix, iy, i);
        					// && i<=iSize
-       					if (i > 0 ) A[i]=iColor ; //255 -A[i] ;
+       					if (i > 0 )A[i]=iColor ; // A[i]=255 -A[i] ;//
        				}
 	
 	
@@ -428,7 +433,7 @@ int ComputeAndSavePixelColor(int ix, int iy, unsigned char A[]){
 	unsigned char color = 0;
 	double potential;
 	complex double c;
-	//double p;
+	double p;
 	int i; 
 	
 	
@@ -440,9 +445,9 @@ int ComputeAndSavePixelColor(int ix, int iy, unsigned char A[]){
 	if (potential == FP_ZERO) 
 		color = 0;
 		else {
-			//p = log(potential)/K;
-     			//color = 255* (1+cos(TwoPi*p))/2.0;
-     			color = 255; // simply white for black equipotentials
+			p = log(potential)/K;
+     			color = 255* (1+cos(TwoPi*p))/2.0;
+     			//color = 255; // simply white for black equipotentials
 
 		
 		}
@@ -550,7 +555,71 @@ int GiveNextFreemanChainCode(int ix0, int iy0, double p0){
 	
 }
 
+// https://en.wikibooks.org/wiki/Fractals/Image_noise
 
+double GiveNoiseMeasure (int ix0, int iy0, int i0){
+
+
+	int FCCode;//
+	
+	int i;
+	int ix, iy;
+	
+	double p0;
+	double p; 
+	double dp; // abs(p - p0)
+	double dpMax = 0.0; // max dp 
+	double dpArithmeticMean = 0.0;
+	
+	
+	
+	p0 = APotential[i0];
+	
+	
+	
+	for (FCCode = 0; FCCode < 8; FCCode ++){
+	
+		// translate FCCode t0 ix, iy
+		ix = ix0 + offset[FCCode][0];
+		iy = iy0 + offset[FCCode][1];
+		
+		// (ix,iy) -> i
+		i = give_i(ix,iy);// new point
+	
+		if (i>0){ // inside bounds of 1D array 
+		//if( ABoundary[i]!=0) printf(" point was visited \n");
+		p = APotential[i];
+		dp = fabs(p-p0);
+		if (dp>dpMax) dpMax = dp;
+		dpArithmeticMean += dp;
+		//printf("FCCode = %d , p = %.16f dp = %.16f\n", FCCode,p, fabs(p-p0) );
+		}
+	
+	
+	
+	}
+	
+	dpArithmeticMean /= 8.0; // 8 neighbours 
+	
+	
+	
+	return dpArithmeticMean/p0; // ratio
+}
+
+double GiveNoiseMeasureD(double complex c){
+
+	int i;
+	int ix, iy;
+	double m;
+	// world to screen conversion
+	ix = (int)round((creal(c)-CxMin)/PixelWidth);
+      	iy = (int)round((CyMax-cimag(c))/PixelHeight); // reverse y axis
+      	i = give_i(ix,iy);
+      	m = GiveNoiseMeasure(ix,iy,i);
+      	printf("for c = (%f;%f)\tnoise measure = %16f\tpotential = %f\n", creal(c), cimag(c), m, APotential[i]);
+      	return m;
+
+}
 
 int CheckMooreNeighborhood(int ix0, int iy0, double p0){
 
@@ -561,6 +630,7 @@ int CheckMooreNeighborhood(int ix0, int iy0, double p0){
 	int ix, iy;
 	
 	double p; 
+	//double pp
 	
 	printf("CheckMooreNeighborhood \n");
 	printf("center  p0 = %.16f \n", p0);
@@ -657,8 +727,9 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
   	
   	printf("\ndraw equipotential curve thru point c = (%.16f; %.16f) pixel = (%d, %d)\n ", creal(c), cimag(c), ix0,iy0);
   	
-  	printf("\tstart point"); 	
-  	i0 = give_i_(ix0,iy0);
+  	printf("\tstart point\n\t"); 
+  	GiveNoiseMeasureD(c);	
+  	i0 = give_i_(ix0,iy0); // compute and describe 
   	if ( i0<0){ printf("\tc is out of drawing rectangle. End. \n"); return 1;}
   	
   	p0 = APotential[i0];
@@ -667,6 +738,7 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 	//else 
 	//printf("\tplot point n = %d\n", n);
 	iPlotBigPoint(ix0, iy0, iColor, A);
+	//A[i0] = 255 - A[i0];
 	// printf("\tStart point\tix = %d iy = %d i = %d potential = %.16f\n",   ix, iy, i0 , p0);
 	potential = p0;
 	
@@ -716,7 +788,7 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 			if (potential == FP_ZERO) { printf("c is inside. End. \n"); return 3;}
 			//
 			iPlotBigPoint(ix, iy, iColor, A);
-			//A[i] = iColor;
+			//A[i] = 255 - A[i]; //iColor;
 			ABoundary[i]=1; // mark as visited
 			
 			
@@ -826,6 +898,9 @@ int CheckOrientation (unsigned char A[])
 }
 
 
+
+
+
 int info(){
 
 
@@ -837,6 +912,87 @@ int info(){
 	printf("EscapeRadius = %.0f\n",EscapeRadius);
 	printf("iPixelRadius = ixMax* 0.002 = %d so big pixel = %d (small) pixels \n", iPixelRadius, 4*iPixelRadius*iPixelRadius); // ???
 	return 0;
+}
+
+
+
+// // make exterior white
+// uses global var :  ...
+int ClearExterior (unsigned char A[])
+{
+  int ix, iy;		// pixel coordinate 
+  		//  
+  int i;			/* index of 1D array */
+  
+  for (iy = iyMin; iy <= iyMax; ++iy)
+        for (ix = ixMin; ix <= ixMax; ++ix)
+	{
+
+	  i = give_i (ix, iy);	/* compute index of 1D array from indices of 2D array */
+	  if ( APotential[i] != FP_ZERO) A[i] = 255 ;	// check if exterior
+	  
+	}
+    
+  printf("ClearExterior =  make exterior solid color = white\n");
+  return 0;
+}
+
+
+
+
+// // make exterior white
+// uses global var :  ...
+int FindMaxNoisyPixels (unsigned char A[])
+{
+  int ix, iy;		// pixel coordinate 
+  int i; 			/* index of 1D array */
+  
+  double NoiseMeasure;
+ 
+	
+  for (iy = 1; iy < iyMax-1; ++iy) // do not check border points, or change GiveNoiseMeasure 
+        for (ix = 1; ix < ixMax-1; ++ix)
+	{
+
+	  i = give_i (ix, iy);	/* compute index of 1D array from indices of 2D array */
+	  if (i>-1 && APotential[i] != FP_ZERO) {
+	  	
+	  	NoiseMeasure = GiveNoiseMeasure (ix,iy,i);
+	  	if (NoiseMeasure>NoiseMeasureThreshold) A[i] = 255 ;	// 
+	  	}
+	  
+	}
+    
+  printf("Find boundary of Mandelbrot set using  noise measure\n");
+  return 0;
+}
+
+
+// // make exterior white
+// uses global var :  ...
+int FindNoisyPixels (unsigned char A[])
+{
+  int ix, iy;		// pixel coordinate 
+  int i; 			/* index of 1D array */
+  
+  double NoiseMeasure;
+  
+	
+  for (iy = 1; iy < iyMax-1; ++iy) // do not check border points, or change GiveNoiseMeasure 
+        for (ix = 1; ix < ixMax-1; ++ix)
+	{
+
+	  i = give_i (ix, iy);	/* compute index of 1D array from indices of 2D array */
+	  if (i>-1 && APotential[i] != FP_ZERO) {
+	  	NoiseMeasure = GiveNoiseMeasure (ix,iy,i);
+	  	if (NoiseMeasure<NoiseMeasureThreshold 
+	  	    && NoiseMeasure>0.025) A[i] = 255 ;	// 
+	  	}
+	  
+	}
+    
+  printf("Find noisy pixels\n");
+  return 0;
 }
 
 
@@ -863,6 +1019,8 @@ int main()
 	setup(); // corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
 	ClearArray(AColor);
 	MakeImage(AColor);
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-10, NULL,  iWidth, iHeight, iSize );
+	ClearExterior(AColor); // make exterior white
 	//DrawExtRayOut( 0.5+0.9*I, AColor);
 	DrawEquipotential( 1.03+1.7*I,	0, AColor); // bad because of image boundary 
 	DrawEquipotential( 1.05, 	0, AColor); // bad on boundary:  error  from giv_i : bad input: ix = 2000 
@@ -875,7 +1033,38 @@ int main()
 	
 	//CheckOrientation(AColor) ;
 	 
-	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax, NULL,  iWidth, iHeight, iSize ); 	
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-20, NULL,  iWidth, iHeight, iSize ); 	
+	
+  	ClearArray(AColor);
+  	FindMaxNoisyPixels(AColor);
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-30, NULL,  iWidth, iHeight, iSize ); 
+  	//
+  	ClearArray(AColor);
+  	FindNoisyPixels(AColor);
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-40, NULL,  iWidth, iHeight, iSize ); 
+  	
+  	//test to find limits of NoiseMeasure
+  	GiveNoiseMeasureD(0.0);
+  	GiveNoiseMeasureD(0.1);
+  	GiveNoiseMeasureD(0.2);
+  	GiveNoiseMeasureD(0.25);
+  	GiveNoiseMeasureD(0.26);
+  	GiveNoiseMeasureD(0.27);
+  	GiveNoiseMeasureD(0.28);
+  	GiveNoiseMeasureD(0.29);
+  	GiveNoiseMeasureD(0.3);
+  	GiveNoiseMeasureD(0.35);
+  	GiveNoiseMeasureD(0.4);
+  	GiveNoiseMeasureD(0.45);
+  	GiveNoiseMeasureD(0.5);
+  	GiveNoiseMeasureD(0.6);
+  	GiveNoiseMeasureD(0.7);
+  	GiveNoiseMeasureD(0.8);
+  	GiveNoiseMeasureD(0.9);
+  	GiveNoiseMeasureD(1.0);
+  	
+  	
+  	
   	
 	SetDown();
  
