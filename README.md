@@ -6,7 +6,7 @@ TOC
 * trace a curve in complex 2D plane ( compute each point)
 
 
-## 
+## equipotentials
 
 ![](10_100001.png)
 
@@ -16,15 +16,24 @@ TOC
 
 
 
+# links
+* [The Boundary Tracing algorithm by Evgeny Demidov](https://www.ibiblio.org/e-notes/MSet/big_m.htm)
+
 # see also
-* 
+* [Boundary Scanning by Robert P. Munafo](http://mrob.com/pub/muency/boundaryscanning.html)
+* [How to “inform” successive ContourPlot calculations in Mathematica?](https://mathematica.stackexchange.com/questions/103673/how-to-inform-successive-contourplot-calculations/103681)
+* [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)
 
 
 # Key words
 * discrete complex dynamics
 * complex quadratic polynomial
 * parameter plane
-* trace a curve
+* trace 
+  * a curve
+  * a boundary
+  * a contour
+
 
 
 
