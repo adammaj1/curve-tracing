@@ -4,7 +4,7 @@ TOC
 
 # dictionary
 
-## tracing 
+tracing   
 
 ```mermaid
 graph TD
@@ -15,8 +15,7 @@ C -->|Yes| D[End]
 
 ```
 
-## scanning
-* "scanning means to check every pixel"
+"scanning means to check every pixel"
 
 # cases
 * trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
@@ -133,7 +132,7 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 * [ray-backward-iteration](https://gitlab.com/adammajewski/ray-backward-iteration)
 * [NonInteractiveParameterRayInMPFR](https://gitlab.com/adammajewski/NonInteractiveParameterRayInMPFR)
 * [dynamic_ray_newton](https://gitlab.com/c_files/dynamic_ray_newton)
-* [parameter_ray_in_newton_mpfr]https://gitlab.com/c_files/parameter_ray_in_newton_mpfr
+* [parameter_ray_in_newton_mpfr](https://gitlab.com/c_files/parameter_ray_in_newton_mpfr)
 
 
 # links
