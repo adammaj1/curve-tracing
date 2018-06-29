@@ -100,7 +100,7 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 
  double TwoPi = 2.0*M_PI;
  
-const int IterationMax=100001;
+const int IterationMax=90000;
 
 
 /* bail-out value for the bailout test for exaping points
@@ -190,7 +190,7 @@ double PixelHeight; // =(CyMax-CyMin)/iYmax;
 	|  SW      |          |          |
 	+----------+----------+----------
 	
-	the Freeman Chain Code of Eight directions (FCCE)
+	the Freeman Chain Code of Eight directions (FCCE) in counterclockwise direction
 	
 	+----------+----------+----------+
 	|          |          |          |
@@ -488,6 +488,7 @@ int DrawExtRayOut(double complex c, unsigned char A[]){
 	double potential;
 	potential = GivePotential(c);
 	if (potential == FP_ZERO) { printf("c is inside\n"); return 1;}
+	//GiveNoiseMeasureD(c);
 	//else 
 	dPlotPoint(c, 0,  A);
 	printf(" exterior p = %f \n",potential);
@@ -508,8 +509,14 @@ int DrawExtRayOut(double complex c, unsigned char A[]){
  check all pixels of the 8-point neighborhood on a 2D grid
  find most similar value to p0 
  it is the direction
+ 
+ ----
+ but there should be 2 directions for equipotential curve ?????
+ why it gives the only one : 
+ it exludes previous point : if (i>0 && ABoundary[i]==0){ // inside bounds of 1D array and not visited 
+  
 */
-int GiveNextFreemanChainCode(int ix0, int iy0, double p0){
+int GiveNextChainCodeEqual(int ix0, int iy0, double p0){
 	
 	//double pTemp;
 	double dpTemp;
@@ -523,7 +530,7 @@ int GiveNextFreemanChainCode(int ix0, int iy0, double p0){
 	
 	// find FCCode for which dp is the smallest 
 	
-	for (FCCode = 0; FCCode < 8; FCCode ++){
+	for (FCCode = 0; FCCode < 8; FCCode ++){ // 
 	
 		// translate FCCode t0 ix, iy
 		ix = ix0 + offset[FCCode][0];
@@ -570,6 +577,7 @@ double GiveNoiseMeasure (int ix0, int iy0, int i0){
 	double dp; // abs(p - p0)
 	double dpMax = 0.0; // max dp 
 	double dpArithmeticMean = 0.0;
+	double n = 0.0;
 	
 	
 	
@@ -587,19 +595,26 @@ double GiveNoiseMeasure (int ix0, int iy0, int i0){
 		i = give_i(ix,iy);// new point
 	
 		if (i>0){ // inside bounds of 1D array 
-		//if( ABoundary[i]!=0) printf(" point was visited \n");
-		p = APotential[i];
-		dp = fabs(p-p0);
+			//if( ABoundary[i]!=0) printf(" point was visited \n");
+			p = APotential[i];
+			// compute dp 
+			if ( p ==  FP_ZERO) 
+				{if (p0 == FP_ZERO) 
+					dp = 0.0;
+					else dp = p0;}
+				else dp = fabs(p-p0); // (p && p0) != FP_ZERO
+			 
 		if (dp>dpMax) dpMax = dp;
 		dpArithmeticMean += dp;
 		//printf("FCCode = %d , p = %.16f dp = %.16f\n", FCCode,p, fabs(p-p0) );
+		n +=1.0;
 		}
 	
 	
 	
 	}
 	
-	dpArithmeticMean /= 8.0; // 8 neighbours 
+	dpArithmeticMean /= n; //  
 	
 	
 	
@@ -611,12 +626,15 @@ double GiveNoiseMeasureD(double complex c){
 	int i;
 	int ix, iy;
 	double m;
+	double p;
 	// world to screen conversion
 	ix = (int)round((creal(c)-CxMin)/PixelWidth);
       	iy = (int)round((CyMax-cimag(c))/PixelHeight); // reverse y axis
       	i = give_i(ix,iy);
       	m = GiveNoiseMeasure(ix,iy,i);
-      	printf("for c = (%f;%f)\tnoise measure = %16f\tpotential = %f\n", creal(c), cimag(c), m, APotential[i]);
+      	p = APotential[i];
+      	if (p == FP_ZERO) p = 0.0;
+      	printf("for c = (%f;%f)\tnoise measure = %.16f\tpotential = %.16f\n", creal(c), cimag(c), m, p );
       	return m;
 
 }
@@ -650,6 +668,7 @@ int CheckMooreNeighborhood(int ix0, int iy0, double p0){
 		if (i>0){ // inside bounds of 1D array 
 		if( ABoundary[i]!=0) printf(" point was visited \n");
 		p = APotential[i];
+		if (p ==  FP_ZERO) p = 0.0; // 
 		printf("FCCode = %d , p = %.16f dp = %.16f\n", FCCode,p, fabs(p-p0) );}
 	
 	
@@ -733,7 +752,8 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
   	if ( i0<0){ printf("\tc is out of drawing rectangle. End. \n"); return 1;}
   	
   	p0 = APotential[i0];
-	ABoundary[i0]=1; // mark as visited, but not starting point because it wil be omited in GiveNextFreemanChainCode and curve do not close 
+  	if (p0 ==  FP_ZERO) p0 = 0.0; // 
+	ABoundary[i0]=1; // mark as visited, but not starting point because it wil be omited in GiveNextChainCodeEqual and curve do not close 
 	//if (p0 == FP_ZERO) { printf("\tstart point c is inside. End.\n"); return 1;}
 	//else 
 	//printf("\tplot point n = %d\n", n);
@@ -753,11 +773,11 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 	
 		//printf("\t n = %d\n", n);
 		
-		if (n == 2) ABoundary[i0]=0; // mark start point as not visited,  because it wil be omited in GiveNextFreemanChainCode and curve do not close 
+		if (n == 2) ABoundary[i0]=0; // mark start point as not visited,  because it wil be omited in GiveNextChainCodeEqual and curve do not close 
 		
 		//CheckMooreNeighborhood(ix, iy,p0);
 		// choose next point
-		FCCode = GiveNextFreemanChainCode( ix,  iy,  p0);
+		FCCode = GiveNextChainCodeEqual( ix,  iy,  p0);
 		if (FCCode <0 || FCCode>7) {printf("\tdrawing stopped because of bad FCCode = %d after %d steps ( pixels)\n ", FCCode, n); return 1;}
 		
 		// translate FCCode t0 ix, iy
@@ -785,7 +805,9 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 						//CheckMooreNeighborhood(ix, iy,p0);
 						return 2;}
 			potential = APotential[i];
-			if (potential == FP_ZERO) { printf("c is inside. End. \n"); return 3;}
+			
+			if (potential == FP_ZERO) { printf("\tc is inside. End. \n"); return 3;}
+			
 			//
 			iPlotBigPoint(ix, iy, iColor, A);
 			//A[i] = 255 - A[i]; //iColor;
@@ -796,8 +818,10 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 			//else {printf("\terror from DrawEquipotential : bad i \n"); return -1; }	
 	}
 	
-	// 
-	printf("\tend point\tix = %d iy = %d i = %d potential = %.16f\n", ix, iy, i,  APotential[give_i(ix, iy)] );
+	// end after n = nMax
+	potential = APotential[give_i(ix, iy)];
+	if (potential ==FP_ZERO) potential = 0.0;
+	printf("\tend point\tix = %d iy = %d i = %d potential = %.16f\n", ix, iy, i,  potential );
 	printf("\tcurve is not closed = stop ( bad !!) after %d steps (pixels)\n\n", n);
 	
 	return 0; // 
@@ -1021,15 +1045,17 @@ int main()
 	MakeImage(AColor);
 	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-10, NULL,  iWidth, iHeight, iSize );
 	ClearExterior(AColor); // make exterior white
-	//DrawExtRayOut( 0.5+0.9*I, AColor);
-	DrawEquipotential( 1.03+1.7*I,	0, AColor); // bad because of image boundary 
-	DrawEquipotential( 1.05, 	0, AColor); // bad on boundary:  error  from giv_i : bad input: ix = 2000 
+	
+	
+	DrawExtRayOut( 0.5+0.9*I, AColor);
+	//DrawEquipotential( 1.03+1.7*I,	0, AColor); // bad because of image boundary 
+	//DrawEquipotential( 1.05, 	0, AColor); // bad on boundary:  error  from giv_i : bad input: ix = 2000 
 	DrawEquipotential( 0.9, 	0, AColor); //good
 	DrawEquipotential( 0.7, 	0, AColor); // good
 	DrawEquipotential( 0.5, 	0, AColor); // good
 	DrawEquipotential( 0.4, 	0, AColor); // good 
-	DrawEquipotential( 0.35, 	0, AColor); // bad because of chaotic data
-	DrawEquipotential( 0.3, 	0, AColor); // bad because of chaotic data
+	// DrawEquipotential( 0.35, 	0, AColor); // bad because of chaotic data
+	// DrawEquipotential( 0.3, 	0, AColor); // bad because of chaotic data
 	
 	//CheckOrientation(AColor) ;
 	 

@@ -1,0 +1,68 @@
+render image = compute and write image data bytes to the array 
+File 10_89990.pgm saved. 
+ClearExterior =  make exterior solid color = white
+ exterior p = 0.751188 
+
+draw equipotential curve thru point c = (0.9000000000000000; 0.0000000000000000) pixel = (1916, 1000)
+ 	start point
+	for c = (0.900000;0.000000)	noise measure = 0.0025952006903814	potential = 0.9901006463279854
+	c is inside the array : iy = 1916 iy = 1000	and outside M set
+	end point	ix = 1916 iy = 1000 i = 2001916 potential = 0.9901033608952807
+	curve is closed = stop ( good) after 4357 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.7000000000000000; 0.0000000000000000) pixel = (1805, 1000)
+ 	start point
+	for c = (0.700000;0.000000)	noise measure = 0.0045160797467720	potential = 0.5989907665960282
+	c is inside the array : iy = 1805 iy = 1000	and outside M set
+	end point	ix = 1805 iy = 1000 i = 2001805 potential = 0.5989911428328348
+	curve is closed = stop ( good) after 3825 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.5000000000000000; 0.0000000000000000) pixel = (1694, 1000)
+ 	start point
+	for c = (0.500000;0.000000)	noise measure = 0.0111195774508909	potential = 0.2128012374973248
+	c is inside the array : iy = 1694 iy = 1000	and outside M set
+	end point	ix = 1694 iy = 1000 i = 2001694 potential = 0.2127903458916913
+	curve is closed = stop ( good) after 3687 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.4000000000000000; 0.0000000000000000) pixel = (1638, 1000)
+ 	start point
+	for c = (0.400000;0.000000)	noise measure = 0.0244119823222931	potential = 0.0632189280903892
+	c is inside the array : iy = 1638 iy = 1000	and outside M set
+	end point	ix = 1638 iy = 1000 i = 2001638 potential = 0.0631906592052049
+	curve is closed = stop ( good) after 4125 steps (pixels)
+
+File 10_89980.pgm saved. 
+Find boundary of Mandelbrot set using  noise measure
+File 10_89970.pgm saved. 
+Find noisy pixels
+File 10_89960.pgm saved. 
+for c = (0.000000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.100000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.200000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.250000;0.000000)	noise measure = 0.2500000000000000	potential = 0.0000000000000000
+for c = (0.260000;0.000000)	noise measure = 3.1457717601949291	potential = 0.0000000019934531
+for c = (0.270000;0.000000)	noise measure = 0.5572597205697883	potential = 0.0000044162911707
+for c = (0.280000;0.000000)	noise measure = 0.3078640888246843	potential = 0.0000587486278177
+for c = (0.290000;0.000000)	noise measure = 0.1872334952074938	potential = 0.0003708182242248
+for c = (0.300000;0.000000)	noise measure = 0.1290122547411083	potential = 0.0012438403001236
+for c = (0.350000;0.000000)	noise measure = 0.0457918910257952	potential = 0.0183838747379665
+for c = (0.400000;0.000000)	noise measure = 0.0244119823222931	potential = 0.0632189280903892
+for c = (0.450000;0.000000)	noise measure = 0.0156374406145566	potential = 0.1305368896713344
+for c = (0.500000;0.000000)	noise measure = 0.0111195774508909	potential = 0.2128012374973248
+for c = (0.600000;0.000000)	noise measure = 0.0066430404569894	potential = 0.3984187631443595
+for c = (0.700000;0.000000)	noise measure = 0.0045160797467720	potential = 0.5989907665960282
+for c = (0.800000;0.000000)	noise measure = 0.0033359942064616	potential = 0.7958924429230689
+for c = (0.900000;0.000000)	noise measure = 0.0025952006903814	potential = 0.9901006463279854
+for c = (1.000000;0.000000)	noise measure = 0.0020908718498594	potential = 1.1743374869011141
+
+
+Parameter plane with Mandelbrot set
+corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
+corners: ixMin = 0	ixMax = 1999	 iyMin = 0	 iyMax 1999
+exterior = CPM/M
+IterationMax = 90000
+EscapeRadius = 10
+iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels 
