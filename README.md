@@ -138,13 +138,18 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 # links
 * [Argument tracing by Wolf Jung](http://www.mndynamics.com/indexp.html#XR)
   * [code in wikibooks](https://en.wikibooks.org/wiki/Fractals/mandel#Argument_tracing)
-
+* [Meandering triangles ( marching triangles)](https://en.wikipedia.org/wiki/Marching_squares#Meandering_triangles)
+* [Otis by Tomoki Kawahira](http://www.math.titech.ac.jp/~kawahira/programs/aboutotis.html)
+* [Numerical_continuation](https://en.wikipedia.org/wiki/Numerical_continuation)
+  * [Piecewise_linear_continuation](https://en.wikipedia.org/wiki/Piecewise_linear_continuation)
+* [Isoline ](http://debian.man.ac.uk/.f/pub/cgu/iavsc/avs5/Module_Src/mappers/Isoline_Slice/Isoline_Slic.html)
 # see also
+
+## boundary scaning
 * [Boundary Scanning by Robert P. Munafo](http://mrob.com/pub/muency/boundaryscanning.html)
 * [How to “inform” successive ContourPlot calculations in Mathematica?](https://mathematica.stackexchange.com/questions/103673/how-to-inform-successive-contourplot-calculations/103681)
-* [Drawing M-set by contour lines method](https://groups.google.com/forum/#!topic/sci.fractals/t9Udefcs20Q)
-  * [M. Romera, G. Pastor and F. Montoya, "Graphic Tools to Analyse One-Dimensional Quadratic Maps", Computers & Graphics, 20/2 (1996), 333-339 ](http://www.tic.itefi.csic.es/gerardo/publica/Romera96.pdf)
-  * M. Romera, G. Pastor and F. Montoya, "Drawing the Mandelbrot set by the method of escape lines", Fractalia, 5, n.º 17 (1996), 11-13.
+
+## Image noise
 * [Image noise in wikibooks](https://en.wikibooks.org/wiki/Fractals/Image_noise)
 ## boundary tracing
 * [wikipedia : Boundary_tracing](https://en.wikipedia.org/wiki/Boundary_tracing)
@@ -154,20 +159,38 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 * [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)  
 * [Square Tracing Algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/square.html) 
 * [comturs in OpenCV and Python](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html)
+## contour tracing
+* [Drawing M-set by contour lines method](https://groups.google.com/forum/#!topic/sci.fractals/t9Udefcs20Q)
+  * [M. Romera, G. Pastor and F. Montoya, "Graphic Tools to Analyse One-Dimensional Quadratic Maps", Computers & Graphics, 20/2 (1996), 333-339 ](http://www.tic.itefi.csic.es/gerardo/publica/Romera96.pdf)
+  * M. Romera, G. Pastor and F. Montoya, "Drawing the Mandelbrot set by the method of escape lines", Fractalia, 5, n.º 17 (1996), 11-13.
+* [an explicit conformal isomorphism between the complement of the Mandelbrot set M and the complement of the closed unit disk D](https://math.stackexchange.com/questions/748875/demonstrating-that-the-mandelbrot-set-is-connected)
+* [CONREC = A Contouring algorithm of some surface represented as a regular triangular mesh by Paul Bourke](http://paulbourke.net/papers/conrec/)
+## Contour scanning or edge detection
+* [wikibooks](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D#Edge_detection)
+
+
 ## code
 * [contour-tracing: c++, OpenCV](https://github.com/aaalgo/contour-tracing/blob/master/contour-tracing.h)
-* [Moore Neighbor Contour Tracing Algorithm in C++ BY ERIK SMISTAD](https://www.eriksmistad.no/moore-neighbor-contour-tracing-algorithm-in-c/)
+* [Moore Neighbor Contour Tracing Algorithm in C++ BY ERIK SMISTAD](https://www.eriksmistad.no/moore-neighbor-contour-tracing-algorithm-in-c/)  
+
+
 # Key words
 * Digital Topology
 * digital image processing
 * binary 2D image
 * discrete complex dynamics
 * complex quadratic polynomial
+* Coxeter-Freudenthal decomposition (triangulation)
 * parameter plane
 * trace 
   * a curve
   * a boundary
   * a contour
+* curve
+  * isocurve ( isoline): equipotential curve, 
+* Applications:
+  * Numerical continuation 
+    * Simplicial or piecewise linear continuation 
 
 
 

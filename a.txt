@@ -1,5 +1,5 @@
 render image = compute and write image data bytes to the array 
-File 10_89990.pgm saved. 
+File 10_70001_.pgm saved. 
 ClearExterior =  make exterior solid color = white
  exterior p = 0.751188 
 
@@ -34,11 +34,11 @@ draw equipotential curve thru point c = (0.4000000000000000; 0.0000000000000000)
 	end point	ix = 1638 iy = 1000 i = 2001638 potential = 0.0631906592052049
 	curve is closed = stop ( good) after 4125 steps (pixels)
 
-File 10_89980.pgm saved. 
-Find boundary of Mandelbrot set using  noise measure
-File 10_89970.pgm saved. 
-Find noisy pixels
-File 10_89960.pgm saved. 
+File 10_70002_.pgm saved. 
+Find boundary of Mandelbrot set using  potential
+File 10_70003_.pgm saved. 
+Find noisy pixels near boundary of Mandelbrot set with boundary )
+File 10_70004_.pgm saved. 
 for c = (0.000000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
 for c = (0.100000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
 for c = (0.200000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
@@ -60,9 +60,11 @@ for c = (1.000000;0.000000)	noise measure = 0.0020908718498594	potential = 1.174
 
 
 Parameter plane with Mandelbrot set
-corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
-corners: ixMin = 0	ixMax = 1999	 iyMin = 0	 iyMax 1999
+	corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
+	corners: ixMin = 0	ixMax = 1999	 iyMin = 0	 iyMax 1999
 exterior = CPM/M
-IterationMax = 90000
+IterationMax = 70000
 EscapeRadius = 10
 iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels 
+NoiseMeasureThreshold = 0.0450000000000000
+BoundaryMeasure = 1.1499999999999999

@@ -100,7 +100,7 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 
  double TwoPi = 2.0*M_PI;
  
-const int IterationMax=90000;
+const int IterationMax=70000;
 
 
 /* bail-out value for the bailout test for exaping points
@@ -144,6 +144,29 @@ double PixelWidth; // =(CxMax-CxMin)/iXmax;
 double PixelHeight; // =(CyMax-CyMin)/iYmax; 
 
 /*
+
+
+directional features(Chain Codes)
+  8 directional chain code
+  the Freeman Chain Code of Eight Directions[1] (FCCE)
+  https://en.wikipedia.org/wiki/Chain_code
+  
+ http://www.cis.hut.fi/research/IA/paper/publications/bmvc97/node2.html
+ 3 2 1
+ 4 c 0
+ 5 6 7 
+ where c = center 
+ 
+ check all pixels of the 8-point neighborhood on a 2D grid
+ find most similar value to p0 
+ it is the direction
+ 
+ ----
+ but there should be 2 directions for equipotential curve ?????
+ why it gives the only one : 
+ it exludes previous point : if (i>0 && ABoundary[i]==0){ // inside bounds of 1D array and not visited 
+
+
    2D lattice ( array) and coorinate 
 	+----------+----------+----------+
 	|          |          |          |
@@ -228,8 +251,8 @@ double *APotential;
 int *ABoundary; 
 
 
-double NoiseMeasureThreshold = 1.0; // arbitrary 
-
+double NoiseMeasureThreshold = 0.045; // arbitrary for c = 0.365000000000000  +0.000000000000000 i    period = 0 
+double BoundaryMeasure = 1.15; // higher value = thinner boundary
 // ----------------------  functions ===========================================
 
  double cnorm(double complex z)
@@ -337,51 +360,6 @@ int dPlotPoint(complex double c, unsigned char iColor, unsigned char A[])
 }
 
 
-// fill array 
-// uses global var :  ...
-// scanning complex plane 
-int ClearArray(unsigned char A[] )
-{
-  
-  	unsigned int i; // index of 1D array
-
-  	// every pixel of the image is black
-	for(i= 0; i<=iSize; ++i) A[i] = 0; 
-			     	
-	return 0;
-}
-
-/*
- save data array to pgm file 
-SaveArray2PGMFile(data0 , iterMax+9, "marked first quadrant should be up and right", 100, 100); // save array (image) to pgm filename
-*/
-
-int SaveArray2PGMFile( unsigned char A[], double ER,int IterationMax , char* comment, int iWidth, int iHeight, int iSize )
-{
-  
-  FILE * fp;
-  const unsigned int MaxColorComponentValue=255; /* color component is coded from 0 to 255 ;  it is 8 bit color file */
-  char name [100]; /* name of file */
-  snprintf(name, sizeof name, "%d_%d",(int)ER, IterationMax); /*  */
-  char *filename =strncat(name,".pgm", 4);
-  
-  
-  
-  /* save AColor to the pgm file  */      
-  fp= fopen(filename,"wb"); /*create new file,give it a name and open it in binary mode  */
-  fprintf(fp,"P5\n # %s\n %u %u\n %u\n", comment, iWidth, iHeight, MaxColorComponentValue);  /*write header to the file*/
-  fwrite(A,iSize,1,fp);  /*write image data bytes to the file in one step */
-  
-  //
-  printf("File %s saved. ", filename);
-  if (comment != NULL)  
-  	printf ("comment = %s \n", comment); 
-  	else printf ("\n"); 
-  fclose(fp);
-
-  return 0;
-}
-
 
 
  double complex give_c(int iX, int iY){
@@ -482,38 +460,13 @@ int MakeImage(unsigned char A[]){
 
 
 
-
-int DrawExtRayOut(double complex c, unsigned char A[]){
-
-	double potential;
-	potential = GivePotential(c);
-	if (potential == FP_ZERO) { printf("c is inside\n"); return 1;}
-	//GiveNoiseMeasureD(c);
-	//else 
-	dPlotPoint(c, 0,  A);
-	printf(" exterior p = %f \n",potential);
-	return 0;
-
-}
-
-
 /*
- directional features(Chain Codes)
-  8 directional chain code
- http://www.cis.hut.fi/research/IA/paper/publications/bmvc97/node2.html
- 3 2 1
- 4 c 0
- 5 6 7 
- where c = center 
  
- check all pixels of the 8-point neighborhood on a 2D grid
- find most similar value to p0 
- it is the direction
- 
- ----
- but there should be 2 directions for equipotential curve ?????
- why it gives the only one : 
- it exludes previous point : if (i>0 && ABoundary[i]==0){ // inside bounds of 1D array and not visited 
+  
+  
+  
+  Gives direction ( coded in FCCode) to the left equal pixel , so it trace conterclockwise 
+  
   
 */
 int GiveNextChainCodeEqual(int ix0, int iy0, double p0){
@@ -830,6 +783,73 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
 
 
 
+/*
+ 
+  Gives direction ( coded in FCCode) to the pixel with most greater potential 
+  gradient ascent, hill climbing
+  External ray out 
+ */
+int GiveNextChainCodeAscent(int ix0, int iy0, double p0){
+	
+	//double pTemp;
+	double dpTemp;
+	double p = 0.0; // low
+	double dp = 0.0; // low 
+	int ix, iy; 
+	int i; 
+	
+	int f = -1; // result = final FCCode
+	int FCCode;//
+	
+	// find FCCode for which dp is the smallest 
+	if (p0 == FP_ZERO) {printf("\tproblem from GiveNextChainCodeAscent: p0 = FP_ZERO  \n");return -1;}
+	
+	for (FCCode = 0; FCCode < 8; FCCode ++){ // 
+	
+		// translate FCCode t0 ix, iy
+		ix = ix0 + offset[FCCode][0];
+		iy = iy0 + offset[FCCode][1];
+		
+		// (ix,iy) -> i
+		i = give_i(ix,iy);// new point
+	
+		if (i>0 && ABoundary[i]==0){ // inside bounds of 1D array and not visited 
+			p = APotential[i];
+			if (p != FP_ZERO) { // not interior
+				dpTemp = (p - p0);
+				if (dpTemp>dp && dpTemp > 0.0){ 
+					f =  FCCode; // 
+					dp = dpTemp;}}}
+					
+					
+		}
+	
+	
+	
+		
+	if (f == -1) {printf("\tproblem from GiveNextChainCodeAscent: FCCode not found \n"); return -2;}	
+		
+	if(i<0 ) f = -2;
+	 else if( ABoundary[i]>0) FCCode = -3; // check if point was visitred
+	
+	return f;
+	
+}
+
+
+int DrawExtRayOut(double complex c, unsigned char A[]){
+
+	double potential;
+	potential = GivePotential(c);
+	if (potential == FP_ZERO) { printf("c is inside\n"); return 1;}
+	//GiveNoiseMeasureD(c);
+	//else 
+	dPlotPoint(c, 0,  A);
+	printf(" exterior p = %f \n",potential);
+	return 0;
+
+}
+
 
 
 
@@ -929,12 +949,14 @@ int info(){
 
 
 	printf("\n\nParameter plane with Mandelbrot set\n");
-	printf("corners: CxMin = %f\tCxMax = %f\t CyMin = %f\t CyMax %f\n",CxMin, CxMax, CyMin, CyMax);
-	printf("corners: ixMin = %d\tixMax = %d\t iyMin = %d\t iyMax %d\n",ixMin, ixMax, iyMin, iyMax);
+	printf("\tcorners: CxMin = %f\tCxMax = %f\t CyMin = %f\t CyMax %f\n",CxMin, CxMax, CyMin, CyMax);
+	printf("\tcorners: ixMin = %d\tixMax = %d\t iyMin = %d\t iyMax %d\n",ixMin, ixMax, iyMin, iyMax);
 	printf("exterior = CPM/M\n");
 	printf("IterationMax = %d\n", IterationMax);
 	printf("EscapeRadius = %.0f\n",EscapeRadius);
 	printf("iPixelRadius = ixMax* 0.002 = %d so big pixel = %d (small) pixels \n", iPixelRadius, 4*iPixelRadius*iPixelRadius); // ???
+	printf("NoiseMeasureThreshold = %.16f\n", NoiseMeasureThreshold );
+	printf("BoundaryMeasure = %.16f\n", BoundaryMeasure);
 	return 0;
 }
 
@@ -966,12 +988,13 @@ int ClearExterior (unsigned char A[])
 
 // // make exterior white
 // uses global var :  ...
-int FindMaxNoisyPixels (unsigned char A[])
+int FindBoundary (unsigned char A[])
 {
   int ix, iy;		// pixel coordinate 
   int i; 			/* index of 1D array */
   
   double NoiseMeasure;
+  
  
 	
   for (iy = 1; iy < iyMax-1; ++iy) // do not check border points, or change GiveNoiseMeasure 
@@ -979,21 +1002,24 @@ int FindMaxNoisyPixels (unsigned char A[])
 	{
 
 	  i = give_i (ix, iy);	/* compute index of 1D array from indices of 2D array */
-	  if (i>-1 && APotential[i] != FP_ZERO) {
+	  if (i>-1 && APotential[i] != FP_ZERO){ 
+	  	
 	  	
 	  	NoiseMeasure = GiveNoiseMeasure (ix,iy,i);
-	  	if (NoiseMeasure>NoiseMeasureThreshold) A[i] = 255 ;	// 
+	  	if (NoiseMeasure> BoundaryMeasure) A[i] = 255 ;	// white
 	  	}
 	  
 	}
     
-  printf("Find boundary of Mandelbrot set using  noise measure\n");
+  printf("Find boundary of Mandelbrot set using  potential\n");
   return 0;
 }
 
 
-// // make exterior white
-// uses global var :  ...
+/* make exterior white
+ uses global var :  ...
+ wher potential is positive ( >0 ) and < BoundaryMeasure
+*/
 int FindNoisyPixels (unsigned char A[])
 {
   int ix, iy;		// pixel coordinate 
@@ -1009,16 +1035,60 @@ int FindNoisyPixels (unsigned char A[])
 	  i = give_i (ix, iy);	/* compute index of 1D array from indices of 2D array */
 	  if (i>-1 && APotential[i] != FP_ZERO) {
 	  	NoiseMeasure = GiveNoiseMeasure (ix,iy,i);
-	  	if (NoiseMeasure<NoiseMeasureThreshold 
-	  	    && NoiseMeasure>0.025) A[i] = 255 ;	// 
+	  	if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// 
 	  	}
 	  
 	}
     
-  printf("Find noisy pixels\n");
+  printf("Find noisy pixels near boundary of Mandelbrot set with boundary )\n");
   return 0;
 }
 
+
+// fill array 
+// uses global var :  ...
+// scanning complex plane 
+int ClearArray(unsigned char A[] )
+{
+  
+  	unsigned int i; // index of 1D array
+
+  	// every pixel of the image is black
+	for(i= 0; i<=iSize; ++i) A[i] = 0; 
+			     	
+	return 0;
+}
+
+/*
+ save data array to pgm file 
+SaveArray2PGMFile(data0 , iterMax+9, "marked first quadrant should be up and right", 100, 100); // save array (image) to pgm filename
+*/
+
+int SaveArray2PGMFile( unsigned char A[], double ER,int IterationMax , char* comment, int iWidth, int iHeight, int iSize )
+{
+  
+  FILE * fp;
+  const unsigned int MaxColorComponentValue=255; /* color component is coded from 0 to 255 ;  it is 8 bit color file */
+  char name [100]; /* name of file */
+  snprintf(name, sizeof name, "%d_%d_",(int)ER, IterationMax); /*  */
+  char *filename =strncat(name,".pgm", 4);
+  
+  
+  
+  /* save AColor to the pgm file  */      
+  fp= fopen(filename,"wb"); /*create new file,give it a name and open it in binary mode  */
+  fprintf(fp,"P5\n # %s\n %u %u\n %u\n", comment, iWidth, iHeight, MaxColorComponentValue);  /*write header to the file*/
+  fwrite(A,iSize,1,fp);  /*write image data bytes to the file in one step */
+  
+  //
+  printf("File %s saved. ", filename);
+  if (comment != NULL)  
+  	printf ("comment = %s \n", comment); 
+  	else printf ("\n"); 
+  fclose(fp);
+
+  return 0;
+}
 
 
 
@@ -1041,9 +1111,9 @@ int main()
 
 		
 	setup(); // corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
-	ClearArray(AColor);
+	ClearArray(AColor); // all black
 	MakeImage(AColor);
-	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-10, NULL,  iWidth, iHeight, iSize );
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+1, NULL,  iWidth, iHeight, iSize );
 	ClearExterior(AColor); // make exterior white
 	
 	
@@ -1059,15 +1129,15 @@ int main()
 	
 	//CheckOrientation(AColor) ;
 	 
-	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-20, NULL,  iWidth, iHeight, iSize ); 	
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+2, NULL,  iWidth, iHeight, iSize ); 	
 	
-  	ClearArray(AColor);
-  	FindMaxNoisyPixels(AColor);
-  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-30, NULL,  iWidth, iHeight, iSize ); 
+  	ClearArray(AColor); // all black
+  	FindBoundary(AColor);
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+3, NULL,  iWidth, iHeight, iSize ); 
   	//
-  	ClearArray(AColor);
+  	ClearArray(AColor); // all black
   	FindNoisyPixels(AColor);
-  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax-40, NULL,  iWidth, iHeight, iSize ); 
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+4, NULL,  iWidth, iHeight, iSize ); 
   	
   	//test to find limits of NoiseMeasure
   	GiveNoiseMeasureD(0.0);
