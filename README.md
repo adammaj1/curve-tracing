@@ -28,15 +28,32 @@ C -->|Yes| D[End]
 ## equipotentials
 
 Exterior is coloured with potential ( grayscale)   
+```c
+p = log(potential)/K;
+color = 255* (1+cos(TwoPi*p))/2.0;
+```  
+
 ![](10_99991.png)  
 
 Exterior is white with black equipotential curves    
 ![](10_99981.png)  
 
 Boundary using noise detection  
-![](10_99971.png)  
 
+```c
+double BoundaryMeasure = 1.15; // higher value = thinner boundary
+// FindBoundary
+if (NoiseMeasure> BoundaryMeasure) A[i] = 255 ;	// white
+```  
+![](10_99971.png)  
+     
 Noise pixels  
+```c
+double NoiseMeasureThreshold = 0.045; // arbitrary for c = 0.365000000000000  +0.000000000000000 i    period = 0 
+//  FindNoisyPixels
+if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
+```  
+
 ![](10_99961.png)  
 
 Text output of the program:   
