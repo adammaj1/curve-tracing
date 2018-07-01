@@ -12,8 +12,10 @@ A[Start point] --> B(Compute next point)
 B --> C{meet stop criteria ? }
 C --> |No|B
 C -->|Yes| D[End]
-
 ```
+
+![](Simplicial.gif)   
+[Image by Michael E. Henderson](https://commons.wikimedia.org/wiki/File:Simplicial.gif) 
 
 "scanning means to check every pixel"
 
