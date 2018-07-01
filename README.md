@@ -4,7 +4,7 @@ TOC
 
 # dictionary
 
-tracing   
+tracing a curve means evaluate successive points on the curve, one by one
 
 ```mermaid
 graph TD
