@@ -4,7 +4,14 @@ TOC
 
 # dictionary
 
-tracing a curve means evaluate successive points on the curve, one by one
+tracing a curve means compute successive points on the curve, one by one, until stopping criteria are met
+
+
+Maximum compute time
+Maximum streamline length
+Boundary of the Grid
+Velocity approaches 0 - In this case, the flow has stopped moving
+Streamline intersects itself - In this case, the flow has become circular, and the streamline is infinite in that direction 
 
 ```mermaid
 graph TD
@@ -14,18 +21,36 @@ C --> |No|B
 C -->|Yes| D[End]
 ```
 
-![](Simplicial.gif)   
+
+Tracing a curve on the triangular grid  
+![Tracing a curve on the triangular grid](Simplicial.gif)   
 [Image by Michael E. Henderson](https://commons.wikimedia.org/wiki/File:Simplicial.gif) 
 
-"scanning means to check every pixel"
+"scanning means to check every pixel". Other names : detection, extraction
 
 # cases
-* trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
-* trace a curve in complex 2D plane ( compute each point)
+* dimension : 2D / 3D / ...
+* input
+  * trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
+  * trace a curve in complex 2D plane ( compute each point)
+* curve types 
+  * closed / not closed ( ray)
+  * simple,   
+  * critical points / [singularities ](https://en.wikipedia.org/wiki/Singular_point_of_a_curve)
+* grid
+  * structured / unstructured
+  * quadratic / triangular
+* stoping criteris
+  * boundary of the Grid ( image)
+  * maximal curve length
+  * Maximum compute time 
+* trace 
+  * forward / backward   or clockwise/counterclockwise
+  * how many seed points
+  * [fixed step / change ](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient)
+  * algorithm  
+  
 
-# curve types
-* closed / not closed ( ray)
-* simple, 
 
 ## equipotentials
 
@@ -58,7 +83,15 @@ if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
 
 ![](10_99961.png)  
 
-Text output of the program:   
+
+## field lines = external rays 
+
+here field lines are [external rays](https://en.wikipedia.org/wiki/External_ray)
+* do not cross with each other but 2 or more lines may land on the same point ( root or Misiurewicz point)  
+* are perpendicular to equipotential lines
+
+
+# Text output of the program:   
 
 
 ```bash
@@ -145,6 +178,7 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 # code
 * [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
 * [s.c](s.c) - trace equipotential curves on the parameter plane
+* [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
 * [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
 * [dynamic_external_angle](https://gitlab.com/adammajewski/dynamic_external_angle)
 * [m_d_exray_in](https://gitlab.com/adammajewski/m_d_exray_in)
@@ -162,7 +196,18 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 * [Numerical_continuation](https://en.wikipedia.org/wiki/Numerical_continuation)
   * [Piecewise_linear_continuation](https://en.wikipedia.org/wiki/Piecewise_linear_continuation)
 * [Isoline ](http://debian.man.ac.uk/.f/pub/cgu/iavsc/avs5/Module_Src/mappers/Isoline_Slice/Isoline_Slic.html)
+* [CURVE TRACING AND CURVE DETECTION IN IMAGES by Karthik Raghupathy](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.571.3262&rep=rep1&type=pdf)
+* curve tracing algorithm, proposed by Steger 
+  * [Carsten Steger, “An unbiased detector of curvilinear structures,” IEEE Transactions on Pattern Analysis and Machine Intelligence, February 1998.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.42.2266&rep=rep1&type=pdf)
+  * [Unbiased Extraction of Curvilinear Structures from 2D and 3D Images by Carsten Steger](https://iuks.in.tum.de/_media/members/steger/publications/1998/diss-1998-steger.pdf)
+  * [Curviliniar_Detector in matlab by Emmanouil Kapernaros](https://github.com/kapcom01/Curviliniar_Detector)
+  * [Curve tracing by Eugene Katrukha](http://katpyxa.info/feedbacks/?p=154) and [code ](https://github.com/jalmar/CurveTracing)
+  * [Ridge (Line) Detection Plugin (Fiji) by Thorsten Wagner, Mark Hiner](http://imagej.net/Ridge_Detection) and [code](https://github.com/thorstenwagner/ij-ridgedetection)
 # see also
+
+
+## Feature detection
+* [Feature detection in computer_vision](https://en.wikipedia.org/wiki/Feature_detection_(computer_vision))
 
 ## boundary scaning
 * [Boundary Scanning by Robert P. Munafo](http://mrob.com/pub/muency/boundaryscanning.html)
@@ -187,8 +232,15 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 ## Contour scanning or edge detection
 * [wikibooks](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D#Edge_detection)
 
+## streamline tracing
+* [HARSH BHATIA](http://www.sci.utah.edu/~hbhatia/research.php)
+* [stackoverflow question: how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar](https://stackoverflow.com/questions/8296617/how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar)
+* [stackoverflow question: how-to-create-streamline-like-arrow-lines-in-gnuplot](https://stackoverflow.com/questions/33240722/how-to-create-streamline-like-arrow-lines-in-gnuplot?noredirect=1&lq=1)
+* [wikipedia : Image-based_flow_visualization](https://en.wikipedia.org/wiki/Image-based_flow_visualization)
+* [Robust Polylines Tracing for N-Symmetry Direction Field on Triangulated Surfaces by NICOLAS RAY and DMITRY SOKOLOV](http://alice.loria.fr/publications/papers/2014/STREAM/RobustStreamlines.pdf)
 
-## code
+
+# code
 * [contour-tracing: c++, OpenCV](https://github.com/aaalgo/contour-tracing/blob/master/contour-tracing.h)
 * [Moore Neighbor Contour Tracing Algorithm in C++ BY ERIK SMISTAD](https://www.eriksmistad.no/moore-neighbor-contour-tracing-algorithm-in-c/)  
 
@@ -205,9 +257,15 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
   * a curve
   * a boundary
   * a contour
+  * [polylines](https://en.wikipedia.org/wiki/Polygonal_chain)
 * curve
-  * isocurve ( isoline): equipotential curve, 
+  * isocurve ( isoline): equipotential curve
+* [FLOW VISUALIZATION](http://www.flowvis.org/)
+  * [seed](https://slvg.soe.ucsc.edu/seed.html)
+  * [dual seed ](https://www.zib.de/hotz/publications/paper/rosanwo09_dualSeeding.pdf)
+* [2D Velocity Fields](http://avis.soe.ucsc.edu/texflow.html)
 * Applications:
+  *  streamline tracing on triangular and quadrilateral grids
   * Numerical continuation 
     * Simplicial or piecewise linear continuation 
 
