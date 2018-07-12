@@ -7,12 +7,6 @@ TOC
 tracing a curve means compute successive points on the curve, one by one, until stopping criteria are met
 
 
-Maximum compute time
-Maximum streamline length
-Boundary of the Grid
-Velocity approaches 0 - In this case, the flow has stopped moving
-Streamline intersects itself - In this case, the flow has become circular, and the streamline is infinite in that direction 
-
 ```mermaid
 graph TD
 A[Start point] --> B(Compute next point)
@@ -39,7 +33,8 @@ Tracing a curve on the triangular grid
   * critical points / [singularities ](https://en.wikipedia.org/wiki/Singular_point_of_a_curve)
 * grid
   * structured / unstructured
-  * quadratic / triangular
+  * quadratic / triangular ( Coxeter-Freudenthal decomposition (triangulation))
+* [pixel connectivity](https://en.wikipedia.org/wiki/Pixel_connectivity)
 * stoping criteris
   * boundary of the Grid ( image)
   * maximal curve length
@@ -251,7 +246,6 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 * binary 2D image
 * discrete complex dynamics
 * complex quadratic polynomial
-* Coxeter-Freudenthal decomposition (triangulation)
 * parameter plane
 * trace 
   * a curve
