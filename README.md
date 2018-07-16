@@ -1,26 +1,22 @@
 TOC
 
+# code
+* [s.c](s.c) - trace equipotential curves on the parameter plane ( my own code))
+* [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
+* [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
+* [y,c](y.c) - Mandelbrot boundary tracing example for Youtube – © Joel Yliluoma
+* [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017
+## in other repositories
+* [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
+* [dynamic_external_angle](https://gitlab.com/adammajewski/dynamic_external_angle)
+* [m_d_exray_in](https://gitlab.com/adammajewski/m_d_exray_in)
+* [ray-backward-iteration](https://gitlab.com/adammajewski/ray-backward-iteration)
+* [NonInteractiveParameterRayInMPFR](https://gitlab.com/adammajewski/NonInteractiveParameterRayInMPFR)
+* [dynamic_ray_newton](https://gitlab.com/c_files/dynamic_ray_newton)
+* [parameter_ray_in_newton_mpfr](https://gitlab.com/c_files/parameter_ray_in_newton_mpfr)
 
 
-# dictionary
 
-tracing a curve means compute successive points on the curve, one by one, until stopping criteria are met
-
-
-```mermaid
-graph TD
-A[Start point] --> B(Compute next point)
-B --> C{meet stop criteria ? }
-C --> |No|B
-C -->|Yes| D[End]
-```
-
-
-Tracing a curve on the triangular grid  
-![Tracing a curve on the triangular grid](Simplicial.gif)   
-[Image by Michael E. Henderson](https://commons.wikimedia.org/wiki/File:Simplicial.gif) 
-
-"scanning means to check every pixel". Other names : detection, extraction
 
 # cases
 * dimension : 2D / 3D / ...
@@ -83,7 +79,7 @@ if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
 
 here field lines are [external rays](https://en.wikipedia.org/wiki/External_ray)
 * do not cross with each other but 2 or more lines may land on the same point ( root or Misiurewicz point)  
-* are perpendicular to equipotential lines
+* are [perpendicular ( normal)](https://www.intmath.com/applications-differentiation/1-tangent-normal.php) to equipotential lines
 
 
 # Text output of the program:   
@@ -168,24 +164,32 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 
 [Why real time is lower then user time ? ](https://unix.stackexchange.com/questions/40694/why-real-time-can-be-lower-than-user-time)
 
+# dictionary
+
+tracing a curve means compute successive points on the curve, one by one, until stopping criteria are met
 
 
-# code
-* [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
-* [s.c](s.c) - trace equipotential curves on the parameter plane
-* [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
-* [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
-* [dynamic_external_angle](https://gitlab.com/adammajewski/dynamic_external_angle)
-* [m_d_exray_in](https://gitlab.com/adammajewski/m_d_exray_in)
-* [ray-backward-iteration](https://gitlab.com/adammajewski/ray-backward-iteration)
-* [NonInteractiveParameterRayInMPFR](https://gitlab.com/adammajewski/NonInteractiveParameterRayInMPFR)
-* [dynamic_ray_newton](https://gitlab.com/c_files/dynamic_ray_newton)
-* [parameter_ray_in_newton_mpfr](https://gitlab.com/c_files/parameter_ray_in_newton_mpfr)
+```mermaid
+graph TD
+A[Start point] --> B(Compute next point)
+B --> C{meet stop criteria ? }
+C --> |No|B
+C -->|Yes| D[End]
+```
+
+
+Tracing a curve on the triangular grid  
+![Tracing a curve on the triangular grid](Simplicial.gif)   
+[Image by Michael E. Henderson](https://commons.wikimedia.org/wiki/File:Simplicial.gif) 
+
+"scanning means to check every pixel". Other names : detection, extraction
+
 
 
 # links
 * [Argument tracing by Wolf Jung](http://www.mndynamics.com/indexp.html#XR)
   * [code in wikibooks](https://en.wikibooks.org/wiki/Fractals/mandel#Argument_tracing)
+* [A Rasterizing Algorithm for Drawing Curves by Alois Zingl](http://members.chello.at/easyfilter/bresenham.pdf)
 * [Meandering triangles ( marching triangles)](https://en.wikipedia.org/wiki/Marching_squares#Meandering_triangles)
 * [Otis by Tomoki Kawahira](http://www.math.titech.ac.jp/~kawahira/programs/aboutotis.html)
 * [Numerical_continuation](https://en.wikipedia.org/wiki/Numerical_continuation)
@@ -198,19 +202,28 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
   * [Curviliniar_Detector in matlab by Emmanouil Kapernaros](https://github.com/kapcom01/Curviliniar_Detector)
   * [Curve tracing by Eugene Katrukha](http://katpyxa.info/feedbacks/?p=154) and [code ](https://github.com/jalmar/CurveTracing)
   * [Ridge (Line) Detection Plugin (Fiji) by Thorsten Wagner, Mark Hiner](http://imagej.net/Ridge_Detection) and [code](https://github.com/thorstenwagner/ij-ridgedetection)
+
+
+
 # see also
 
+## Recursive subdivision 
+* The process of subdividing an object (either geometric object, or a data structure) recursively until some criteria is met.
+
+## Image noise
+* [Image noise in wikibooks](https://en.wikibooks.org/wiki/Fractals/Image_noise)
 
 ## Feature detection
 * [Feature detection in computer_vision](https://en.wikipedia.org/wiki/Feature_detection_(computer_vision))
 
-## boundary scaning
+
+
+### boundary scaning
 * [Boundary Scanning by Robert P. Munafo](http://mrob.com/pub/muency/boundaryscanning.html)
 * [How to “inform” successive ContourPlot calculations in Mathematica?](https://mathematica.stackexchange.com/questions/103673/how-to-inform-successive-contourplot-calculations/103681)
 
-## Image noise
-* [Image noise in wikibooks](https://en.wikibooks.org/wiki/Fractals/Image_noise)
-## boundary tracing
+
+### boundary tracing
 * [wikipedia : Boundary_tracing](https://en.wikipedia.org/wiki/Boundary_tracing)
 * [The Boundary Tracing algorithm by Evgeny Demidov](https://www.ibiblio.org/e-notes/MSet/big_m.htm)
 * [Fast Contour-Tracing Algorithm Based on a Pixel-Following Method for Image Sensors by Jonghoon Seo, et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4813928/)
@@ -218,22 +231,25 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 * [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)  
 * [Square Tracing Algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/square.html) 
 * [comturs in OpenCV and Python](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html)
-## contour tracing
+### contour tracing
 * [Drawing M-set by contour lines method](https://groups.google.com/forum/#!topic/sci.fractals/t9Udefcs20Q)
   * [M. Romera, G. Pastor and F. Montoya, "Graphic Tools to Analyse One-Dimensional Quadratic Maps", Computers & Graphics, 20/2 (1996), 333-339 ](http://www.tic.itefi.csic.es/gerardo/publica/Romera96.pdf)
   * M. Romera, G. Pastor and F. Montoya, "Drawing the Mandelbrot set by the method of escape lines", Fractalia, 5, n.º 17 (1996), 11-13.
 * [an explicit conformal isomorphism between the complement of the Mandelbrot set M and the complement of the closed unit disk D](https://math.stackexchange.com/questions/748875/demonstrating-that-the-mandelbrot-set-is-connected)
 * [CONREC = A Contouring algorithm of some surface represented as a regular triangular mesh by Paul Bourke](http://paulbourke.net/papers/conrec/)
-## Contour scanning or edge detection
+### Contour scanning or edge detection
 * [wikibooks](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D#Edge_detection)
 
-## streamline tracing
+### streamline tracing
 * [HARSH BHATIA](http://www.sci.utah.edu/~hbhatia/research.php)
 * [stackoverflow question: how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar](https://stackoverflow.com/questions/8296617/how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar)
 * [stackoverflow question: how-to-create-streamline-like-arrow-lines-in-gnuplot](https://stackoverflow.com/questions/33240722/how-to-create-streamline-like-arrow-lines-in-gnuplot?noredirect=1&lq=1)
 * [wikipedia : Image-based_flow_visualization](https://en.wikipedia.org/wiki/Image-based_flow_visualization)
 * [Robust Polylines Tracing for N-Symmetry Direction Field on Triangulated Surfaces by NICOLAS RAY and DMITRY SOKOLOV](http://alice.loria.fr/publications/papers/2014/STREAM/RobustStreamlines.pdf)
 
+### Visualization of Algebraic Curves - curve sketching
+* [AN ACCURATE ALGORITHM FOR RASTERIZING ALGEBRAIC CURVES by Gabriel Taubin](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9588&rep=rep1&type=pdf)
+* [Visualizing Arcs of Implicit Algebraic Curves, Exactly and Fast by Pavel Emeliyanenko, Eric Berberich, Michael Sagraloff1](https://people.mpi-inf.mpg.de/~msagralo/curvevisualization.pdf)
 
 # code
 * [contour-tracing: c++, OpenCV](https://github.com/aaalgo/contour-tracing/blob/master/contour-tracing.h)
@@ -262,7 +278,7 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
   *  streamline tracing on triangular and quadrilateral grids
   * Numerical continuation 
     * Simplicial or piecewise linear continuation 
-
+  * Visualization of Algebraic Curves - curve sketching
 
 
 
