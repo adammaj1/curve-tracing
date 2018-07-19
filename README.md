@@ -4,8 +4,11 @@ TOC
 * [s.c](s.c) - trace equipotential curves on the parameter plane ( my own code))
 * [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
 * [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
-* [y,c](y.c) - Mandelbrot boundary tracing example for Youtube – © Joel Yliluoma
+* [y,c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
 * [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
+* [fractint.c](fractint.c) - code for the bound_trace from fractint 
+
+
 
 ## in other repositories
 * [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
@@ -32,7 +35,7 @@ TOC
   * structured / unstructured
   * quadratic / triangular ( Coxeter-Freudenthal decomposition (triangulation))
 * [pixel connectivity](https://en.wikipedia.org/wiki/Pixel_connectivity)
-* stoping criteris
+* stoping criteria
   * boundary of the Grid ( image)
   * maximal curve length
   * Maximum compute time 
@@ -232,6 +235,9 @@ Tracing a curve on the triangular grid
 * [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)  
 * [Square Tracing Algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/square.html) 
 * [comturs in OpenCV and Python](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html)
+* [Bisqwit]()
+
+
 ### contour tracing
 * [Drawing M-set by contour lines method](https://groups.google.com/forum/#!topic/sci.fractals/t9Udefcs20Q)
   * [M. Romera, G. Pastor and F. Montoya, "Graphic Tools to Analyse One-Dimensional Quadratic Maps", Computers & Graphics, 20/2 (1996), 333-339 ](http://www.tic.itefi.csic.es/gerardo/publica/Romera96.pdf)
@@ -264,6 +270,7 @@ Tracing a curve on the triangular grid
 * discrete complex dynamics
 * complex quadratic polynomial
 * parameter plane
+* lines tangent and normal to curve at a point 
 * trace 
   * a curve
   * a boundary
