@@ -4,7 +4,7 @@ TOC
 * [s.c](s.c) - trace equipotential curves on the parameter plane ( my own code))
 * [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
 * [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
-* [y,c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
+* [y.c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
 * [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
 * [fractint.c](fractint.c) - code for the bound_trace from fractint 
 
@@ -188,6 +188,11 @@ Tracing a curve on the triangular grid
 
 "scanning means to check every pixel". Other names : detection, extraction
 
+Gradient
+* The gradient of a scalar field  is a vector that represents the magnitude and the direction of the greatest increase rate of the field 
+
+
+
 
 
 # links
@@ -278,6 +283,12 @@ Tracing a curve on the triangular grid
   * [polylines](https://en.wikipedia.org/wiki/Polygonal_chain)
 * curve
   * isocurve ( isoline): equipotential curve
+* 2D scalar field  
+  * gradient 
+    * [Visualizing the Variability of Gradients in Uncertain 2D Scalar Fields by Tobias Pfaffelmoser, Mihaela Mihai and Rudiger Westermann ](https://wwwcg.in.tum.de/research/research/publications/2013/visualizing-the-variability-of-gradients-in-uncertain-2d-scalar-fields.html)
+    * [Array computing and curve plotting (in python) by Hans Petter Langtangen ](http://hplgit.github.io/primer.html/doc/pub/plot/._plot-readable007.html)
+    * [Visualization of scalar and vector fields ( in matlab) by Øyvind Ryan, Hans Petter Langtangen](http://folk.uio.no/oyvindry/mat1110/2016/3dplot_inf1100.pdf)
+    * [Simulating Gradient Contour and Mesh of a Scalar Field ( in Matlab) by Usman Ali Khan, Bismah Tariq, Khalida Raza, Saima Malik, Aoun Muhammad ](https://waset.org/publications/11609/simulating-gradient-contour-and-mesh-of-a-scalar-field)
 * [FLOW VISUALIZATION](http://www.flowvis.org/)
   * [seed](https://slvg.soe.ucsc.edu/seed.html)
   * [dual seed ](https://www.zib.de/hotz/publications/paper/rosanwo09_dualSeeding.pdf)
