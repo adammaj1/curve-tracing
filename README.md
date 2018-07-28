@@ -1,13 +1,13 @@
 TOC
 
-# code
+# code 
 * [s.c](s.c) - trace equipotential curves on the parameter plane ( my own code))
 * [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
 * [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
 * [y.c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
 * [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
 * [fractint.c](fractint.c) - code for the bound_trace from fractint 
-
+* [gradient .mac](gradient.mac) - Maxima CAS code for numerila aproximation of gradient and equiopotential direction, [text output of the program](c_0_301_0.0001.txt)
 
 
 ## in other repositories
@@ -83,7 +83,20 @@ if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
 
 here field lines are [external rays](https://en.wikipedia.org/wiki/External_ray)
 * do not cross with each other but 2 or more lines may land on the same point ( root or Misiurewicz point)  
-* are [perpendicular ( normal)](https://www.intmath.com/applications-differentiation/1-tangent-normal.php) to equipotential lines
+* are [perpendicular ( normal)](https://www.intmath.com/applications-differentiation/1-tangent-normal.php) to equipotential lines  = are gradient lines of potential ( scalar field)
+
+![](c_0_301_0.0001.png)  
+
+
+![](c_0_301_0.0001_s.png)  
+
+
+
+
+
+
+
+
 
 
 # Text output of the program:   
@@ -259,6 +272,11 @@ Gradient
 * [wikipedia : Image-based_flow_visualization](https://en.wikipedia.org/wiki/Image-based_flow_visualization)
 * [Robust Polylines Tracing for N-Symmetry Direction Field on Triangulated Surfaces by NICOLAS RAY and DMITRY SOKOLOV](http://alice.loria.fr/publications/papers/2014/STREAM/RobustStreamlines.pdf)
 
+### field lines
+* [Grid-Independent Detection of Closed Stream Lines in 2D Vector Fields by H. Theisel, T. Weinkauf, H.-C. Hege, H.-P. Seidel](https://www.csc.kth.se/~weinkauf/gallery/cattheisel04b.html)
+* [the Morse-Smale complex in python by  Nithin Shivashankar.](http://vgl.csa.iisc.ac.in/mscomplex/primer.html)
+* [stackoverflow question: computing-and-drawing-vector-fields](https://stackoverflow.com/questions/25342072/computing-and-drawing-vector-fields)
+
 ### Visualization of Algebraic Curves - curve sketching
 * [AN ACCURATE ALGORITHM FOR RASTERIZING ALGEBRAIC CURVES by Gabriel Taubin](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9588&rep=rep1&type=pdf)
 * [Visualizing Arcs of Implicit Algebraic Curves, Exactly and Fast by Pavel Emeliyanenko, Eric Berberich, Michael Sagraloff1](https://people.mpi-inf.mpg.de/~msagralo/curvevisualization.pdf)
@@ -283,12 +301,23 @@ Gradient
   * [polylines](https://en.wikipedia.org/wiki/Polygonal_chain)
 * curve
   * isocurve ( isoline): equipotential curve
+* Fields
+  * [Visualizing Electromagnetism by Sen-ben Liao, Peter Dourmashkin, and John Belcher.](http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide01.pdf)
 * 2D scalar field  
   * gradient 
     * [Visualizing the Variability of Gradients in Uncertain 2D Scalar Fields by Tobias Pfaffelmoser, Mihaela Mihai and Rudiger Westermann ](https://wwwcg.in.tum.de/research/research/publications/2013/visualizing-the-variability-of-gradients-in-uncertain-2d-scalar-fields.html)
     * [Array computing and curve plotting (in python) by Hans Petter Langtangen ](http://hplgit.github.io/primer.html/doc/pub/plot/._plot-readable007.html)
     * [Visualization of scalar and vector fields ( in matlab) by Øyvind Ryan, Hans Petter Langtangen](http://folk.uio.no/oyvindry/mat1110/2016/3dplot_inf1100.pdf)
+    * [visualization-with-matlab](http://www.bu.edu/tech/support/research/training-consulting/online-tutorials/visualization-with-matlab/)
     * [Simulating Gradient Contour and Mesh of a Scalar Field ( in Matlab) by Usman Ali Khan, Bismah Tariq, Khalida Raza, Saima Malik, Aoun Muhammad ](https://waset.org/publications/11609/simulating-gradient-contour-and-mesh-of-a-scalar-field)
+    * [chebfun is an open-source software system for numerical computing with functions.](http://www.chebfun.org/docs/guide/guide16.html)
+    * [Paraview](https://www.paraview.org/)
+* numerical differentiation = numerically computing the gradient of a function
+  * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
+  * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
+  * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
+* Mathematical optimization = finding numerically minimums (or maximums or zeros) of a function
+  * [ Gaël Varoquaux](https://www.scipy-lectures.org/advanced/mathematical_optimization/#gradient-based-methods)
 * [FLOW VISUALIZATION](http://www.flowvis.org/)
   * [seed](https://slvg.soe.ucsc.edu/seed.html)
   * [dual seed ](https://www.zib.de/hotz/publications/paper/rosanwo09_dualSeeding.pdf)
