@@ -285,10 +285,10 @@ code
 
 ## numerical differentiation = numerically computing the gradient of a function
 
-$ f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h}$
+$` f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h}`$
 
 
-$ f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace $
+$` f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace `$
 
 
 Methods
@@ -319,7 +319,7 @@ Links:
 * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
 * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
 * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
-
+* [numerical integration by Glenn Fiedler](https://gafferongames.com/post/integration_basics/)
 
 
 
