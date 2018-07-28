@@ -85,14 +85,6 @@ here field lines are [external rays](https://en.wikipedia.org/wiki/External_ray)
 * do not cross with each other but 2 or more lines may land on the same point ( root or Misiurewicz point)  
 * are [perpendicular ( normal)](https://www.intmath.com/applications-differentiation/1-tangent-normal.php) to equipotential lines  = are gradient lines of potential ( scalar field)
 
-![](c_0_301_0.0001.png)  
-
-
-![](c_0_301_0.0001_s.png)  
-
-
-
-
 
 
 
@@ -245,6 +237,8 @@ Gradient
 * [How to “inform” successive ContourPlot calculations in Mathematica?](https://mathematica.stackexchange.com/questions/103673/how-to-inform-successive-contourplot-calculations/103681)
 
 
+
+
 ### boundary tracing
 * [wikipedia : Boundary_tracing](https://en.wikipedia.org/wiki/Boundary_tracing)
 * [The Boundary Tracing algorithm by Evgeny Demidov](https://www.ibiblio.org/e-notes/MSet/big_m.htm)
@@ -262,6 +256,12 @@ Gradient
   * M. Romera, G. Pastor and F. Montoya, "Drawing the Mandelbrot set by the method of escape lines", Fractalia, 5, n.º 17 (1996), 11-13.
 * [an explicit conformal isomorphism between the complement of the Mandelbrot set M and the complement of the closed unit disk D](https://math.stackexchange.com/questions/748875/demonstrating-that-the-mandelbrot-set-is-connected)
 * [CONREC = A Contouring algorithm of some surface represented as a regular triangular mesh by Paul Bourke](http://paulbourke.net/papers/conrec/)
+
+
+code
+* [contour-tracing: c++, OpenCV](https://github.com/aaalgo/contour-tracing/blob/master/contour-tracing.h)
+* [Moore Neighbor Contour Tracing Algorithm in C++ BY ERIK SMISTAD](https://www.eriksmistad.no/moore-neighbor-contour-tracing-algorithm-in-c/)  
+
 ### Contour scanning or edge detection
 * [wikibooks](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D#Edge_detection)
 
@@ -281,9 +281,46 @@ Gradient
 * [AN ACCURATE ALGORITHM FOR RASTERIZING ALGEBRAIC CURVES by Gabriel Taubin](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9588&rep=rep1&type=pdf)
 * [Visualizing Arcs of Implicit Algebraic Curves, Exactly and Fast by Pavel Emeliyanenko, Eric Berberich, Michael Sagraloff1](https://people.mpi-inf.mpg.de/~msagralo/curvevisualization.pdf)
 
-# code
-* [contour-tracing: c++, OpenCV](https://github.com/aaalgo/contour-tracing/blob/master/contour-tracing.h)
-* [Moore Neighbor Contour Tracing Algorithm in C++ BY ERIK SMISTAD](https://www.eriksmistad.no/moore-neighbor-contour-tracing-algorithm-in-c/)  
+
+
+## numerical differentiation = numerically computing the gradient of a function
+
+$ f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h}$
+
+
+$ f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace $
+
+
+Methods
+* Euler (  a first order method )
+* Midpoint (  a second order method)
+* Runge-Kutta methods  
+  *  [the Runge-Kutta of 4th order method = RK4 ](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
+* checking n points on the circla aound center = n-th order method 
+
+
+
+![](c_0_301_0.0001.png)  
+
+
+![](c_0_301_0.0001_s.png)  
+
+
+
+
+
+
+  
+  
+Modifications:
+* Adaptive step size  
+
+Links:
+* [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
+* [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
+* [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
+
+
 
 
 # Key words
@@ -313,9 +350,6 @@ Gradient
     * [chebfun is an open-source software system for numerical computing with functions.](http://www.chebfun.org/docs/guide/guide16.html)
     * [Paraview](https://www.paraview.org/)
 * numerical differentiation = numerically computing the gradient of a function
-  * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
-  * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
-  * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
 * Mathematical optimization = finding numerically minimums (or maximums or zeros) of a function
   * [ Gaël Varoquaux](https://www.scipy-lectures.org/advanced/mathematical_optimization/#gradient-based-methods)
 * [FLOW VISUALIZATION](http://www.flowvis.org/)
