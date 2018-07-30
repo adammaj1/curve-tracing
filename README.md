@@ -285,10 +285,17 @@ code
 
 ## numerical differentiation = numerically computing the gradient of a function
 
-$` f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h}`$
 
+In 1D case derivative of the function f at point x gives [the slope](https://en.wikipedia.org/wiki/Slope) of the tangent line at the point x
+
+$` f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h} =  \tan (\theta)`$
+
+It is aproximated by the maximal finite differnce: 
 
 $` f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace `$
+
+
+In 2D case gradient (generalization of the derivative) of function f at point (x,y) gives the slope of the plane (flat surface) tangent to the 3D surface z = f(x,y) 
 
 
 Methods
@@ -320,7 +327,7 @@ Links:
 * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
 * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
 * [numerical integration by Glenn Fiedler](https://gafferongames.com/post/integration_basics/)
-
+* [Runge–Kutta 4 integrator ( 2D case) by Marek Fišer](http://www.marekfiser.com/Projects/Real-time-visualization-of-3D-vector-field-with-CUDA/4-Vector-field-integrators-for-stream-line-visualization)
 
 
 # Key words
@@ -340,6 +347,7 @@ Links:
   * isocurve ( isoline): equipotential curve
 * Fields
   * [Visualizing Electromagnetism by Sen-ben Liao, Peter Dourmashkin, and John Belcher.](http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide01.pdf)
+  * [slope field](https://en.wikipedia.org/wiki/Slope_field)
 * 2D scalar field  
   * gradient 
     * [Visualizing the Variability of Gradients in Uncertain 2D Scalar Fields by Tobias Pfaffelmoser, Mihaela Mihai and Rudiger Westermann ](https://wwwcg.in.tum.de/research/research/publications/2013/visualizing-the-variability-of-gradients-in-uncertain-2d-scalar-fields.html)
@@ -349,6 +357,15 @@ Links:
     * [Simulating Gradient Contour and Mesh of a Scalar Field ( in Matlab) by Usman Ali Khan, Bismah Tariq, Khalida Raza, Saima Malik, Aoun Muhammad ](https://waset.org/publications/11609/simulating-gradient-contour-and-mesh-of-a-scalar-field)
     * [chebfun is an open-source software system for numerical computing with functions.](http://www.chebfun.org/docs/guide/guide16.html)
     * [Paraview](https://www.paraview.org/)
+   * quiver plot: plot of the 2-D vector field ( vectors as arrows with components (u,v) at the points (x,y) )
+    * [octave](https://octave.sourceforge.io/octave/function/quiver.html)
+    * matlab
+      * [matlab](http://www4.ncsu.edu/eos/users/w/white/www/white/ma341/lec2.PDF)
+      * [Numerical differentiation](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
+    * [ImageJ](https://imagej.net/Quiver_Plot) - needs 2D array of the direction of each vector, and a 2D array of the magnitude of each vector. [Code](https://github.com/Llamero/Quiver_Plot/blob/master/src/main/java/Quiver_Package/Quiver_Plot.java)
+    * [matplotlib](https://plot.ly/matplotlib/quiver-plots/) and [doc](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.quiver.html)
+    * [OpenCv](https://stackoverflow.com/questions/10161351/opencv-how-to-plot-velocity-vectors-as-arrows-in-using-single-static-image)
+    
 * numerical differentiation = numerically computing the gradient of a function
 * Mathematical optimization = finding numerically minimums (or maximums or zeros) of a function
   * [ Gaël Varoquaux](https://www.scipy-lectures.org/advanced/mathematical_optimization/#gradient-based-methods)
