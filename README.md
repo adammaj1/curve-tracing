@@ -7,7 +7,8 @@ TOC
 * [y.c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
 * [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
 * [fractint.c](fractint.c) - code for the bound_trace from fractint 
-* [gradient .mac](gradient.mac) - Maxima CAS code for numerila aproximation of gradient and equiopotential direction, [text output of the program](c_0_301_0.0001.txt)
+* [gradient.mac](gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
+* [grad_f.mac](grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
 
 
 ## in other repositories
@@ -246,7 +247,7 @@ Gradient
 * [Tracing Boundaries in 2D Images by V. Kovalevsky](http://www.kovalevsky.de/Topology/Algorithms_2D_e.htm)
 * [the Moore-Neighbor tracing algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/moore.html)  
 * [Square Tracing Algorithm by Abeer George Ghuneim ](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/square.html) 
-* [comturs in OpenCV and Python](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html)
+* [conturs in OpenCV and Python](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html)
 * [Bisqwit]()
 
 
@@ -303,7 +304,7 @@ Methods
 * Midpoint (  a second order method)
 * Runge-Kutta methods  
   *  [the Runge-Kutta of 4th order method = RK4 ](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
-* checking n points on the circla aound center = n-th order method 
+* checking n points on the circle around center = n-th order method 
 
 
 
@@ -315,6 +316,9 @@ Methods
 
 
 
+Different outputs of numerical gradient function:
+* angle of the gradient vector
+* point directed by the gradient vector
 
 
   
@@ -323,11 +327,14 @@ Modifications:
 * Adaptive step size  
 
 Links:
+* [gradient of the potential by Linas Vepstas](https://gitlab.com/adammajewski/LinasArtGallery_MandelbrotSet/blob/master/README.md#gradient-of-the-potential)
 * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
 * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
 * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
-* [numerical integration by Glenn Fiedler](https://gafferongames.com/post/integration_basics/)
-* [Runge–Kutta 4 integrator ( 2D case) by Marek Fišer](http://www.marekfiser.com/Projects/Real-time-visualization-of-3D-vector-field-with-CUDA/4-Vector-field-integrators-for-stream-line-visualization)
+* rk4
+  * [1D - numerical integration by Glenn Fiedler](https://gafferongames.com/post/integration_basics/)
+  * [2D - Runge–Kutta 4 integrator by Marek Fišer](http://www.marekfiser.com/Projects/Real-time-visualization-of-3D-vector-field-with-CUDA/4-Vector-field-integrators-for-stream-line-visualization)
+  * [parameter_external_angle/tavis.cpp  tavis.cpp] 
 
 
 # Key words
