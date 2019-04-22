@@ -267,16 +267,24 @@ code
 * [wikibooks](https://en.wikibooks.org/wiki/Fractals/Computer_graphic_techniques/2D#Edge_detection)
 
 ### streamline tracing
+* [streamlines](https://github.com/anvaka/streamlines) - The library by Andrei Kashcha, which   builds streamlines for arbitrary vector fields, trying to keep uniform distance between them.
+* [fieldplay](https://earth.nullschool.net/)- by Andrei Kashcha
+* [How I built a wind map with WebGL](https://blog.mapbox.com/how-i-built-a-wind-map-with-webgl-b63022b5537f) by Vladimir Agafonkin
 * [HARSH BHATIA](http://www.sci.utah.edu/~hbhatia/research.php)
 * [stackoverflow question: how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar](https://stackoverflow.com/questions/8296617/how-to-plot-streamlines-when-i-know-u-and-v-components-of-velocitynumpy-2d-ar)
 * [stackoverflow question: how-to-create-streamline-like-arrow-lines-in-gnuplot](https://stackoverflow.com/questions/33240722/how-to-create-streamline-like-arrow-lines-in-gnuplot?noredirect=1&lq=1)
 * [wikipedia : Image-based_flow_visualization](https://en.wikipedia.org/wiki/Image-based_flow_visualization)
 * [Robust Polylines Tracing for N-Symmetry Direction Field on Triangulated Surfaces by NICOLAS RAY and DMITRY SOKOLOV](http://alice.loria.fr/publications/papers/2014/STREAM/RobustStreamlines.pdf)
+* [presentation by Abdelkrim Mebarki](ftp://ftp-sop.inria.fr/prisme/amebarki/presentationEN.pdf)
+* [CGAL package by Abdelkrim Mebarki](https://doc.cgal.org/latest/Stream_lines_2/index.html#Section_2D_Streamlines_Example)
+* [matplotlib](https://stackoverflow.com/questions/30786274/streamlines-on-a-triangulation-with-matplotlib)
+* [math.stackexchange question: solving-for-streamlines-from-numerical-velocity-field/1950329#1950329](https://math.stackexchange.com/questions/1926636/solving-for-streamlines-from-numerical-velocity-field/1950329#1950329)
 
 ### field lines
 * [Grid-Independent Detection of Closed Stream Lines in 2D Vector Fields by H. Theisel, T. Weinkauf, H.-C. Hege, H.-P. Seidel](https://www.csc.kth.se/~weinkauf/gallery/cattheisel04b.html)
 * [the Morse-Smale complex in python by  Nithin Shivashankar.](http://vgl.csa.iisc.ac.in/mscomplex/primer.html)
 * [stackoverflow question: computing-and-drawing-vector-fields](https://stackoverflow.com/questions/25342072/computing-and-drawing-vector-fields)
+* [An external ray is an integral curve of the gradient vector field ∇G on Bc(∞).](http://qcpages.qc.cuny.edu/~yjiang/HomePageYJ/Download/2004MandLocConn.pdf)
 
 ### Visualization of Algebraic Curves - curve sketching
 * [AN ACCURATE ALGORITHM FOR RASTERIZING ALGEBRAIC CURVES by Gabriel Taubin](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.9588&rep=rep1&type=pdf)
@@ -298,12 +306,7 @@ $` f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace `$
 
 In 2D case gradient (generalization of the derivative) of function f at point (x,y) gives the slope of the plane (flat surface) tangent to the 3D surface z = f(x,y) 
 
-
 Methods
-* Euler (  a first order method )
-* Midpoint (  a second order method)
-* Runge-Kutta methods  
-  *  [the Runge-Kutta of 4th order method = RK4 ](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
 * checking n points on the circle around center = n-th order method 
 
 
@@ -326,15 +329,28 @@ Different outputs of numerical gradient function:
 Modifications:
 * Adaptive step size  
 
+
+
+
+
 Links:
 * [gradient of the potential by Linas Vepstas](https://gitlab.com/adammajewski/LinasArtGallery_MandelbrotSet/blob/master/README.md#gradient-of-the-potential)
 * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
 * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
 * [wikipedia : Finite_difference ](https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives)
-* rk4
+
+Methods
+* Euler (  a first order method  = RK1)
+* Midpoint (  a second order method)
+* Runge-Kutta methods  = RK4
+  * [Adaptive Distance Grid Based Algorithm for Farthest Point Seeding Streamline Placement by Abdelkrim Mebarki](https://www.researchgate.net/publication/305693462_Adaptive_Distance_Grid_Based_Algorithm_for_Farthest_Point_Seeding_Streamline_Placement) -"use the Runge-Kutta second order integration scheme to construct the polyline for approximating our streamline."
+  * [the Runge-Kutta of 4th order method = RK4 ](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
   * [1D - numerical integration by Glenn Fiedler](https://gafferongames.com/post/integration_basics/)
   * [2D - Runge–Kutta 4 integrator by Marek Fišer](http://www.marekfiser.com/Projects/Real-time-visualization-of-3D-vector-field-with-CUDA/4-Vector-field-integrators-for-stream-line-visualization)
+  * [An Intuitive Description of Runge-Kutta Integration by Daren Scot Wilso](https://wigglewave.wordpress.com/2012/11/09/intuitive-description-of-runge-kutta-integration/)
+  * [stackoverflow question : runge-kutta-rk4-integration-for-game-physics](https://stackoverflow.com/questions/1668098/runge-kutta-rk4-integration-for-game-physics)
   * [parameter_external_angle/tavis.cpp  tavis.cpp] 
+  * [The Runge-Kutta Method for 2-Dimensional Systems](http://wps.prenhall.com/wps/media/objects/884/905485/chapt4/proj4.3A/proj4-3A.pdf)
 
 
 # Key words
@@ -364,7 +380,8 @@ Links:
     * [Simulating Gradient Contour and Mesh of a Scalar Field ( in Matlab) by Usman Ali Khan, Bismah Tariq, Khalida Raza, Saima Malik, Aoun Muhammad ](https://waset.org/publications/11609/simulating-gradient-contour-and-mesh-of-a-scalar-field)
     * [chebfun is an open-source software system for numerical computing with functions.](http://www.chebfun.org/docs/guide/guide16.html)
     * [Paraview](https://www.paraview.org/)
-   * quiver plot: plot of the 2-D vector field ( vectors as arrows with components (u,v) at the points (x,y) )
+  * A streamline is an integral curve of the vector field  
+  * quiver plot: plot of the 2-D vector field ( vectors as arrows with components (u,v) at the points (x,y) )
     * [octave](https://octave.sourceforge.io/octave/function/quiver.html)
     * matlab
       * [matlab](http://www4.ncsu.edu/eos/users/w/white/www/white/ma341/lec2.PDF)
@@ -372,7 +389,6 @@ Links:
     * [ImageJ](https://imagej.net/Quiver_Plot) - needs 2D array of the direction of each vector, and a 2D array of the magnitude of each vector. [Code](https://github.com/Llamero/Quiver_Plot/blob/master/src/main/java/Quiver_Package/Quiver_Plot.java)
     * [matplotlib](https://plot.ly/matplotlib/quiver-plots/) and [doc](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.quiver.html)
     * [OpenCv](https://stackoverflow.com/questions/10161351/opencv-how-to-plot-velocity-vectors-as-arrows-in-using-single-static-image)
-    
 * numerical differentiation = numerically computing the gradient of a function
 * Mathematical optimization = finding numerically minimums (or maximums or zeros) of a function
   * [ Gaël Varoquaux](https://www.scipy-lectures.org/advanced/mathematical_optimization/#gradient-based-methods)
@@ -406,4 +422,8 @@ git add .
 git commit -m "Initial commit"
 git push -u origin master
 ```
+
+
+
+Local repo : ~/c/mandel/p_e_angle/trace_last/test5
 
