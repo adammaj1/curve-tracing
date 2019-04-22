@@ -320,7 +320,7 @@ Methods
 
 
 Different outputs of numerical gradient function:
-* angle of the gradient vector
+* angle of the gradient vector (and the radius ) 
 * point directed by the gradient vector
 
 
@@ -349,7 +349,7 @@ Methods
   * [2D - Runge–Kutta 4 integrator by Marek Fišer](http://www.marekfiser.com/Projects/Real-time-visualization-of-3D-vector-field-with-CUDA/4-Vector-field-integrators-for-stream-line-visualization)
   * [An Intuitive Description of Runge-Kutta Integration by Daren Scot Wilso](https://wigglewave.wordpress.com/2012/11/09/intuitive-description-of-runge-kutta-integration/)
   * [stackoverflow question : runge-kutta-rk4-integration-for-game-physics](https://stackoverflow.com/questions/1668098/runge-kutta-rk4-integration-for-game-physics)
-  * [parameter_external_angle/tavis.cpp  tavis.cpp] 
+  * [parameter_external_angle/tavis.cpp  tavis.cpp](https://gitlab.com/adammajewski/parameter_external_angle/blob/master/tavis.cpp) 
   * [The Runge-Kutta Method for 2-Dimensional Systems](http://wps.prenhall.com/wps/media/objects/884/905485/chapt4/proj4.3A/proj4-3A.pdf)
 
 
