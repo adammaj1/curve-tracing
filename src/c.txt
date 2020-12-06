@@ -1,0 +1,999 @@
+render image = compute and write image data bytes to the array 
+File 101_70001.pgm saved. 
+ClearExterior =  make exterior solid color = white
+
+draw equipotential curve thru point c = (1.0000000000000000; 0.0000000000000000) pixel = (2070, 1050)
+ 	start point
+	for c = (1.000000;0.000000)	noise measure = 0.0019854185440499	potential = 1.1758520114181692
+	c is inside the array : iy = 2070 iy = 1050	and outside M set
+	end point	ix = 2070 iy = 1050 i = 2207070 potential = 1.1758547837423379
+	curve is closed = stop ( good) after 4891 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.9000000000000000; 0.0000000000000000) pixel = (2012, 1050)
+ 	start point
+	for c = (0.900000;0.000000)	noise measure = 0.0024602154290276	potential = 0.9912636780259726
+	c is inside the array : iy = 2012 iy = 1050	and outside M set
+	end point	ix = 2012 iy = 1050 i = 2207012 potential = 0.9912662452703074
+	curve is closed = stop ( good) after 4577 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.8000000000000000; 0.0000000000000000) pixel = (1953, 1050)
+ 	start point
+	for c = (0.800000;0.000000)	noise measure = 0.0031773839892348	potential = 0.7957459704586637
+	c is inside the array : iy = 1953 iy = 1050	and outside M set
+	end point	ix = 1953 iy = 1050 i = 2206953 potential = 0.7957478610631095
+	curve is closed = stop ( good) after 4275 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.7000000000000000; 0.0000000000000000) pixel = (1895, 1050)
+ 	start point
+	for c = (0.700000;0.000000)	noise measure = 0.0043040030286548	potential = 0.5980600631586402
+	c is inside the array : iy = 1895 iy = 1050	and outside M set
+	end point	ix = 1895 iy = 1050 i = 2206895 potential = 0.5980603175297536
+	curve is closed = stop ( good) after 4015 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.6000000000000000; 0.0000000000000000) pixel = (1837, 1050)
+ 	start point
+	for c = (0.600000;0.000000)	noise measure = 0.0063020804414836	potential = 0.4001244847551234
+	c is inside the array : iy = 1837 iy = 1050	and outside M set
+	end point	ix = 1837 iy = 1050 i = 2206837 potential = 0.4001209893718258
+	curve is closed = stop ( good) after 3809 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.5000000000000000; 0.0000000000000000) pixel = (1778, 1050)
+ 	start point
+	for c = (0.500000;0.000000)	noise measure = 0.0106168633982484	potential = 0.2107865932961150
+	c is inside the array : iy = 1778 iy = 1050	and outside M set
+	end point	ix = 1778 iy = 1050 i = 2206778 potential = 0.2107744812132952
+	curve is closed = stop ( good) after 3849 steps (pixels)
+
+
+draw equipotential curve thru point c = (0.4000000000000000; 0.0000000000000000) pixel = (1720, 1050)
+ 	start point
+	for c = (0.400000;0.000000)	noise measure = 0.0231890993554015	potential = 0.0633542205377538
+	c is inside the array : iy = 1720 iy = 1050	and outside M set
+	end point	ix = 1720 iy = 1050 i = 2206720 potential = 0.0653173066609069
+	curve is closed = stop ( good) after 17660 steps (pixels)
+
+File 101_70002.pgm saved. 
+draw external ray
+	start point c = (0.7000000000000000;0.0000000000000000) 	potential = 0.597822	pixel = (1895,1050)
+	probably bad start point: noise = 0.0043040030286548
+ 	new point c = (0.7018342067651260;-0.0025726536445926) 	 pixel = (1896;1051)	FCCode = 1	potential = 0.601492	external angle = 0.9994166019459065
+	new point c = (0.7035493091948545;-0.0042877560743210) 	 pixel = (1897;1052)	FCCode = 1	potential = 0.604925	external angle = 0.9990300479065598
+	new point c = (0.7052644116245829;-0.0060028585040495) 	 pixel = (1898;1053)	FCCode = 1	potential = 0.608357	external angle = 0.9986453853083952
+	new point c = (0.7069795140543114;-0.0077179609337779) 	 pixel = (1899;1054)	FCCode = 1	potential = 0.611790	external angle = 0.9982626047639402
+	new point c = (0.7086946164840398;-0.0094330633635064) 	 pixel = (1900;1055)	FCCode = 1	potential = 0.615223	external angle = 0.9978816968902643
+	new point c = (0.7104097189137683;-0.0111481657932348) 	 pixel = (1901;1056)	FCCode = 1	potential = 0.618656	external angle = 0.9975026523102050
+	new point c = (0.7121248213434966;-0.0128632682229633) 	 pixel = (1902;1057)	FCCode = 1	potential = 0.622090	external angle = 0.9971254616535647
+	new point c = (0.7138399237732250;-0.0145783706526917) 	 pixel = (1903;1058)	FCCode = 1	potential = 0.625524	external angle = 0.9967501155582765
+	new point c = (0.7155550262029535;-0.0162934730824201) 	 pixel = (1904;1059)	FCCode = 1	potential = 0.628959	external angle = 0.9963766046715389
+	new point c = (0.7172701286326819;-0.0180085755121486) 	 pixel = (1905;1060)	FCCode = 1	potential = 0.632395	external angle = 0.9960049196509221
+	new point c = (0.7189852310624104;-0.0197236779418770) 	 pixel = (1906;1061)	FCCode = 1	potential = 0.635831	external angle = 0.9956350511654447
+	new point c = (0.7207003334921388;-0.0214387803716055) 	 pixel = (1907;1062)	FCCode = 1	potential = 0.639268	external angle = 0.9952669898966218
+	new point c = (0.7224154359218673;-0.0231538828013339) 	 pixel = (1908;1063)	FCCode = 1	potential = 0.642705	external angle = 0.9949007265394847
+	new point c = (0.7241305383515957;-0.0248689852310623) 	 pixel = (1909;1064)	FCCode = 1	potential = 0.646144	external angle = 0.9945362518035733
+	new point c = (0.7258456407813242;-0.0265840876607908) 	 pixel = (1910;1065)	FCCode = 1	potential = 0.649583	external angle = 0.9941735564139006
+	new point c = (0.7275607432110526;-0.0282991900905192) 	 pixel = (1911;1066)	FCCode = 1	potential = 0.653024	external angle = 0.9938126311118913
+	new point c = (0.7292758456407811;-0.0300142925202477) 	 pixel = (1912;1067)	FCCode = 1	potential = 0.656465	external angle = 0.9934534666562936
+	new point c = (0.7309909480705095;-0.0317293949499761) 	 pixel = (1913;1068)	FCCode = 1	potential = 0.659907	external angle = 0.9930960538240649
+	new point c = (0.7327060505002380;-0.0334444973797046) 	 pixel = (1914;1069)	FCCode = 1	potential = 0.663351	external angle = 0.9927403834112324
+	new point c = (0.7344211529299663;-0.0351595998094330) 	 pixel = (1915;1070)	FCCode = 1	potential = 0.666795	external angle = 0.9923864462337292
+	new point c = (0.7361362553596948;-0.0368747022391614) 	 pixel = (1916;1071)	FCCode = 1	potential = 0.670240	external angle = 0.9920342331282050
+	new point c = (0.7378513577894232;-0.0385898046688899) 	 pixel = (1917;1072)	FCCode = 1	potential = 0.673687	external angle = 0.9916837349528137
+	new point c = (0.7395664602191517;-0.0403049070986183) 	 pixel = (1918;1073)	FCCode = 1	potential = 0.677135	external angle = 0.9913349425879759
+	new point c = (0.7412815626488801;-0.0420200095283468) 	 pixel = (1919;1074)	FCCode = 1	potential = 0.680584	external angle = 0.9909878469371206
+	new point c = (0.7429966650786086;-0.0437351119580752) 	 pixel = (1920;1075)	FCCode = 1	potential = 0.684035	external angle = 0.9906424389274018
+	new point c = (0.7447117675083370;-0.0454502143878037) 	 pixel = (1921;1076)	FCCode = 1	potential = 0.687486	external angle = 0.9902987095103939
+	new point c = (0.7464268699380655;-0.0471653168175321) 	 pixel = (1922;1077)	FCCode = 1	potential = 0.690939	external angle = 0.9899566496627659
+	new point c = (0.7481419723677939;-0.0488804192472605) 	 pixel = (1923;1078)	FCCode = 1	potential = 0.694394	external angle = 0.9896162503869318
+	new point c = (0.7498570747975224;-0.0505955216769890) 	 pixel = (1924;1079)	FCCode = 1	potential = 0.697849	external angle = 0.9892775027116834
+	new point c = (0.7515721772272508;-0.0523106241067174) 	 pixel = (1925;1080)	FCCode = 1	potential = 0.701306	external angle = 0.9889403976927984
+	new point c = (0.7532872796569793;-0.0540257265364459) 	 pixel = (1926;1081)	FCCode = 1	potential = 0.704765	external angle = 0.9886049264136325
+	new point c = (0.7550023820867077;-0.0557408289661743) 	 pixel = (1927;1082)	FCCode = 1	potential = 0.708225	external angle = 0.9882710799856879
+	new point c = (0.7567174845164362;-0.0574559313959027) 	 pixel = (1928;1083)	FCCode = 1	potential = 0.711686	external angle = 0.9879388495491646
+	new point c = (0.7584325869461646;-0.0591710338256312) 	 pixel = (1929;1084)	FCCode = 1	potential = 0.715149	external angle = 0.9876082262734923
+	new point c = (0.7601476893758931;-0.0608861362553596) 	 pixel = (1930;1085)	FCCode = 1	potential = 0.718614	external angle = 0.9872792013578430
+	new point c = (0.7618627918056214;-0.0626012386850881) 	 pixel = (1931;1086)	FCCode = 1	potential = 0.722080	external angle = 0.9869517660316257
+	new point c = (0.7635778942353499;-0.0643163411148165) 	 pixel = (1932;1087)	FCCode = 1	potential = 0.725547	external angle = 0.9866259115549633
+	new point c = (0.7652929966650783;-0.0660314435445450) 	 pixel = (1933;1088)	FCCode = 1	potential = 0.729016	external angle = 0.9863016292191518
+	new point c = (0.7670080990948068;-0.0677465459742734) 	 pixel = (1934;1089)	FCCode = 1	potential = 0.732487	external angle = 0.9859789103471021
+	new point c = (0.7687232015245352;-0.0694616484040018) 	 pixel = (1935;1090)	FCCode = 1	potential = 0.735959	external angle = 0.9856577462937653
+	new point c = (0.7704383039542637;-0.0711767508337303) 	 pixel = (1936;1091)	FCCode = 1	potential = 0.739433	external angle = 0.9853381284465422
+	new point c = (0.7721534063839921;-0.0728918532634587) 	 pixel = (1937;1092)	FCCode = 1	potential = 0.742908	external angle = 0.9850200482256745
+	new point c = (0.7738685088137206;-0.0746069556931872) 	 pixel = (1938;1093)	FCCode = 1	potential = 0.746385	external angle = 0.9847034970846228
+	new point c = (0.7755836112434490;-0.0763220581229156) 	 pixel = (1939;1094)	FCCode = 1	potential = 0.749864	external angle = 0.9843884665104274
+	new point c = (0.7772987136731774;-0.0780371605526440) 	 pixel = (1940;1095)	FCCode = 1	potential = 0.753344	external angle = 0.9840749480240555
+	new point c = (0.7790138161029059;-0.0797522629823725) 	 pixel = (1941;1096)	FCCode = 1	potential = 0.756826	external angle = 0.9837629331807314
+	new point c = (0.7807289185326343;-0.0814673654121009) 	 pixel = (1942;1097)	FCCode = 1	potential = 0.760310	external angle = 0.9834524135702549
+	new point c = (0.7824440209623628;-0.0831824678418294) 	 pixel = (1943;1098)	FCCode = 1	potential = 0.763795	external angle = 0.9831433808173040
+	new point c = (0.7841591233920912;-0.0848975702715578) 	 pixel = (1944;1099)	FCCode = 1	potential = 0.767282	external angle = 0.9828358265817233
+	new point c = (0.7858742258218196;-0.0866126727012863) 	 pixel = (1945;1100)	FCCode = 1	potential = 0.770770	external angle = 0.9825297425588011
+	new point c = (0.7875893282515480;-0.0883277751310147) 	 pixel = (1946;1101)	FCCode = 1	potential = 0.774260	external angle = 0.9822251204795308
+	new point c = (0.7893044306812765;-0.0900428775607432) 	 pixel = (1947;1102)	FCCode = 1	potential = 0.777752	external angle = 0.9819219521108610
+	new point c = (0.7910195331110049;-0.0917579799904716) 	 pixel = (1948;1103)	FCCode = 1	potential = 0.781246	external angle = 0.9816202292559325
+	new point c = (0.7927346355407334;-0.0934730824202000) 	 pixel = (1949;1104)	FCCode = 1	potential = 0.784741	external angle = 0.9813199437543033
+	new point c = (0.7944497379704618;-0.0951881848499285) 	 pixel = (1950;1105)	FCCode = 1	potential = 0.788238	external angle = 0.9810210874821608
+	new point c = (0.7961648404001903;-0.0969032872796569) 	 pixel = (1951;1106)	FCCode = 1	potential = 0.791736	external angle = 0.9807236523525231
+	new point c = (0.7978799428299187;-0.0986183897093854) 	 pixel = (1952;1107)	FCCode = 1	potential = 0.795236	external angle = 0.9804276303154287
+	new point c = (0.7978799428299187;-0.1003334921391138) 	 pixel = (1952;1108)	FCCode = 2	potential = 0.795340	external angle = 0.9800907514437175
+	new point c = (0.7978799428299187;-0.1020485945688422) 	 pixel = (1952;1109)	FCCode = 2	potential = 0.795447	external angle = 0.9797540518116252
+	new point c = (0.7978799428299187;-0.1037636969985707) 	 pixel = (1952;1110)	FCCode = 2	potential = 0.795555	external angle = 0.9794175342875323
+	new point c = (0.7978799428299187;-0.1054787994282991) 	 pixel = (1952;1111)	FCCode = 2	potential = 0.795666	external angle = 0.9790812017302042
+	new point c = (0.7978799428299187;-0.1071939018580276) 	 pixel = (1952;1112)	FCCode = 2	potential = 0.795779	external angle = 0.9787450569886565
+	new point c = (0.7978799428299187;-0.1089090042877560) 	 pixel = (1952;1113)	FCCode = 2	potential = 0.795893	external angle = 0.9784091029020215
+	new point c = (0.7978799428299187;-0.1106241067174845) 	 pixel = (1952;1114)	FCCode = 2	potential = 0.796010	external angle = 0.9780733422994159
+	new point c = (0.7978799428299187;-0.1123392091472129) 	 pixel = (1952;1115)	FCCode = 2	potential = 0.796129	external angle = 0.9777377779998094
+	new point c = (0.7978799428299187;-0.1140543115769413) 	 pixel = (1952;1116)	FCCode = 2	potential = 0.796250	external angle = 0.9774024128118960
+	new point c = (0.7978799428299187;-0.1157694140066698) 	 pixel = (1952;1117)	FCCode = 2	potential = 0.796374	external angle = 0.9770672495339643
+	new point c = (0.7978799428299187;-0.1174845164363982) 	 pixel = (1952;1118)	FCCode = 2	potential = 0.796499	external angle = 0.9767322909537717
+	new point c = (0.7978799428299187;-0.1191996188661267) 	 pixel = (1952;1119)	FCCode = 2	potential = 0.796627	external angle = 0.9763975398484178
+	new point c = (0.7978799428299187;-0.1209147212958551) 	 pixel = (1952;1120)	FCCode = 2	potential = 0.796757	external angle = 0.9760629989842207
+	new point c = (0.7978799428299187;-0.1226298237255836) 	 pixel = (1952;1121)	FCCode = 2	potential = 0.796890	external angle = 0.9757286711165929
+	new point c = (0.7978799428299187;-0.1243449261553120) 	 pixel = (1952;1122)	FCCode = 2	potential = 0.797024	external angle = 0.9753945589899212
+	new point c = (0.7978799428299187;-0.1260600285850404) 	 pixel = (1952;1123)	FCCode = 2	potential = 0.797161	external angle = 0.9750606653374452
+	new point c = (0.7978799428299187;-0.1277751310147689) 	 pixel = (1952;1124)	FCCode = 2	potential = 0.797300	external angle = 0.9747269928811386
+	new point c = (0.7978799428299187;-0.1294902334444973) 	 pixel = (1952;1125)	FCCode = 2	potential = 0.797441	external angle = 0.9743935443315924
+	new point c = (0.7995950452596472;-0.1294902334444973) 	 pixel = (1953;1125)	FCCode = 0	potential = 0.800854	external angle = 0.9744475292727950
+	new point c = (0.8013101476893756;-0.1312053358742258) 	 pixel = (1954;1126)	FCCode = 1	potential = 0.804410	external angle = 0.9741694198036206
+	new point c = (0.8030252501191041;-0.1329204383039542) 	 pixel = (1955;1127)	FCCode = 1	potential = 0.807968	external angle = 0.9738926563412972
+	new point c = (0.8047403525488325;-0.1346355407336826) 	 pixel = (1956;1128)	FCCode = 1	potential = 0.811528	external angle = 0.9736172307994712
+	new point c = (0.8064554549785610;-0.1363506431634111) 	 pixel = (1957;1129)	FCCode = 1	potential = 0.815090	external angle = 0.9733431351377264
+	new point c = (0.8081705574082894;-0.1380657455931395) 	 pixel = (1958;1130)	FCCode = 1	potential = 0.818654	external angle = 0.9730703613615491
+	new point c = (0.8098856598380179;-0.1397808480228680) 	 pixel = (1959;1131)	FCCode = 1	potential = 0.822220	external angle = 0.9727989015222858
+	new point c = (0.8116007622677462;-0.1414959504525964) 	 pixel = (1960;1132)	FCCode = 1	potential = 0.825788	external angle = 0.9725287477170943
+	new point c = (0.8133158646974747;-0.1432110528823249) 	 pixel = (1961;1133)	FCCode = 1	potential = 0.829357	external angle = 0.9722598920888883
+	new point c = (0.8150309671272031;-0.1449261553120533) 	 pixel = (1962;1134)	FCCode = 1	potential = 0.832936	external angle = 0.9719923268262749
+	new point c = (0.8167460695569316;-0.1466412577417817) 	 pixel = (1963;1135)	FCCode = 1	potential = 0.836508	external angle = 0.9717260441634856
+	new point c = (0.8184611719866600;-0.1483563601715102) 	 pixel = (1964;1136)	FCCode = 1	potential = 0.840083	external angle = 0.9714610363803022
+	new point c = (0.8201762744163885;-0.1500714626012386) 	 pixel = (1965;1137)	FCCode = 1	potential = 0.843659	external angle = 0.9711972958019756
+	new point c = (0.8218913768461169;-0.1517865650309671) 	 pixel = (1966;1138)	FCCode = 1	potential = 0.847237	external angle = 0.9709348147991390
+	new point c = (0.8236064792758454;-0.1535016674606955) 	 pixel = (1967;1139)	FCCode = 1	potential = 0.850817	external angle = 0.9706735857877167
+	new point c = (0.8253215817055738;-0.1552167698904240) 	 pixel = (1968;1140)	FCCode = 1	potential = 0.854399	external angle = 0.9704136012288260
+	new point c = (0.8270366841353023;-0.1569318723201524) 	 pixel = (1969;1141)	FCCode = 1	potential = 0.857982	external angle = 0.9701548536286746
+	new point c = (0.8287517865650307;-0.1586469747498808) 	 pixel = (1970;1142)	FCCode = 1	potential = 0.861567	external angle = 0.9698973355384529
+	new point c = (0.8304668889947592;-0.1603620771796093) 	 pixel = (1971;1143)	FCCode = 1	potential = 0.865153	external angle = 0.9696410395542215
+	new point c = (0.8321819914244876;-0.1620771796093377) 	 pixel = (1972;1144)	FCCode = 1	potential = 0.868741	external angle = 0.9693859583167936
+	new point c = (0.8338970938542161;-0.1637922820390662) 	 pixel = (1973;1145)	FCCode = 1	potential = 0.872331	external angle = 0.9691320845116134
+	new point c = (0.8356121962839445;-0.1655073844687946) 	 pixel = (1974;1146)	FCCode = 1	potential = 0.875922	external angle = 0.9688794108686295
+	new point c = (0.8373272987136728;-0.1672224868985230) 	 pixel = (1975;1147)	FCCode = 1	potential = 0.879514	external angle = 0.9686279301621649
+	new point c = (0.8390424011434013;-0.1689375893282515) 	 pixel = (1976;1148)	FCCode = 1	potential = 0.883109	external angle = 0.9683776352107818
+	new point c = (0.8407575035731297;-0.1706526917579799) 	 pixel = (1977;1149)	FCCode = 1	potential = 0.886704	external angle = 0.9681285188771437
+	new point c = (0.8424726060028582;-0.1723677941877084) 	 pixel = (1978;1150)	FCCode = 1	potential = 0.890302	external angle = 0.9678805740678723
+	new point c = (0.8441877084325866;-0.1740828966174368) 	 pixel = (1979;1151)	FCCode = 1	potential = 0.893900	external angle = 0.9676337937334021
+	new point c = (0.8459028108623151;-0.1757979990471653) 	 pixel = (1980;1152)	FCCode = 1	potential = 0.897500	external angle = 0.9673881708678307
+	new point c = (0.8476179132920435;-0.1775131014768937) 	 pixel = (1981;1153)	FCCode = 1	potential = 0.901102	external angle = 0.9671436985087659
+	new point c = (0.8493330157217720;-0.1792282039066221) 	 pixel = (1982;1154)	FCCode = 1	potential = 0.904704	external angle = 0.9669003697371693
+	new point c = (0.8510481181515004;-0.1809433063363506) 	 pixel = (1983;1155)	FCCode = 1	potential = 0.908309	external angle = 0.9666581776771975
+	new point c = (0.8527632205812289;-0.1826584087660790) 	 pixel = (1984;1156)	FCCode = 1	potential = 0.911914	external angle = 0.9664171154960393
+	new point c = (0.8544783230109573;-0.1843735111958075) 	 pixel = (1985;1157)	FCCode = 1	potential = 0.915521	external angle = 0.9661771764037508
+	new point c = (0.8561934254406858;-0.1860886136255359) 	 pixel = (1986;1158)	FCCode = 1	potential = 0.919129	external angle = 0.9659383536530872
+	new point c = (0.8579085278704142;-0.1878037160552644) 	 pixel = (1987;1159)	FCCode = 1	potential = 0.922738	external angle = 0.9657006405393327
+	new point c = (0.8596236303001427;-0.1895188184849928) 	 pixel = (1988;1160)	FCCode = 1	potential = 0.926349	external angle = 0.9654640304001265
+	new point c = (0.8613387327298710;-0.1912339209147212) 	 pixel = (1989;1161)	FCCode = 1	potential = 0.929960	external angle = 0.9652285166152881
+	new point c = (0.8630538351595995;-0.1929490233444497) 	 pixel = (1990;1162)	FCCode = 1	potential = 0.933573	external angle = 0.9649940926066388
+	new point c = (0.8647689375893279;-0.1946641257741781) 	 pixel = (1991;1163)	FCCode = 1	potential = 0.937187	external angle = 0.9647607518378218
+	new point c = (0.8664840400190564;-0.1963792282039065) 	 pixel = (1992;1164)	FCCode = 1	potential = 0.940802	external angle = 0.9645284878141199
+	new point c = (0.8681991424487848;-0.1980943306336350) 	 pixel = (1993;1165)	FCCode = 1	potential = 0.944418	external angle = 0.9642972940822714
+	new point c = (0.8699142448785133;-0.1998094330633634) 	 pixel = (1994;1166)	FCCode = 1	potential = 0.948035	external angle = 0.9640671642302835
+	new point c = (0.8716293473082417;-0.2015245354930919) 	 pixel = (1995;1167)	FCCode = 1	potential = 0.951654	external angle = 0.9638380918872447
+	new point c = (0.8733444497379702;-0.2032396379228203) 	 pixel = (1996;1168)	FCCode = 1	potential = 0.955273	external angle = 0.9636100707231348
+	new point c = (0.8750595521676986;-0.2049547403525488) 	 pixel = (1997;1169)	FCCode = 1	potential = 0.958893	external angle = 0.9633830944486335
+	new point c = (0.8767746545974271;-0.2066698427822772) 	 pixel = (1998;1170)	FCCode = 1	potential = 0.962514	external angle = 0.9631571568149275
+	new point c = (0.8784897570271555;-0.2083849452120057) 	 pixel = (1999;1171)	FCCode = 1	potential = 0.966136	external angle = 0.9629322516135161
+	new point c = (0.8802048594568840;-0.2101000476417341) 	 pixel = (2000;1172)	FCCode = 1	potential = 0.969759	external angle = 0.9627083726760154
+	new point c = (0.8819199618866124;-0.2118151500714625) 	 pixel = (2001;1173)	FCCode = 1	potential = 0.973383	external angle = 0.9624855138739604
+	new point c = (0.8836350643163409;-0.2135302525011910) 	 pixel = (2002;1174)	FCCode = 1	potential = 0.977008	external angle = 0.9622636691186078
+	new point c = (0.8853501667460693;-0.2152453549309194) 	 pixel = (2003;1175)	FCCode = 1	potential = 0.980633	external angle = 0.9620428323607356
+	new point c = (0.8870652691757978;-0.2169604573606479) 	 pixel = (2004;1176)	FCCode = 1	potential = 0.984260	external angle = 0.9618229975904427
+	new point c = (0.8887803716055261;-0.2186755597903763) 	 pixel = (2005;1177)	FCCode = 1	potential = 0.987887	external angle = 0.9616041588369468
+	new point c = (0.8904954740352546;-0.2203906622201048) 	 pixel = (2006;1178)	FCCode = 1	potential = 0.991514	external angle = 0.9613863101683826
+	new point c = (0.8904954740352546;-0.2221057646498332) 	 pixel = (2006;1179)	FCCode = 2	potential = 0.991842	external angle = 0.9610975985235115
+	new point c = (0.8904954740352546;-0.2238208670795616) 	 pixel = (2006;1180)	FCCode = 2	potential = 0.992173	external angle = 0.9608091478983414
+	new point c = (0.8904954740352546;-0.2255359695092901) 	 pixel = (2006;1181)	FCCode = 2	potential = 0.992507	external angle = 0.9605209598314548
+	new point c = (0.8904954740352546;-0.2272510719390185) 	 pixel = (2006;1182)	FCCode = 2	potential = 0.992843	external angle = 0.9602330358517480
+	new point c = (0.8922105764649830;-0.2272510719390185) 	 pixel = (2007;1182)	FCCode = 0	potential = 0.996145	external angle = 0.9603063465652418
+	new point c = (0.8939256788947115;-0.2289661743687470) 	 pixel = (2008;1183)	FCCode = 1	potential = 0.999785	external angle = 0.9600927032938318
+	new point c = (0.8956407813244399;-0.2306812767984754) 	 pixel = (2009;1184)	FCCode = 1	potential = 1.003425	external angle = 0.9598800242206207
+	new point c = (0.8973558837541684;-0.2323963792282038) 	 pixel = (2010;1185)	FCCode = 1	potential = 1.007065	external angle = 0.9596683035874342
+	new point c = (0.8990709861838968;-0.2341114816579323) 	 pixel = (2011;1186)	FCCode = 1	potential = 1.010707	external angle = 0.9594575356743097
+	new point c = (0.9007860886136252;-0.2358265840876607) 	 pixel = (2012;1187)	FCCode = 1	potential = 1.014348	external angle = 0.9592477147992809
+	new point c = (0.9025011910433537;-0.2375416865173892) 	 pixel = (2013;1188)	FCCode = 1	potential = 1.017991	external angle = 0.9590388353181598
+	new point c = (0.9042162934730821;-0.2392567889471176) 	 pixel = (2014;1189)	FCCode = 1	potential = 1.021634	external angle = 0.9588308916243192
+	new point c = (0.9059313959028106;-0.2409718913768460) 	 pixel = (2015;1190)	FCCode = 1	potential = 1.025277	external angle = 0.9586238781484755
+	new point c = (0.9076464983325390;-0.2426869938065745) 	 pixel = (2016;1191)	FCCode = 1	potential = 1.028921	external angle = 0.9584177893584704
+	new point c = (0.9093616007622675;-0.2444020962363029) 	 pixel = (2017;1192)	FCCode = 1	potential = 1.032565	external angle = 0.9582126197590537
+	new point c = (0.9110767031919959;-0.2461171986660314) 	 pixel = (2018;1193)	FCCode = 1	potential = 1.036209	external angle = 0.9580083638916643
+	new point c = (0.9127918056217244;-0.2478323010957598) 	 pixel = (2019;1194)	FCCode = 1	potential = 1.039854	external angle = 0.9578050163342131
+	new point c = (0.9145069080514527;-0.2495474035254883) 	 pixel = (2020;1195)	FCCode = 1	potential = 1.043499	external angle = 0.9576025717008646
+	new point c = (0.9162220104811812;-0.2512625059552167) 	 pixel = (2021;1196)	FCCode = 1	potential = 1.047145	external angle = 0.9574010246418190
+	new point c = (0.9179371129109096;-0.2529776083849452) 	 pixel = (2022;1197)	FCCode = 1	potential = 1.050791	external angle = 0.9572003698430944
+	new point c = (0.9196522153406381;-0.2546927108146736) 	 pixel = (2023;1198)	FCCode = 1	potential = 1.054437	external angle = 0.9570006020263097
+	new point c = (0.9213673177703665;-0.2564078132444020) 	 pixel = (2024;1199)	FCCode = 1	potential = 1.058083	external angle = 0.9568017159484659
+	new point c = (0.9230824202000950;-0.2581229156741305) 	 pixel = (2025;1200)	FCCode = 1	potential = 1.061730	external angle = 0.9566037064017302
+	new point c = (0.9247975226298234;-0.2598380181038589) 	 pixel = (2026;1201)	FCCode = 1	potential = 1.065377	external angle = 0.9564065682132181
+	new point c = (0.9265126250595519;-0.2615531205335874) 	 pixel = (2027;1202)	FCCode = 1	potential = 1.069023	external angle = 0.9562102962447772
+	new point c = (0.9282277274892803;-0.2632682229633158) 	 pixel = (2028;1203)	FCCode = 1	potential = 1.072670	external angle = 0.9560148853927705
+	new point c = (0.9299428299190088;-0.2649833253930443) 	 pixel = (2029;1204)	FCCode = 1	potential = 1.076318	external angle = 0.9558203305878606
+	new point c = (0.9316579323487372;-0.2666984278227727) 	 pixel = (2030;1205)	FCCode = 1	potential = 1.079965	external angle = 0.9556266267947942
+	new point c = (0.9333730347784657;-0.2684135302525011) 	 pixel = (2031;1206)	FCCode = 1	potential = 1.083612	external angle = 0.9554337690121864
+	new point c = (0.9350881372081941;-0.2701286326822296) 	 pixel = (2032;1207)	FCCode = 1	potential = 1.087259	external angle = 0.9552417522723066
+	new point c = (0.9368032396379226;-0.2718437351119580) 	 pixel = (2033;1208)	FCCode = 1	potential = 1.090907	external angle = 0.9550505716408637
+	new point c = (0.9385183420676509;-0.2735588375416865) 	 pixel = (2034;1209)	FCCode = 1	potential = 1.094554	external angle = 0.9548602222167927
+	new point c = (0.9402334444973794;-0.2752739399714149) 	 pixel = (2035;1210)	FCCode = 1	potential = 1.098201	external angle = 0.9546706991320413
+	new point c = (0.9419485469271078;-0.2769890424011434) 	 pixel = (2036;1211)	FCCode = 1	potential = 1.101848	external angle = 0.9544819975513570
+	new point c = (0.9436636493568363;-0.2787041448308718) 	 pixel = (2037;1212)	FCCode = 1	potential = 1.105495	external angle = 0.9542941126720755
+	new point c = (0.9453787517865647;-0.2804192472606002) 	 pixel = (2038;1213)	FCCode = 1	potential = 1.109142	external angle = 0.9541070397239090
+	new point c = (0.9470938542162932;-0.2821343496903287) 	 pixel = (2039;1214)	FCCode = 1	potential = 1.112789	external angle = 0.9539207739687352
+	new point c = (0.9488089566460216;-0.2838494521200571) 	 pixel = (2040;1215)	FCCode = 1	potential = 1.116436	external angle = 0.9537353107003870
+	new point c = (0.9505240590757501;-0.2855645545497856) 	 pixel = (2041;1216)	FCCode = 1	potential = 1.120082	external angle = 0.9535506452444436
+	new point c = (0.9522391615054785;-0.2872796569795140) 	 pixel = (2042;1217)	FCCode = 1	potential = 1.123728	external angle = 0.9533667729580206
+	new point c = (0.9539542639352070;-0.2889947594092424) 	 pixel = (2043;1218)	FCCode = 1	potential = 1.127374	external angle = 0.9531836892295631
+	new point c = (0.9556693663649354;-0.2907098618389709) 	 pixel = (2044;1219)	FCCode = 1	potential = 1.131020	external angle = 0.9530013894786371
+	new point c = (0.9573844687946639;-0.2924249642686993) 	 pixel = (2045;1220)	FCCode = 1	potential = 1.134666	external angle = 0.9528198691557238
+	new point c = (0.9590995712243923;-0.2941400666984277) 	 pixel = (2046;1221)	FCCode = 1	potential = 1.138311	external angle = 0.9526391237420130
+	new point c = (0.9608146736541208;-0.2958551691281562) 	 pixel = (2047;1222)	FCCode = 1	potential = 1.141956	external angle = 0.9524591487491985
+	new point c = (0.9625297760838492;-0.2975702715578846) 	 pixel = (2048;1223)	FCCode = 1	potential = 1.145600	external angle = 0.9522799397192733
+	new point c = (0.9642448785135775;-0.2992853739876131) 	 pixel = (2049;1224)	FCCode = 1	potential = 1.149244	external angle = 0.9521014922243266
+	new point c = (0.9659599809433060;-0.3010004764173415) 	 pixel = (2050;1225)	FCCode = 1	potential = 1.152888	external angle = 0.9519238018663408
+	new point c = (0.9676750833730344;-0.3027155788470700) 	 pixel = (2051;1226)	FCCode = 1	potential = 1.156531	external angle = 0.9517468642769897
+	new point c = (0.9693901858027629;-0.3044306812767984) 	 pixel = (2052;1227)	FCCode = 1	potential = 1.160174	external angle = 0.9515706751174376
+	new point c = (0.9711052882324913;-0.3061457837065268) 	 pixel = (2053;1228)	FCCode = 1	potential = 1.163816	external angle = 0.9513952300781391
+	new point c = (0.9728203906622198;-0.3078608861362553) 	 pixel = (2054;1229)	FCCode = 1	potential = 1.167458	external angle = 0.9512205248786400
+	new point c = (0.9745354930919482;-0.3095759885659837) 	 pixel = (2055;1230)	FCCode = 1	potential = 1.171100	external angle = 0.9510465552673785
+	new point c = (0.9762505955216767;-0.3112910909957122) 	 pixel = (2056;1231)	FCCode = 1	potential = 1.174740	external angle = 0.9508733170214887
+	new point c = (0.9779656979514051;-0.3130061934254406) 	 pixel = (2057;1232)	FCCode = 1	potential = 1.178381	external angle = 0.9507008059466032
+	new point c = (0.9796808003811336;-0.3147212958551691) 	 pixel = (2058;1233)	FCCode = 1	potential = 1.182020	external angle = 0.9505290178766577
+	new point c = (0.9813959028108620;-0.3164363982848975) 	 pixel = (2059;1234)	FCCode = 1	potential = 1.185659	external angle = 0.9503579486736964
+	new point c = (0.9831110052405905;-0.3181515007146259) 	 pixel = (2060;1235)	FCCode = 1	potential = 1.189298	external angle = 0.9501875942276784
+	new point c = (0.9848261076703189;-0.3198666031443544) 	 pixel = (2061;1236)	FCCode = 1	potential = 1.192936	external angle = 0.9500179504562849
+	new point c = (0.9865412101000474;-0.3215817055740828) 	 pixel = (2062;1237)	FCCode = 1	potential = 1.196573	external angle = 0.9498490133047269
+	new point c = (0.9882563125297757;-0.3232968080038113) 	 pixel = (2063;1238)	FCCode = 1	potential = 1.200210	external angle = 0.9496807787455552
+	new point c = (0.9899714149595042;-0.3250119104335397) 	 pixel = (2064;1239)	FCCode = 1	potential = 1.203845	external angle = 0.9495132427784697
+	new point c = (0.9916865173892326;-0.3267270128632682) 	 pixel = (2065;1240)	FCCode = 1	potential = 1.207480	external angle = 0.9493464014301307
+	new point c = (0.9934016198189611;-0.3284421152929966) 	 pixel = (2066;1241)	FCCode = 1	potential = 1.211115	external angle = 0.9491802507539714
+	new point c = (0.9951167222486895;-0.3301572177227250) 	 pixel = (2067;1242)	FCCode = 1	potential = 1.214748	external angle = 0.9490147868300106
+	new point c = (0.9968318246784180;-0.3318723201524535) 	 pixel = (2068;1243)	FCCode = 1	potential = 1.218381	external angle = 0.9488500057646667
+	new point c = (0.9985469271081464;-0.3335874225821819) 	 pixel = (2069;1244)	FCCode = 1	potential = 1.222013	external angle = 0.9486859036905730
+	new point c = (1.0002620295378748;-0.3353025250119104) 	 pixel = (2070;1245)	FCCode = 1	potential = 1.225644	external angle = 0.9485224767663937
+	new point c = (1.0019771319676034;-0.3370176274416388) 	 pixel = (2071;1246)	FCCode = 1	potential = 1.229275	external angle = 0.9483597211766409
+	new point c = (1.0036922343973318;-0.3387327298713673) 	 pixel = (2072;1247)	FCCode = 1	potential = 1.232904	external angle = 0.9481976331314929
+	new point c = (1.0054073368270602;-0.3404478323010957) 	 pixel = (2073;1248)	FCCode = 1	potential = 1.236533	external angle = 0.9480362088666131
+	new point c = (1.0071224392567886;-0.3421629347308242) 	 pixel = (2074;1249)	FCCode = 1	potential = 1.240161	external angle = 0.9478754446429702
+	new point c = (1.0088375416865172;-0.3438780371605526) 	 pixel = (2075;1250)	FCCode = 1	potential = 1.243787	external angle = 0.9477153367466598
+	new point c = (1.0105526441162456;-0.3455931395902810) 	 pixel = (2076;1251)	FCCode = 1	potential = 1.247413	external angle = 0.9475558814887256
+	new point c = (1.0122677465459740;-0.3473082420200095) 	 pixel = (2077;1252)	FCCode = 1	potential = 1.251038	external angle = 0.9473970752049840
+	new point c = (1.0139828489757023;-0.3490233444497379) 	 pixel = (2078;1253)	FCCode = 1	potential = 1.254662	external angle = 0.9472389142558469
+	new point c = (1.0156979514054310;-0.3507384468794664) 	 pixel = (2079;1254)	FCCode = 1	potential = 1.258285	external angle = 0.9470813950261485
+	new point c = (1.0174130538351593;-0.3524535493091948) 	 pixel = (2080;1255)	FCCode = 1	potential = 1.261907	external angle = 0.9469245139249703
+	new point c = (1.0191281562648877;-0.3541686517389233) 	 pixel = (2081;1256)	FCCode = 1	potential = 1.265528	external angle = 0.9467682673854694
+	new point c = (1.0208432586946161;-0.3558837541686517) 	 pixel = (2082;1257)	FCCode = 1	potential = 1.269148	external angle = 0.9466126518647063
+	new point c = (1.0225583611243447;-0.3575988565983801) 	 pixel = (2083;1258)	FCCode = 1	potential = 1.272766	external angle = 0.9464576638434750
+	new point c = (1.0242734635540731;-0.3593139590281085) 	 pixel = (2084;1259)	FCCode = 1	potential = 1.276384	external angle = 0.9463032998261328
+	new point c = (1.0259885659838015;-0.3610290614578370) 	 pixel = (2085;1260)	FCCode = 1	potential = 1.280001	external angle = 0.9461495563404325
+	new point c = (1.0277036684135299;-0.3627441638875654) 	 pixel = (2086;1261)	FCCode = 1	potential = 1.283616	external angle = 0.9459964299373546
+	new point c = (1.0294187708432583;-0.3644592663172939) 	 pixel = (2087;1262)	FCCode = 1	potential = 1.287231	external angle = 0.9458439171909407
+	new point c = (1.0311338732729869;-0.3661743687470223) 	 pixel = (2088;1263)	FCCode = 1	potential = 1.290844	external angle = 0.9456920146981290
+	new point c = (1.0328489757027153;-0.3678894711767507) 	 pixel = (2089;1264)	FCCode = 1	potential = 1.294456	external angle = 0.9455407190785892
+	new point c = (1.0345640781324437;-0.3696045736064792) 	 pixel = (2090;1265)	FCCode = 1	potential = 1.298067	external angle = 0.9453900269745593
+	new point c = (1.0362791805621721;-0.3713196760362076) 	 pixel = (2091;1266)	FCCode = 1	potential = 1.301676	external angle = 0.9452399350506842
+	new point c = (1.0379942829919007;-0.3730347784659361) 	 pixel = (2092;1267)	FCCode = 1	potential = 1.305285	external angle = 0.9450904399938533
+	new point c = (1.0397093854216291;-0.3747498808956645) 	 pixel = (2093;1268)	FCCode = 1	potential = 1.308892	external angle = 0.9449415385130416
+	new point c = (1.0414244878513574;-0.3764649833253930) 	 pixel = (2094;1269)	FCCode = 1	potential = 1.312498	external angle = 0.9447932273391497
+	new point c = (1.0431395902810858;-0.3781800857551214) 	 pixel = (2095;1270)	FCCode = 1	potential = 1.316103	external angle = 0.9446455032248460
+	new point c = (1.0448546927108144;-0.3798951881848499) 	 pixel = (2096;1271)	FCCode = 1	potential = 1.319706	external angle = 0.9444983629444098
+	new point c = (1.0465697951405428;-0.3816102906145783) 	 pixel = (2097;1272)	FCCode = 1	potential = 1.323308	external angle = 0.9443518032935754
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	new point c = (1.0482848975702712;-0.3833253930443067) 	 pixel = (2098;1273)	FCCode = 1	potential = 1.326909	external angle = 0.9442058210893766
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2101 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2101 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2101 
+	error  from giv_i : bad input: ix = 2100 
+	new point c = (1.0499999999999996;-0.3850404954740352) 	 pixel = (2099;1274)	FCCode = 1	potential = 0.000000	external angle = 0.9440604131699931
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	GiveAscent: bad FCCode = -2 
+ 	drawing stopped because of bad FCCode = -1 after 226 steps ( pixels)
+ draw external ray
+	start point c = (-2.0099999999999998;0.0000000000000000) 	potential = 0.236427	pixel = (315,1050)
+	new point c = (-2.0114578370652691;0.0000000000000000) 	 pixel = (314;1050)	FCCode = 4	potential = 0.253180	external angle = 0.5000000000000000
+	new point c = (-2.0131729394949973;0.0000000000000000) 	 pixel = (313;1050)	FCCode = 4	potential = 0.271599	external angle = 0.5000000000000000
+	new point c = (-2.0148880419247259;0.0000000000000000) 	 pixel = (312;1050)	FCCode = 4	potential = 0.288873	external angle = 0.5000000000000000
+	new point c = (-2.0166031443544545;0.0000000000000000) 	 pixel = (311;1050)	FCCode = 4	potential = 0.305197	external angle = 0.5000000000000000
+	new point c = (-2.0183182467841827;0.0000000000000000) 	 pixel = (310;1050)	FCCode = 4	potential = 0.320715	external angle = 0.5000000000000000
+	new point c = (-2.0200333492139113;0.0000000000000000) 	 pixel = (309;1050)	FCCode = 4	potential = 0.335539	external angle = 0.5000000000000000
+	new point c = (-2.0217484516436399;0.0000000000000000) 	 pixel = (308;1050)	FCCode = 4	potential = 0.349755	external angle = 0.5000000000000000
+	new point c = (-2.0234635540733681;0.0000000000000000) 	 pixel = (307;1050)	FCCode = 4	potential = 0.363435	external angle = 0.5000000000000000
+	new point c = (-2.0251786565030967;0.0000000000000000) 	 pixel = (306;1050)	FCCode = 4	potential = 0.376637	external angle = 0.5000000000000000
+	new point c = (-2.0268937589328249;0.0000000000000000) 	 pixel = (305;1050)	FCCode = 4	potential = 0.389410	external angle = 0.5000000000000000
+	new point c = (-2.0286088613625535;0.0000000000000000) 	 pixel = (304;1050)	FCCode = 4	potential = 0.401793	external angle = 0.5000000000000000
+	new point c = (-2.0286088613625535;0.0008575512148643) 	 pixel = (304;1049)	FCCode = 6	potential = 0.401837	external angle = 0.4999327206396119
+	new point c = (-2.0303239637922821;0.0025726536445927) 	 pixel = (303;1048)	FCCode = 5	potential = 0.414185	external angle = 0.4997983325161072
+	new point c = (-2.0320390662220102;0.0025726536445927) 	 pixel = (302;1048)	FCCode = 4	potential = 0.425867	external angle = 0.4997985027293809
+	new point c = (-2.0337541686517389;0.0025726536445927) 	 pixel = (301;1048)	FCCode = 4	potential = 0.437245	external angle = 0.4997986726555672
+	new point c = (-2.0354692710814675;0.0025726536445927) 	 pixel = (300;1048)	FCCode = 4	potential = 0.448350	external angle = 0.4997988422953916
+	new point c = (-2.0371843735111956;0.0025726536445927) 	 pixel = (299;1048)	FCCode = 4	potential = 0.459202	external angle = 0.4997990116495774
+	new point c = (-2.0388994759409242;0.0025726536445927) 	 pixel = (298;1048)	FCCode = 4	potential = 0.469817	external angle = 0.4997991807188455
+	new point c = (-2.0406145783706524;0.0025726536445927) 	 pixel = (297;1048)	FCCode = 4	potential = 0.480211	external angle = 0.4997993495039142
+	new point c = (-2.0423296808003810;0.0025726536445927) 	 pixel = (296;1048)	FCCode = 4	potential = 0.490397	external angle = 0.4997995180054997
+	new point c = (-2.0440447832301096;0.0025726536445927) 	 pixel = (295;1048)	FCCode = 4	potential = 0.500388	external angle = 0.4997996862243154
+	new point c = (-2.0457598856598378;0.0025726536445927) 	 pixel = (294;1048)	FCCode = 4	potential = 0.510196	external angle = 0.4997998541610725
+	new point c = (-2.0474749880895664;0.0025726536445927) 	 pixel = (293;1048)	FCCode = 4	potential = 0.519830	external angle = 0.4998000218164798
+	new point c = (-2.0491900905192946;0.0025726536445927) 	 pixel = (292;1048)	FCCode = 4	potential = 0.529300	external angle = 0.4998001891912439
+	new point c = (-2.0509051929490232;0.0025726536445927) 	 pixel = (291;1048)	FCCode = 4	potential = 0.538613	external angle = 0.4998003562860687
+	new point c = (-2.0526202953787518;0.0025726536445927) 	 pixel = (290;1048)	FCCode = 4	potential = 0.547779	external angle = 0.4998005231016560
+	new point c = (-2.0543353978084800;0.0025726536445927) 	 pixel = (289;1048)	FCCode = 4	potential = 0.556803	external angle = 0.4998006896387052
+	new point c = (-2.0560505002382086;0.0025726536445927) 	 pixel = (288;1048)	FCCode = 4	potential = 0.565694	external angle = 0.4998008558979133
+	new point c = (-2.0577656026679372;0.0025726536445927) 	 pixel = (287;1048)	FCCode = 4	potential = 0.574456	external angle = 0.4998010218799750
+	new point c = (-2.0594807050976653;0.0025726536445927) 	 pixel = (286;1048)	FCCode = 4	potential = 0.583095	external angle = 0.4998011875855828
+	new point c = (-2.0611958075273940;0.0025726536445927) 	 pixel = (285;1048)	FCCode = 4	potential = 0.591617	external angle = 0.4998013530154267
+	new point c = (-2.0629109099571221;0.0025726536445927) 	 pixel = (284;1048)	FCCode = 4	potential = 0.600027	external angle = 0.4998015181701946
+	new point c = (-2.0646260123868507;0.0042877560743212) 	 pixel = (283;1047)	FCCode = 5	potential = 0.608536	external angle = 0.4996694720550722
+	new point c = (-2.0663411148165793;0.0042877560743212) 	 pixel = (282;1047)	FCCode = 4	potential = 0.616726	external angle = 0.4996697463987657
+	new point c = (-2.0680562172463075;0.0042877560743212) 	 pixel = (281;1047)	FCCode = 4	potential = 0.624817	external angle = 0.4996700202874179
+	new point c = (-2.0697713196760361;0.0042877560743212) 	 pixel = (280;1047)	FCCode = 4	potential = 0.632812	external angle = 0.4996702937221599
+	new point c = (-2.0714864221057647;0.0042877560743212) 	 pixel = (279;1047)	FCCode = 4	potential = 0.640715	external angle = 0.4996705667041194
+	new point c = (-2.0732015245354929;0.0042877560743212) 	 pixel = (278;1047)	FCCode = 4	potential = 0.648530	external angle = 0.4996708392344198
+	new point c = (-2.0749166269652215;0.0042877560743212) 	 pixel = (277;1047)	FCCode = 4	potential = 0.656259	external angle = 0.4996711113141812
+	new point c = (-2.0766317293949497;0.0042877560743212) 	 pixel = (276;1047)	FCCode = 4	potential = 0.663905	external angle = 0.4996713829445201
+	new point c = (-2.0783468318246783;0.0042877560743212) 	 pixel = (275;1047)	FCCode = 4	potential = 0.671471	external angle = 0.4996716541265489
+	new point c = (-2.0800619342544069;0.0042877560743212) 	 pixel = (274;1047)	FCCode = 4	potential = 0.678960	external angle = 0.4996719248613766
+	new point c = (-2.0817770366841351;0.0042877560743212) 	 pixel = (273;1047)	FCCode = 4	potential = 0.686373	external angle = 0.4996721951501086
+	new point c = (-2.0834921391138637;0.0042877560743212) 	 pixel = (272;1047)	FCCode = 4	potential = 0.693714	external angle = 0.4996724649938464
+	new point c = (-2.0852072415435923;0.0042877560743212) 	 pixel = (271;1047)	FCCode = 4	potential = 0.700985	external angle = 0.4996727343936880
+	new point c = (-2.0869223439733204;0.0042877560743212) 	 pixel = (270;1047)	FCCode = 4	potential = 0.708187	external angle = 0.4996730033507280
+	new point c = (-2.0886374464030490;0.0042877560743212) 	 pixel = (269;1047)	FCCode = 4	potential = 0.715323	external angle = 0.4996732718660571
+	new point c = (-2.0903525488327772;0.0042877560743212) 	 pixel = (268;1047)	FCCode = 4	potential = 0.722394	external angle = 0.4996735399407626
+	new point c = (-2.0920676512625058;0.0042877560743212) 	 pixel = (267;1047)	FCCode = 4	potential = 0.729403	external angle = 0.4996738075759282
+	new point c = (-2.0937827536922344;0.0042877560743212) 	 pixel = (266;1047)	FCCode = 4	potential = 0.736350	external angle = 0.4996740747726339
+	new point c = (-2.0954978561219626;0.0042877560743212) 	 pixel = (265;1047)	FCCode = 4	potential = 0.743239	external angle = 0.4996743415319564
+	new point c = (-2.0972129585516912;0.0042877560743212) 	 pixel = (264;1047)	FCCode = 4	potential = 0.750070	external angle = 0.4996746078549688
+	new point c = (-2.0989280609814198;0.0042877560743212) 	 pixel = (263;1047)	FCCode = 4	potential = 0.756844	external angle = 0.4996748737427406
+	new point c = (-2.1006431634111480;0.0042877560743212) 	 pixel = (262;1047)	FCCode = 4	potential = 0.763564	external angle = 0.4996751391963379
+	new point c = (-2.1023582658408766;0.0042877560743212) 	 pixel = (261;1047)	FCCode = 4	potential = 0.770231	external angle = 0.4996754042168232
+	new point c = (-2.1040733682706048;0.0042877560743212) 	 pixel = (260;1047)	FCCode = 4	potential = 0.776845	external angle = 0.4996756688052558
+	new point c = (-2.1057884707003334;0.0042877560743212) 	 pixel = (259;1047)	FCCode = 4	potential = 0.783409	external angle = 0.4996759329626912
+	new point c = (-2.1075035731300620;0.0042877560743212) 	 pixel = (258;1047)	FCCode = 4	potential = 0.789923	external angle = 0.4996761966901818
+	new point c = (-2.1092186755597901;0.0042877560743212) 	 pixel = (257;1047)	FCCode = 4	potential = 0.796389	external angle = 0.4996764599887764
+	new point c = (-2.1109337779895188;0.0060028585040496) 	 pixel = (256;1046)	FCCode = 5	potential = 0.802946	external angle = 0.4995474126008605
+	new point c = (-2.1126488804192469;0.0060028585040496) 	 pixel = (255;1046)	FCCode = 4	potential = 0.809315	external angle = 0.4995477800209157
+	new point c = (-2.1143639828489755;0.0060028585040496) 	 pixel = (254;1046)	FCCode = 4	potential = 0.815639	external angle = 0.4995481468448977
+	new point c = (-2.1160790852787041;0.0060028585040496) 	 pixel = (253;1046)	FCCode = 4	potential = 0.821919	external angle = 0.4995485130742556
+	new point c = (-2.1177941877084323;0.0060028585040496) 	 pixel = (252;1046)	FCCode = 4	potential = 0.828156	external angle = 0.4995488787104344
+	new point c = (-2.1195092901381609;0.0060028585040496) 	 pixel = (251;1046)	FCCode = 4	potential = 0.834369	external angle = 0.4995492437548739
+	new point c = (-2.1212243925678895;0.0060028585040496) 	 pixel = (250;1046)	FCCode = 4	potential = 0.840522	external angle = 0.4995496082090093
+	new point c = (-2.1229394949976177;0.0060028585040496) 	 pixel = (249;1046)	FCCode = 4	potential = 0.846634	external angle = 0.4995499720742714
+	new point c = (-2.1246545974273463;0.0060028585040496) 	 pixel = (248;1046)	FCCode = 4	potential = 0.852707	external angle = 0.4995503353520865
+	new point c = (-2.1263696998570745;0.0060028585040496) 	 pixel = (247;1046)	FCCode = 4	potential = 0.858741	external angle = 0.4995506980438756
+	new point c = (-2.1280848022868031;0.0060028585040496) 	 pixel = (246;1046)	FCCode = 4	potential = 0.864737	external angle = 0.4995510601510561
+	new point c = (-2.1297999047165317;0.0060028585040496) 	 pixel = (245;1046)	FCCode = 4	potential = 0.870696	external angle = 0.4995514216750399
+	new point c = (-2.1315150071462599;0.0060028585040496) 	 pixel = (244;1046)	FCCode = 4	potential = 0.876618	external angle = 0.4995517826172349
+	new point c = (-2.1332301095759885;0.0060028585040496) 	 pixel = (243;1046)	FCCode = 4	potential = 0.882505	external angle = 0.4995521429790445
+	new point c = (-2.1349452120057171;0.0060028585040496) 	 pixel = (242;1046)	FCCode = 4	potential = 0.888357	external angle = 0.4995525027618672
+	new point c = (-2.1366603144354452;0.0060028585040496) 	 pixel = (241;1046)	FCCode = 4	potential = 0.894174	external angle = 0.4995528619670975
+	new point c = (-2.1383754168651739;0.0060028585040496) 	 pixel = (240;1046)	FCCode = 4	potential = 0.899958	external angle = 0.4995532205961249
+	new point c = (-2.1400905192949020;0.0060028585040496) 	 pixel = (239;1046)	FCCode = 4	potential = 0.905708	external angle = 0.4995535786503350
+	new point c = (-2.1418056217246306;0.0060028585040496) 	 pixel = (238;1046)	FCCode = 4	potential = 0.911426	external angle = 0.4995539361311085
+	new point c = (-2.1435207241543592;0.0060028585040496) 	 pixel = (237;1046)	FCCode = 4	potential = 0.917111	external angle = 0.4995542930398220
+	new point c = (-2.1452358265840874;0.0060028585040496) 	 pixel = (236;1046)	FCCode = 4	potential = 0.922766	external angle = 0.4995546493778473
+	new point c = (-2.1469509290138160;0.0060028585040496) 	 pixel = (235;1046)	FCCode = 4	potential = 0.928389	external angle = 0.4995550051465523
+	new point c = (-2.1486660314435446;0.0060028585040496) 	 pixel = (234;1046)	FCCode = 4	potential = 0.933982	external angle = 0.4995553603473003
+	new point c = (-2.1503811338732728;0.0060028585040496) 	 pixel = (233;1046)	FCCode = 4	potential = 0.939545	external angle = 0.4995557149814501
+	new point c = (-2.1520962363030014;0.0060028585040496) 	 pixel = (232;1046)	FCCode = 4	potential = 0.945079	external angle = 0.4995560690503566
+	new point c = (-2.1538113387327296;0.0060028585040496) 	 pixel = (231;1046)	FCCode = 4	potential = 0.950583	external angle = 0.4995564225553699
+	new point c = (-2.1555264411624582;0.0060028585040496) 	 pixel = (230;1046)	FCCode = 4	potential = 0.956060	external angle = 0.4995567754978361
+	new point c = (-2.1572415435921868;0.0060028585040496) 	 pixel = (229;1046)	FCCode = 4	potential = 0.961508	external angle = 0.4995571278790968
+	new point c = (-2.1589566460219149;0.0060028585040496) 	 pixel = (228;1046)	FCCode = 4	potential = 0.966929	external angle = 0.4995574797004897
+	new point c = (-2.1606717484516436;0.0060028585040496) 	 pixel = (227;1046)	FCCode = 4	potential = 0.972323	external angle = 0.4995578309633479
+	new point c = (-2.1623868508813722;0.0060028585040496) 	 pixel = (226;1046)	FCCode = 4	potential = 0.977691	external angle = 0.4995581816690003
+	new point c = (-2.1641019533111003;0.0060028585040496) 	 pixel = (225;1046)	FCCode = 4	potential = 0.983032	external angle = 0.4995585318187719
+	new point c = (-2.1658170557408289;0.0060028585040496) 	 pixel = (224;1046)	FCCode = 4	potential = 0.988347	external angle = 0.4995588814139831
+	new point c = (-2.1675321581705571;0.0060028585040496) 	 pixel = (223;1046)	FCCode = 4	potential = 0.993637	external angle = 0.4995592304559505
+	new point c = (-2.1692472606002857;0.0077179609337781) 	 pixel = (222;1045)	FCCode = 5	potential = 0.999000	external angle = 0.4994337453030535
+	new point c = (-2.1709623630300143;0.0077179609337781) 	 pixel = (221;1045)	FCCode = 4	potential = 1.004239	external angle = 0.4994341926514907
+	new point c = (-2.1726774654597425;0.0077179609337781) 	 pixel = (220;1045)	FCCode = 4	potential = 1.009453	external angle = 0.4994346392936670
+	new point c = (-2.1743925678894711;0.0077179609337781) 	 pixel = (219;1045)	FCCode = 4	potential = 1.014644	external angle = 0.4994350852312534
+	new point c = (-2.1761076703191993;0.0077179609337781) 	 pixel = (218;1045)	FCCode = 4	potential = 1.019810	external angle = 0.4994355304659159
+	new point c = (-2.1778227727489279;0.0077179609337781) 	 pixel = (217;1045)	FCCode = 4	potential = 1.024954	external angle = 0.4994359749993153
+	new point c = (-2.1795378751786565;0.0077179609337781) 	 pixel = (216;1045)	FCCode = 4	potential = 1.030074	external angle = 0.4994364188331070
+	new point c = (-2.1812529776083847;0.0077179609337781) 	 pixel = (215;1045)	FCCode = 4	potential = 1.035172	external angle = 0.4994368619689413
+	new point c = (-2.1829680800381133;0.0077179609337781) 	 pixel = (214;1045)	FCCode = 4	potential = 1.040248	external angle = 0.4994373044084631
+	new point c = (-2.1846831824678419;0.0077179609337781) 	 pixel = (213;1045)	FCCode = 4	potential = 1.045302	external angle = 0.4994377461533125
+	new point c = (-2.1863982848975700;0.0077179609337781) 	 pixel = (212;1045)	FCCode = 4	potential = 1.050334	external angle = 0.4994381872051243
+	new point c = (-2.1881133873272987;0.0077179609337781) 	 pixel = (211;1045)	FCCode = 4	potential = 1.055344	external angle = 0.4994386275655279
+	new point c = (-2.1898284897570268;0.0077179609337781) 	 pixel = (210;1045)	FCCode = 4	potential = 1.060334	external angle = 0.4994390672361481
+	new point c = (-2.1915435921867554;0.0077179609337781) 	 pixel = (209;1045)	FCCode = 4	potential = 1.065302	external angle = 0.4994395062186041
+	new point c = (-2.1932586946164840;0.0077179609337781) 	 pixel = (208;1045)	FCCode = 4	potential = 1.070250	external angle = 0.4994399445145105
+	new point c = (-2.1949737970462122;0.0077179609337781) 	 pixel = (207;1045)	FCCode = 4	potential = 1.075178	external angle = 0.4994403821254764
+	new point c = (-2.1966888994759408;0.0077179609337781) 	 pixel = (206;1045)	FCCode = 4	potential = 1.080086	external angle = 0.4994408190531063
+	new point c = (-2.1984040019056694;0.0077179609337781) 	 pixel = (205;1045)	FCCode = 4	potential = 1.084974	external angle = 0.4994412552989996
+	new point c = (-2.2001191043353976;0.0077179609337781) 	 pixel = (204;1045)	FCCode = 4	potential = 1.089842	external angle = 0.4994416908647503
+	new point c = (-2.2018342067651262;0.0077179609337781) 	 pixel = (203;1045)	FCCode = 4	potential = 1.094691	external angle = 0.4994421257519480
+	new point c = (-2.2035493091948544;0.0077179609337781) 	 pixel = (202;1045)	FCCode = 4	potential = 1.099521	external angle = 0.4994425599621770
+	new point c = (-2.2052644116245830;0.0077179609337781) 	 pixel = (201;1045)	FCCode = 4	potential = 1.104332	external angle = 0.4994429934970168
+	new point c = (-2.2069795140543116;0.0077179609337781) 	 pixel = (200;1045)	FCCode = 4	potential = 1.109125	external angle = 0.4994434263580420
+	new point c = (-2.2086946164840398;0.0077179609337781) 	 pixel = (199;1045)	FCCode = 4	potential = 1.113899	external angle = 0.4994438585468222
+	new point c = (-2.2104097189137684;0.0077179609337781) 	 pixel = (198;1045)	FCCode = 4	potential = 1.118655	external angle = 0.4994442900649221
+	new point c = (-2.2121248213434970;0.0077179609337781) 	 pixel = (197;1045)	FCCode = 4	potential = 1.123393	external angle = 0.4994447209139020
+	new point c = (-2.2138399237732251;0.0077179609337781) 	 pixel = (196;1045)	FCCode = 4	potential = 1.128113	external angle = 0.4994451510953167
+	new point c = (-2.2155550262029537;0.0077179609337781) 	 pixel = (195;1045)	FCCode = 4	potential = 1.132816	external angle = 0.4994455806107165
+	new point c = (-2.2172701286326819;0.0077179609337781) 	 pixel = (194;1045)	FCCode = 4	potential = 1.137501	external angle = 0.4994460094616471
+	new point c = (-2.2189852310624105;0.0077179609337781) 	 pixel = (193;1045)	FCCode = 4	potential = 1.142170	external angle = 0.4994464376496491
+	new point c = (-2.2207003334921391;0.0077179609337781) 	 pixel = (192;1045)	FCCode = 4	potential = 1.146821	external angle = 0.4994468651762585
+	new point c = (-2.2224154359218673;0.0077179609337781) 	 pixel = (191;1045)	FCCode = 4	potential = 1.151456	external angle = 0.4994472920430064
+	new point c = (-2.2241305383515959;0.0077179609337781) 	 pixel = (190;1045)	FCCode = 4	potential = 1.156074	external angle = 0.4994477182514195
+	new point c = (-2.2258456407813245;0.0077179609337781) 	 pixel = (189;1045)	FCCode = 4	potential = 1.160676	external angle = 0.4994481438030195
+	new point c = (-2.2275607432110527;0.0077179609337781) 	 pixel = (188;1045)	FCCode = 4	potential = 1.165261	external angle = 0.4994485686993234
+	new point c = (-2.2292758456407813;0.0077179609337781) 	 pixel = (187;1045)	FCCode = 4	potential = 1.169831	external angle = 0.4994489929418438
+	new point c = (-2.2309909480705095;0.0077179609337781) 	 pixel = (186;1045)	FCCode = 4	potential = 1.174384	external angle = 0.4994494165320885
+	new point c = (-2.2327060505002381;0.0094330633635065) 	 pixel = (185;1044)	FCCode = 5	potential = 1.179000	external angle = 0.4993275828989543
+	new point c = (-2.2344211529299667;0.0094330633635065) 	 pixel = (184;1044)	FCCode = 4	potential = 1.183522	external angle = 0.4993280990283752
+	new point c = (-2.2361362553596948;0.0094330633635065) 	 pixel = (183;1044)	FCCode = 4	potential = 1.188028	external angle = 0.4993286143660743
+	new point c = (-2.2378513577894235;0.0094330633635065) 	 pixel = (182;1044)	FCCode = 4	potential = 1.192519	external angle = 0.4993291289138717
+	new point c = (-2.2395664602191516;0.0094330633635065) 	 pixel = (181;1044)	FCCode = 4	potential = 1.196995	external angle = 0.4993296426735821
+	new point c = (-2.2412815626488802;0.0094330633635065) 	 pixel = (180;1044)	FCCode = 4	potential = 1.201457	external angle = 0.4993301556470148
+	new point c = (-2.2429966650786088;0.0094330633635065) 	 pixel = (179;1044)	FCCode = 4	potential = 1.205903	external angle = 0.4993306678359735
+	new point c = (-2.2447117675083370;0.0094330633635065) 	 pixel = (178;1044)	FCCode = 4	potential = 1.210336	external angle = 0.4993311792422561
+	new point c = (-2.2464268699380656;0.0094330633635065) 	 pixel = (177;1044)	FCCode = 4	potential = 1.214753	external angle = 0.4993316898676553
+	new point c = (-2.2481419723677942;0.0094330633635065) 	 pixel = (176;1044)	FCCode = 4	potential = 1.219157	external angle = 0.4993321997139584
+	new point c = (-2.2498570747975224;0.0094330633635065) 	 pixel = (175;1044)	FCCode = 4	potential = 1.223546	external angle = 0.4993327087829470
+	new point c = (-2.2515721772272510;0.0094330633635065) 	 pixel = (174;1044)	FCCode = 4	potential = 1.227921	external angle = 0.4993332170763973
+	new point c = (-2.2532872796569792;0.0094330633635065) 	 pixel = (173;1044)	FCCode = 4	potential = 1.232283	external angle = 0.4993337245960804
+	new point c = (-2.2550023820867078;0.0094330633635065) 	 pixel = (172;1044)	FCCode = 4	potential = 1.236630	external angle = 0.4993342313437616
+	new point c = (-2.2567174845164364;0.0094330633635065) 	 pixel = (171;1044)	FCCode = 4	potential = 1.240965	external angle = 0.4993347373212010
+	new point c = (-2.2584325869461646;0.0094330633635065) 	 pixel = (170;1044)	FCCode = 4	potential = 1.245285	external angle = 0.4993352425301536
+	new point c = (-2.2601476893758932;0.0094330633635065) 	 pixel = (169;1044)	FCCode = 4	potential = 1.249593	external angle = 0.4993357469723687
+	new point c = (-2.2618627918056218;0.0094330633635065) 	 pixel = (168;1044)	FCCode = 4	potential = 1.253887	external angle = 0.4993362506495903
+	new point c = (-2.2635778942353499;0.0094330633635065) 	 pixel = (167;1044)	FCCode = 4	potential = 1.258168	external angle = 0.4993367535635574
+	new point c = (-2.2652929966650786;0.0094330633635065) 	 pixel = (166;1044)	FCCode = 4	potential = 1.262436	external angle = 0.4993372557160037
+	new point c = (-2.2670080990948067;0.0094330633635065) 	 pixel = (165;1044)	FCCode = 4	potential = 1.266692	external angle = 0.4993377571086573
+	new point c = (-2.2687232015245353;0.0094330633635065) 	 pixel = (164;1044)	FCCode = 4	potential = 1.270934	external angle = 0.4993382577432416
+	new point c = (-2.2704383039542639;0.0094330633635065) 	 pixel = (163;1044)	FCCode = 4	potential = 1.275165	external angle = 0.4993387576214742
+	new point c = (-2.2721534063839921;0.0094330633635065) 	 pixel = (162;1044)	FCCode = 4	potential = 1.279382	external angle = 0.4993392567450681
+	new point c = (-2.2738685088137207;0.0094330633635065) 	 pixel = (161;1044)	FCCode = 4	potential = 1.283587	external angle = 0.4993397551157306
+	new point c = (-2.2755836112434493;0.0094330633635065) 	 pixel = (160;1044)	FCCode = 4	potential = 1.287780	external angle = 0.4993402527351643
+	new point c = (-2.2772987136731775;0.0094330633635065) 	 pixel = (159;1044)	FCCode = 4	potential = 1.291961	external angle = 0.4993407496050665
+	new point c = (-2.2790138161029061;0.0094330633635065) 	 pixel = (158;1044)	FCCode = 4	potential = 1.296130	external angle = 0.4993412457271293
+	new point c = (-2.2807289185326343;0.0094330633635065) 	 pixel = (157;1044)	FCCode = 4	potential = 1.300287	external angle = 0.4993417411030397
+	new point c = (-2.2824440209623629;0.0094330633635065) 	 pixel = (156;1044)	FCCode = 4	potential = 1.304432	external angle = 0.4993422357344798
+	new point c = (-2.2841591233920915;0.0094330633635065) 	 pixel = (155;1044)	FCCode = 4	potential = 1.308565	external angle = 0.4993427296231266
+	new point c = (-2.2858742258218196;0.0094330633635065) 	 pixel = (154;1044)	FCCode = 4	potential = 1.312687	external angle = 0.4993432227706519
+	new point c = (-2.2875893282515483;0.0094330633635065) 	 pixel = (153;1044)	FCCode = 4	potential = 1.316797	external angle = 0.4993437151787227
+	new point c = (-2.2893044306812769;0.0094330633635065) 	 pixel = (152;1044)	FCCode = 4	potential = 1.320896	external angle = 0.4993442068490010
+	new point c = (-2.2910195331110050;0.0094330633635065) 	 pixel = (151;1044)	FCCode = 4	potential = 1.324984	external angle = 0.4993446977831435
+	new point c = (-2.2927346355407336;0.0094330633635065) 	 pixel = (150;1044)	FCCode = 4	potential = 1.329060	external angle = 0.4993451879828024
+	new point c = (-2.2944497379704618;0.0094330633635065) 	 pixel = (149;1044)	FCCode = 4	potential = 1.333125	external angle = 0.4993456774496247
+	new point c = (-2.2961648404001904;0.0094330633635065) 	 pixel = (148;1044)	FCCode = 4	potential = 1.337179	external angle = 0.4993461661852525
+	new point c = (-2.2978799428299190;0.0094330633635065) 	 pixel = (147;1044)	FCCode = 4	potential = 1.341222	external angle = 0.4993466541913230
+	new point c = (-2.2995950452596472;0.0094330633635065) 	 pixel = (146;1044)	FCCode = 4	potential = 1.345254	external angle = 0.4993471414694685
+	new point c = (-2.3013101476893758;0.0094330633635065) 	 pixel = (145;1044)	FCCode = 4	potential = 1.349276	external angle = 0.4993476280213165
+	new point c = (-2.3030252501191040;0.0094330633635065) 	 pixel = (144;1044)	FCCode = 4	potential = 1.353286	external angle = 0.4993481138484897
+	new point c = (-2.3047403525488326;0.0094330633635065) 	 pixel = (143;1044)	FCCode = 4	potential = 1.357287	external angle = 0.4993485989526059
+	new point c = (-2.3064554549785612;0.0094330633635065) 	 pixel = (142;1044)	FCCode = 4	potential = 1.361276	external angle = 0.4993490833352780
+	new point c = (-2.3081705574082894;0.0094330633635065) 	 pixel = (141;1044)	FCCode = 4	potential = 1.365255	external angle = 0.4993495669981141
+	new point c = (-2.3098856598380180;0.0094330633635065) 	 pixel = (140;1044)	FCCode = 4	potential = 1.369224	external angle = 0.4993500499427178
+	new point c = (-2.3116007622677466;0.0094330633635065) 	 pixel = (139;1044)	FCCode = 4	potential = 1.373183	external angle = 0.4993505321706876
+	new point c = (-2.3133158646974747;0.0094330633635065) 	 pixel = (138;1044)	FCCode = 4	potential = 1.377131	external angle = 0.4993510136836175
+	new point c = (-2.3150309671272034;0.0094330633635065) 	 pixel = (137;1044)	FCCode = 4	potential = 1.381070	external angle = 0.4993514944830967
+	new point c = (-2.3167460695569315;0.0094330633635065) 	 pixel = (136;1044)	FCCode = 4	potential = 1.384998	external angle = 0.4993519745707096
+	new point c = (-2.3184611719866601;0.0094330633635065) 	 pixel = (135;1044)	FCCode = 4	potential = 1.388916	external angle = 0.4993524539480360
+	new point c = (-2.3201762744163887;0.0094330633635065) 	 pixel = (134;1044)	FCCode = 4	potential = 1.392824	external angle = 0.4993529326166512
+	new point c = (-2.3218913768461169;0.0094330633635065) 	 pixel = (133;1044)	FCCode = 4	potential = 1.396723	external angle = 0.4993534105781254
+	new point c = (-2.3236064792758455;0.0094330633635065) 	 pixel = (132;1044)	FCCode = 4	potential = 1.400612	external angle = 0.4993538878340246
+	new point c = (-2.3253215817055741;0.0094330633635065) 	 pixel = (131;1044)	FCCode = 4	potential = 1.404491	external angle = 0.4993543643859100
+	new point c = (-2.3270366841353023;0.0094330633635065) 	 pixel = (130;1044)	FCCode = 4	potential = 1.408361	external angle = 0.4993548402353382
+	new point c = (-2.3287517865650309;0.0094330633635065) 	 pixel = (129;1044)	FCCode = 4	potential = 1.412221	external angle = 0.4993553153838611
+	new point c = (-2.3304668889947591;0.0094330633635065) 	 pixel = (128;1044)	FCCode = 4	potential = 1.416072	external angle = 0.4993557898330264
+	new point c = (-2.3321819914244877;0.0094330633635065) 	 pixel = (127;1044)	FCCode = 4	potential = 1.419913	external angle = 0.4993562635843767
+	new point c = (-2.3338970938542163;0.0094330633635065) 	 pixel = (126;1044)	FCCode = 4	potential = 1.423745	external angle = 0.4993567366394507
+	new point c = (-2.3356121962839445;0.0094330633635065) 	 pixel = (125;1044)	FCCode = 4	potential = 1.427568	external angle = 0.4993572089997820
+	new point c = (-2.3373272987136731;0.0094330633635065) 	 pixel = (124;1044)	FCCode = 4	potential = 1.431381	external angle = 0.4993576806669001
+	new point c = (-2.3390424011434017;0.0094330633635065) 	 pixel = (123;1044)	FCCode = 4	potential = 1.435186	external angle = 0.4993581516423297
+	new point c = (-2.3407575035731298;0.0094330633635065) 	 pixel = (122;1044)	FCCode = 4	potential = 1.438981	external angle = 0.4993586219275913
+	new point c = (-2.3424726060028584;0.0094330633635065) 	 pixel = (121;1044)	FCCode = 4	potential = 1.442768	external angle = 0.4993590915242009
+	new point c = (-2.3441877084325866;0.0094330633635065) 	 pixel = (120;1044)	FCCode = 4	potential = 1.446545	external angle = 0.4993595604336699
+	new point c = (-2.3459028108623152;0.0094330633635065) 	 pixel = (119;1044)	FCCode = 4	potential = 1.450314	external angle = 0.4993600286575054
+	new point c = (-2.3476179132920438;0.0094330633635065) 	 pixel = (118;1044)	FCCode = 4	potential = 1.454074	external angle = 0.4993604961972101
+	new point c = (-2.3493330157217720;0.0094330633635065) 	 pixel = (117;1044)	FCCode = 4	potential = 1.457825	external angle = 0.4993609630542823
+	new point c = (-2.3510481181515006;0.0094330633635065) 	 pixel = (116;1044)	FCCode = 4	potential = 1.461568	external angle = 0.4993614292302160
+	new point c = (-2.3527632205812292;0.0094330633635065) 	 pixel = (115;1044)	FCCode = 4	potential = 1.465302	external angle = 0.4993618947265005
+	new point c = (-2.3544783230109574;0.0094330633635065) 	 pixel = (114;1044)	FCCode = 4	potential = 1.469027	external angle = 0.4993623595446213
+	new point c = (-2.3561934254406860;0.0094330633635065) 	 pixel = (113;1044)	FCCode = 4	potential = 1.472744	external angle = 0.4993628236860592
+	new point c = (-2.3579085278704142;0.0094330633635065) 	 pixel = (112;1044)	FCCode = 4	potential = 1.476453	external angle = 0.4993632871522908
+	new point c = (-2.3596236303001428;0.0094330633635065) 	 pixel = (111;1044)	FCCode = 4	potential = 1.480153	external angle = 0.4993637499447883
+	new point c = (-2.3613387327298714;0.0094330633635065) 	 pixel = (110;1044)	FCCode = 4	potential = 1.483844	external angle = 0.4993642120650200
+	new point c = (-2.3630538351595995;0.0094330633635065) 	 pixel = (109;1044)	FCCode = 4	potential = 1.487528	external angle = 0.4993646735144493
+	new point c = (-2.3647689375893282;0.0094330633635065) 	 pixel = (108;1044)	FCCode = 4	potential = 1.491203	external angle = 0.4993651342945359
+	new point c = (-2.3664840400190563;0.0094330633635065) 	 pixel = (107;1044)	FCCode = 4	potential = 1.494870	external angle = 0.4993655944067351
+	new point c = (-2.3681991424487849;0.0094330633635065) 	 pixel = (106;1044)	FCCode = 4	potential = 1.498530	external angle = 0.4993660538524979
+	new point c = (-2.3699142448785135;0.0094330633635065) 	 pixel = (105;1044)	FCCode = 4	potential = 1.502181	external angle = 0.4993665126332712
+	new point c = (-2.3716293473082417;0.0094330633635065) 	 pixel = (104;1044)	FCCode = 4	potential = 1.505824	external angle = 0.4993669707504977
+	new point c = (-2.3733444497379703;0.0094330633635065) 	 pixel = (103;1044)	FCCode = 4	potential = 1.509459	external angle = 0.4993674282056159
+	new point c = (-2.3750595521676989;0.0094330633635065) 	 pixel = (102;1044)	FCCode = 4	potential = 1.513086	external angle = 0.4993678850000601
+	new point c = (-2.3767746545974271;0.0094330633635065) 	 pixel = (101;1044)	FCCode = 4	potential = 1.516705	external angle = 0.4993683411352605
+	new point c = (-2.3784897570271557;0.0094330633635065) 	 pixel = (100;1044)	FCCode = 4	potential = 1.520317	external angle = 0.4993687966126434
+	new point c = (-2.3802048594568839;0.0094330633635065) 	 pixel = (99;1044)	FCCode = 4	potential = 1.523921	external angle = 0.4993692514336305
+	new point c = (-2.3819199618866125;0.0094330633635065) 	 pixel = (98;1044)	FCCode = 4	potential = 1.527517	external angle = 0.4993697055996398
+	new point c = (-2.3836350643163411;0.0094330633635065) 	 pixel = (97;1044)	FCCode = 4	potential = 1.531105	external angle = 0.4993701591120852
+	new point c = (-2.3853501667460693;0.0094330633635065) 	 pixel = (96;1044)	FCCode = 4	potential = 1.534686	external angle = 0.4993706119723763
+	new point c = (-2.3870652691757979;0.0094330633635065) 	 pixel = (95;1044)	FCCode = 4	potential = 1.538260	external angle = 0.4993710641819188
+	new point c = (-2.3887803716055265;0.0094330633635065) 	 pixel = (94;1044)	FCCode = 4	potential = 1.541826	external angle = 0.4993715157421145
+	new point c = (-2.3904954740352546;0.0094330633635065) 	 pixel = (93;1044)	FCCode = 4	potential = 1.545384	external angle = 0.4993719666543608
+	new point c = (-2.3922105764649833;0.0094330633635065) 	 pixel = (92;1044)	FCCode = 4	potential = 1.548935	external angle = 0.4993724169200515
+	new point c = (-2.3939256788947114;0.0094330633635065) 	 pixel = (91;1044)	FCCode = 4	potential = 1.552479	external angle = 0.4993728665405761
+	new point c = (-2.3956407813244400;0.0094330633635065) 	 pixel = (90;1044)	FCCode = 4	potential = 1.556015	external angle = 0.4993733155173203
+	new point c = (-2.3973558837541686;0.0094330633635065) 	 pixel = (89;1044)	FCCode = 4	potential = 1.559544	external angle = 0.4993737638516658
+	new point c = (-2.3990709861838968;0.0094330633635065) 	 pixel = (88;1044)	FCCode = 4	potential = 1.563066	external angle = 0.4993742115449904
+	new point c = (-2.4007860886136254;0.0094330633635065) 	 pixel = (87;1044)	FCCode = 4	potential = 1.566580	external angle = 0.4993746585986677
+	new point c = (-2.4025011910433540;0.0094330633635065) 	 pixel = (86;1044)	FCCode = 4	potential = 1.570088	external angle = 0.4993751050140677
+	new point c = (-2.4042162934730822;0.0094330633635065) 	 pixel = (85;1044)	FCCode = 4	potential = 1.573588	external angle = 0.4993755507925563
+	new point c = (-2.4059313959028108;0.0094330633635065) 	 pixel = (84;1044)	FCCode = 4	potential = 1.577082	external angle = 0.4993759959354956
+	new point c = (-2.4076464983325390;0.0094330633635065) 	 pixel = (83;1044)	FCCode = 4	potential = 1.580568	external angle = 0.4993764404442439
+	new point c = (-2.4093616007622676;0.0094330633635065) 	 pixel = (82;1044)	FCCode = 4	potential = 1.584047	external angle = 0.4993768843201553
+	new point c = (-2.4110767031919962;0.0094330633635065) 	 pixel = (81;1044)	FCCode = 4	potential = 1.587520	external angle = 0.4993773275645804
+	new point c = (-2.4127918056217244;0.0094330633635065) 	 pixel = (80;1044)	FCCode = 4	potential = 1.590985	external angle = 0.4993777701788657
+	new point c = (-2.4145069080514530;0.0094330633635065) 	 pixel = (79;1044)	FCCode = 4	potential = 1.594444	external angle = 0.4993782121643542
+	new point c = (-2.4162220104811816;0.0094330633635065) 	 pixel = (78;1044)	FCCode = 4	potential = 1.597896	external angle = 0.4993786535223847
+	new point c = (-2.4179371129109097;0.0094330633635065) 	 pixel = (77;1044)	FCCode = 4	potential = 1.601341	external angle = 0.4993790942542926
+	new point c = (-2.4196522153406383;0.0094330633635065) 	 pixel = (76;1044)	FCCode = 4	potential = 1.604779	external angle = 0.4993795343614090
+	new point c = (-2.4213673177703665;0.0094330633635065) 	 pixel = (75;1044)	FCCode = 4	potential = 1.608211	external angle = 0.4993799738450618
+	new point c = (-2.4230824202000951;0.0094330633635065) 	 pixel = (74;1044)	FCCode = 4	potential = 1.611636	external angle = 0.4993804127065747
+	new point c = (-2.4247975226298237;0.0094330633635065) 	 pixel = (73;1044)	FCCode = 4	potential = 1.615054	external angle = 0.4993808509472679
+	new point c = (-2.4265126250595519;0.0094330633635065) 	 pixel = (72;1044)	FCCode = 4	potential = 1.618466	external angle = 0.4993812885684578
+	new point c = (-2.4282277274892805;0.0094330633635065) 	 pixel = (71;1044)	FCCode = 4	potential = 1.621871	external angle = 0.4993817255714570
+	new point c = (-2.4299428299190087;0.0094330633635065) 	 pixel = (70;1044)	FCCode = 4	potential = 1.625270	external angle = 0.4993821619575746
+	new point c = (-2.4316579323487373;0.0094330633635065) 	 pixel = (69;1044)	FCCode = 4	potential = 1.628662	external angle = 0.4993825977281158
+	new point c = (-2.4333730347784659;0.0094330633635065) 	 pixel = (68;1044)	FCCode = 4	potential = 1.632048	external angle = 0.4993830328843821
+	new point c = (-2.4350881372081941;0.0094330633635065) 	 pixel = (67;1044)	FCCode = 4	potential = 1.635427	external angle = 0.4993834674276716
+	new point c = (-2.4368032396379227;0.0094330633635065) 	 pixel = (66;1044)	FCCode = 4	potential = 1.638800	external angle = 0.4993839013592786
+	new point c = (-2.4385183420676513;0.0094330633635065) 	 pixel = (65;1044)	FCCode = 4	potential = 1.642167	external angle = 0.4993843346804934
+	new point c = (-2.4402334444973794;0.0094330633635065) 	 pixel = (64;1044)	FCCode = 4	potential = 1.645528	external angle = 0.4993847673926034
+	new point c = (-2.4419485469271081;0.0094330633635065) 	 pixel = (63;1044)	FCCode = 4	potential = 1.648882	external angle = 0.4993851994968918
+	new point c = (-2.4436636493568362;0.0094330633635065) 	 pixel = (62;1044)	FCCode = 4	potential = 1.652230	external angle = 0.4993856309946383
+	new point c = (-2.4453787517865648;0.0094330633635065) 	 pixel = (61;1044)	FCCode = 4	potential = 1.655571	external angle = 0.4993860618871193
+	new point c = (-2.4470938542162934;0.0094330633635065) 	 pixel = (60;1044)	FCCode = 4	potential = 1.658907	external angle = 0.4993864921756073
+	new point c = (-2.4488089566460216;0.0094330633635065) 	 pixel = (59;1044)	FCCode = 4	potential = 1.662236	external angle = 0.4993869218613715
+	new point c = (-2.4505240590757502;0.0094330633635065) 	 pixel = (58;1044)	FCCode = 4	potential = 1.665602	external angle = 0.4993873509456771
+	new point c = (-2.4522391615054788;0.0094330633635065) 	 pixel = (57;1044)	FCCode = 4	potential = 1.668919	external angle = 0.4993877794297862
+	new point c = (-2.4539542639352070;0.0094330633635065) 	 pixel = (56;1044)	FCCode = 4	potential = 1.672229	external angle = 0.4993882073149574
+	new point c = (-2.4556693663649356;0.0094330633635065) 	 pixel = (55;1044)	FCCode = 4	potential = 1.675534	external angle = 0.4993886346024455
+	new point c = (-2.4573844687946638;0.0094330633635065) 	 pixel = (54;1044)	FCCode = 4	potential = 1.678832	external angle = 0.4993890612935018
+	new point c = (-2.4590995712243924;0.0094330633635065) 	 pixel = (53;1044)	FCCode = 4	potential = 1.682125	external angle = 0.4993894873893743
+	new point c = (-2.4608146736541210;0.0094330633635065) 	 pixel = (52;1044)	FCCode = 4	potential = 1.685412	external angle = 0.4993899128913076
+	new point c = (-2.4625297760838492;0.0094330633635065) 	 pixel = (51;1044)	FCCode = 4	potential = 1.688693	external angle = 0.4993903378005424
+	new point c = (-2.4642448785135778;0.0094330633635065) 	 pixel = (50;1044)	FCCode = 4	potential = 1.691968	external angle = 0.4993907621183165
+	new point c = (-2.4659599809433064;0.0094330633635065) 	 pixel = (49;1044)	FCCode = 4	potential = 1.695237	external angle = 0.4993911858458637
+	new point c = (-2.4676750833730345;0.0094330633635065) 	 pixel = (48;1044)	FCCode = 4	potential = 1.698500	external angle = 0.4993916089844148
+	new point c = (-2.4693901858027631;0.0094330633635065) 	 pixel = (47;1044)	FCCode = 4	potential = 1.701758	external angle = 0.4993920315351971
+	new point c = (-2.4711052882324913;0.0094330633635065) 	 pixel = (46;1044)	FCCode = 4	potential = 1.705010	external angle = 0.4993924534994342
+	new point c = (-2.4728203906622199;0.0094330633635065) 	 pixel = (45;1044)	FCCode = 4	potential = 1.708256	external angle = 0.4993928748783468
+	new point c = (-2.4745354930919485;0.0094330633635065) 	 pixel = (44;1044)	FCCode = 4	potential = 1.711496	external angle = 0.4993932956731517
+	new point c = (-2.4762505955216767;0.0094330633635065) 	 pixel = (43;1044)	FCCode = 4	potential = 1.714731	external angle = 0.4993937158850628
+	new point c = (-2.4779656979514053;0.0094330633635065) 	 pixel = (42;1044)	FCCode = 4	potential = 1.717961	external angle = 0.4993941355152902
+	new point c = (-2.4796808003811339;0.0094330633635065) 	 pixel = (41;1044)	FCCode = 4	potential = 1.721184	external angle = 0.4993945545650409
+	new point c = (-2.4813959028108621;0.0094330633635065) 	 pixel = (40;1044)	FCCode = 4	potential = 1.724403	external angle = 0.4993949730355187
+	new point c = (-2.4831110052405907;0.0094330633635065) 	 pixel = (39;1044)	FCCode = 4	potential = 1.727615	external angle = 0.4993953909279237
+	new point c = (-2.4848261076703189;0.0094330633635065) 	 pixel = (38;1044)	FCCode = 4	potential = 1.730823	external angle = 0.4993958082434530
+	new point c = (-2.4865412101000475;0.0094330633635065) 	 pixel = (37;1044)	FCCode = 4	potential = 1.734024	external angle = 0.4993962249833002
+	new point c = (-2.4882563125297761;0.0094330633635065) 	 pixel = (36;1044)	FCCode = 4	potential = 1.737220	external angle = 0.4993966411486558
+	new point c = (-2.4899714149595042;0.0094330633635065) 	 pixel = (35;1044)	FCCode = 4	potential = 1.740411	external angle = 0.4993970567407069
+	new point c = (-2.4916865173892329;0.0094330633635065) 	 pixel = (34;1044)	FCCode = 4	potential = 1.743597	external angle = 0.4993974717606372
+	new point c = (-2.4934016198189610;0.0094330633635065) 	 pixel = (33;1044)	FCCode = 4	potential = 1.746777	external angle = 0.4993978862096274
+	new point c = (-2.4951167222486896;0.0094330633635065) 	 pixel = (32;1044)	FCCode = 4	potential = 1.749952	external angle = 0.4993983000888549
+	new point c = (-2.4968318246784182;0.0094330633635065) 	 pixel = (31;1044)	FCCode = 4	potential = 1.753121	external angle = 0.4993987133994937
+	new point c = (-2.4985469271081464;0.0094330633635065) 	 pixel = (30;1044)	FCCode = 4	potential = 1.756285	external angle = 0.4993991261427147
+	new point c = (-2.5002620295378750;0.0094330633635065) 	 pixel = (29;1044)	FCCode = 4	potential = 1.759444	external angle = 0.4993995383196857
+	new point c = (-2.5019771319676036;0.0094330633635065) 	 pixel = (28;1044)	FCCode = 4	potential = 1.762598	external angle = 0.4993999499315709
+	new point c = (-2.5036922343973318;0.0094330633635065) 	 pixel = (27;1044)	FCCode = 4	potential = 1.765746	external angle = 0.4994003609795319
+	new point c = (-2.5054073368270604;0.0094330633635065) 	 pixel = (26;1044)	FCCode = 4	potential = 1.768889	external angle = 0.4994007714647266
+	new point c = (-2.5071224392567886;0.0094330633635065) 	 pixel = (25;1044)	FCCode = 4	potential = 1.772027	external angle = 0.4994011813883100
+	new point c = (-2.5088375416865172;0.0094330633635065) 	 pixel = (24;1044)	FCCode = 4	potential = 1.775160	external angle = 0.4994015907514337
+	new point c = (-2.5105526441162458;0.0094330633635065) 	 pixel = (23;1044)	FCCode = 4	potential = 1.778288	external angle = 0.4994019995552466
+	new point c = (-2.5122677465459740;0.0094330633635065) 	 pixel = (22;1044)	FCCode = 4	potential = 1.781411	external angle = 0.4994024078008940
+	new point c = (-2.5139828489757026;0.0094330633635065) 	 pixel = (21;1044)	FCCode = 4	potential = 1.784528	external angle = 0.4994028154895183
+	new point c = (-2.5156979514054312;0.0094330633635065) 	 pixel = (20;1044)	FCCode = 4	potential = 1.787641	external angle = 0.4994032226222588
+	new point c = (-2.5174130538351593;0.0094330633635065) 	 pixel = (19;1044)	FCCode = 4	potential = 1.790748	external angle = 0.4994036292002516
+	new point c = (-2.5191281562648880;0.0094330633635065) 	 pixel = (18;1044)	FCCode = 4	potential = 1.793851	external angle = 0.4994040352246298
+	new point c = (-2.5208432586946161;0.0094330633635065) 	 pixel = (17;1044)	FCCode = 4	potential = 1.796948	external angle = 0.4994044406965232
+	new point c = (-2.5225583611243447;0.0094330633635065) 	 pixel = (16;1044)	FCCode = 4	potential = 1.800041	external angle = 0.4994048456170590
+	new point c = (-2.5242734635540733;0.0094330633635065) 	 pixel = (15;1044)	FCCode = 4	potential = 1.803129	external angle = 0.4994052499873607
+	new point c = (-2.5259885659838015;0.0094330633635065) 	 pixel = (14;1044)	FCCode = 4	potential = 1.806211	external angle = 0.4994056538085493
+	new point c = (-2.5277036684135301;0.0094330633635065) 	 pixel = (13;1044)	FCCode = 4	potential = 1.809289	external angle = 0.4994060570817424
+	new point c = (-2.5294187708432587;0.0094330633635065) 	 pixel = (12;1044)	FCCode = 4	potential = 1.812362	external angle = 0.4994064598080547
+	new point c = (-2.5311338732729869;0.0094330633635065) 	 pixel = (11;1044)	FCCode = 4	potential = 1.815430	external angle = 0.4994068619885980
+	new point c = (-2.5328489757027155;0.0094330633635065) 	 pixel = (10;1044)	FCCode = 4	potential = 1.818493	external angle = 0.4994072636244810
+	new point c = (-2.5345640781324437;0.0094330633635065) 	 pixel = (9;1044)	FCCode = 4	potential = 1.821552	external angle = 0.4994076647168092
+	new point c = (-2.5362791805621723;0.0094330633635065) 	 pixel = (8;1044)	FCCode = 4	potential = 1.824606	external angle = 0.4994080652666854
+	new point c = (-2.5379942829919009;0.0094330633635065) 	 pixel = (7;1044)	FCCode = 4	potential = 1.827654	external angle = 0.4994084652752091
+	new point c = (-2.5397093854216291;0.0094330633635065) 	 pixel = (6;1044)	FCCode = 4	potential = 1.830699	external angle = 0.4994088647434773
+	new point c = (-2.5414244878513577;0.0094330633635065) 	 pixel = (5;1044)	FCCode = 4	potential = 1.833738	external angle = 0.4994092636725837
+	new point c = (-2.5431395902810863;0.0094330633635065) 	 pixel = (4;1044)	FCCode = 4	potential = 1.836773	external angle = 0.4994096620636191
+	new point c = (-2.5448546927108144;0.0094330633635065) 	 pixel = (3;1044)	FCCode = 4	potential = 1.839803	external angle = 0.4994100599176713
+	new point c = (-2.5465697951405430;0.0094330633635065) 	 pixel = (2;1044)	FCCode = 4	potential = 1.842828	external angle = 0.4994104572358253
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	new point c = (-2.5482848975702712;0.0094330633635065) 	 pixel = (1;1044)	FCCode = 4	potential = 1.845849	external angle = 0.4994108540191631
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -2 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -2 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -2 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	new point c = (-2.5499999999999998;0.0094330633635065) 	 pixel = (0;1044)	FCCode = 4	potential = 1.848865	external angle = 0.4994112502687639
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	error  from giv_i : bad input: ix = -1 
+	point out of drawing rectangle. End. 
+File 101_70003.pgm saved. 
+Find boundary of Mandelbrot set using  potential
+File 101_70004.pgm saved. 
+Find noisy pixels near boundary of Mandelbrot set with boundary )
+File 101_70005.pgm saved. 
+
+test to find limits of NoiseMeasure
+for c = (0.000000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.100000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.200000;0.000000)	noise measure = 0.0000000000000000	potential = 0.0000000000000000
+for c = (0.250000;0.000000)	noise measure = 220198104020721.4687500000000000	potential = 0.0000000000000000
+for c = (0.260000;0.000000)	noise measure = 1.7469617387164718	potential = 0.0000000035173765
+for c = (0.270000;0.000000)	noise measure = 0.5345246690857099	potential = 0.0000037007456138
+for c = (0.280000;0.000000)	noise measure = 0.2797291424311453	potential = 0.0000692121835449
+for c = (0.290000;0.000000)	noise measure = 0.1765300776400981	potential = 0.0003823407065867
+for c = (0.300000;0.000000)	noise measure = 0.1239414461450286	potential = 0.0012093995890337
+for c = (0.350000;0.000000)	noise measure = 0.0430656800895883	potential = 0.0188816010791632
+for c = (0.400000;0.000000)	noise measure = 0.0231890993554015	potential = 0.0633542205377538
+for c = (0.450000;0.000000)	noise measure = 0.0149374936349495	potential = 0.1296879412429517
+for c = (0.500000;0.000000)	noise measure = 0.0106168633982484	potential = 0.2107865932961150
+for c = (0.600000;0.000000)	noise measure = 0.0063020804414836	potential = 0.4001244847551234
+for c = (0.700000;0.000000)	noise measure = 0.0043040030286548	potential = 0.5980600631586402
+for c = (0.800000;0.000000)	noise measure = 0.0031773839892348	potential = 0.7957459704586637
+for c = (0.900000;0.000000)	noise measure = 0.0024602154290276	potential = 0.9912636780259726
+for c = (1.000000;0.000000)	noise measure = 0.0019854185440499	potential = 1.1758520114181692
+
+test for tracing  external ray 0 : fccode should be: 0 for ascening (out) , or 4 for descending ( in), 2 and 6 for equal
+
+
+	TestFCCCode c= (0.4500000000000000; 0.0000000000000000)	pixel = (1749;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.1270975639021191 dp = -0.0025903773408326		FCCode = 2 , p = 0.1296684011105462 dp = -0.0000195401324055		FCCode = 1 , p = 0.1322566050711132 dp = 0.0025686638281615	
+	FCCode = 4 , p = 0.1271174052836502 dp = -0.0025705359593015		center  pixel = (1749,1050) p0 = 0.1296879412429517 			FCCode = 0 , p = 0.1322758469235056 dp = 0.0025879056805539	
+	FCCode = 5 , p = 0.1271152006315395 dp = -0.0025727406114122		FCCode = 6 , p = 0.1296857700621483 dp = -0.0000021711808034		FCCode = 7 , p = 0.1322737088842515 dp = 0.0025857676412998	
+	dpMaxPos = 0.0025879056805539 so FCCodeAsc =  0
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0025903773408326 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+
+
+	TestFCCCode c= (0.5500000000000000; 0.0000000000000000)	pixel = (1807;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.2978712481479549 dp = -0.0032285594915512		FCCode = 2 , p = 0.3010927878297184 dp = -0.0000070198097877		FCCode = 1 , p = 0.3043205658431840 dp = 0.0032207582036778	
+	FCCode = 4 , p = 0.2978784125545701 dp = -0.0032213950849360		center  pixel = (1807,1050) p0 = 0.3010998076395061 			FCCode = 0 , p = 0.3043274430307292 dp = 0.0032276353912231	
+	FCCode = 5 , p = 0.2978776164723657 dp = -0.0032221911671404		FCCode = 6 , p = 0.3010990276240744 dp = -0.0000007800154317		FCCode = 7 , p = 0.3043266788626695 dp = 0.0032268712231634	
+	dpMaxPos = 0.0032276353912231 so FCCodeAsc =  0
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0032285594915512 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+
+
+	TestFCCCode c= (0.6500000000000000; 0.0000000000000000)	pixel = (1866;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.4951827043754585 dp = -0.0034213618586623		FCCode = 2 , p = 0.4986028267466879 dp = -0.0000012394874329		FCCode = 1 , p = 0.5020240502212059 dp = 0.0034199839870851	
+	FCCode = 4 , p = 0.4951840070044782 dp = -0.0034200592296426		center  pixel = (1866,1050) p0 = 0.4986040662341208 			FCCode = 0 , p = 0.5020252274406933 dp = 0.0034211612065725	
+	FCCode = 5 , p = 0.4951838622515305 dp = -0.0034202039825903		FCCode = 6 , p = 0.4986039284971162 dp = -0.0000001377370046		FCCode = 7 , p = 0.5020250966225588 dp = 0.0034210303884380	
+	dpMaxPos = 0.0034211612065725 so FCCodeAsc =  0
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0034213618586623 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+
+
+	TestFCCCode c= (0.7500000000000000; 0.0000000000000000)	pixel = (1924;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.6939460363740361 dp = -0.0034111593872674		FCCode = 2 , p = 0.6973584392135449 dp = 0.0000012434522414		FCCode = 1 , p = 0.7007697364574821 dp = 0.0034125406961786	
+	FCCode = 4 , p = 0.6939448205782932 dp = -0.0034123751830103		center  pixel = (1924,1050) p0 = 0.6973571957613035 			FCCode = 0 , p = 0.7007684657500433 dp = 0.0034112699887398	
+	FCCode = 5 , p = 0.6939449556591778 dp = -0.0034122401021257		FCCode = 6 , p = 0.6973573339152321 dp = 0.0000001381539286		FCCode = 7 , p = 0.7007686069324256 dp = 0.0034114111711221	
+	dpMaxPos = 0.0034125406961786 so FCCodeAsc =  1
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0034111593872674 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+
+
+	TestFCCCode c= (0.8500000000000000; 0.0000000000000000)	pixel = (1982;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.8894168132794771 dp = -0.0033152105458837		FCCode = 2 , p = 0.8927343338021543 dp = 0.0000023099767935		FCCode = 1 , p = 0.8960498008746601 dp = 0.0033177770492994	
+	FCCode = 4 , p = 0.8894145143836781 dp = -0.0033175094416826		center  pixel = (1982,1050) p0 = 0.8927320238253608 			FCCode = 0 , p = 0.8960474799979244 dp = 0.0033154561725637	
+	FCCode = 5 , p = 0.8894147698131513 dp = -0.0033172540122095		FCCode = 6 , p = 0.8927322804860961 dp = 0.0000002566607353		FCCode = 7 , p = 0.8960477378698046 dp = 0.0033157140444439	
+	dpMaxPos = 0.0033177770492994 so FCCodeAsc =  1
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0033152105458837 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+
+
+	TestFCCCode c= (0.9500000000000000; 0.0000000000000000)	pixel = (2041;1050)	FCCodeEqual = 6	 FCCodeAsc = 1
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 1.0813858562399326 dp = -0.0031814835737083		FCCode = 2 , p = 1.0845700467770765 dp = 0.0000027069634356		FCCode = 1 , p = 1.0877518310580747 dp = 0.0031844912444339	
+	FCCode = 4 , p = 1.0813831527015665 dp = -0.0031841871120744		center  pixel = (2041,1050) p0 = 1.0845673398136408 			FCCode = 0 , p = 1.0877491207570567 dp = 0.0031817809434158	
+	FCCode = 5 , p = 1.0813834530930777 dp = -0.0031838867205631		FCCode = 6 , p = 1.0845676405857358 dp = 0.0000003007720950		FCCode = 7 , p = 1.0877494219000143 dp = 0.0031820820863735	
+	dpMaxPos = 0.0031844912444339 so FCCodeAsc =  1
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = -0.0031814835737083 so FCCodeEqual = 3
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	error  from giv_i : bad input: ix = 2100 
+	GiveAscent: bad FCCode = -2 
+ 	end of image, stop : ix = 2099 
+	bad asc
+	 bad 7 asc from GiveAscent
+
+
+
+test for tracing  external ray 1/2 : fccode should be:  4 for ascening (out) , or 0 for descending ( in), 2 and 6 for equal
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2805 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2805 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2804 
+
+
+	TestFCCCode c= (2.2599999999999998; 0.0000000000000000)	pixel = (2804;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2803 
+	center  pixel = (2804,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2805 
+	error  from giv_i : bad input: ix = 2803 
+	error  from giv_i : bad input: ix = 2804 
+	error  from giv_i : bad input: ix = 2805 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2811 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2811 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2810 
+
+
+	TestFCCCode c= (2.2700000000000000; 0.0000000000000000)	pixel = (2810;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2809 
+	center  pixel = (2810,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2811 
+	error  from giv_i : bad input: ix = 2809 
+	error  from giv_i : bad input: ix = 2810 
+	error  from giv_i : bad input: ix = 2811 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2817 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2817 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2816 
+
+
+	TestFCCCode c= (2.2799999999999998; 0.0000000000000000)	pixel = (2816;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2815 
+	center  pixel = (2816,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2817 
+	error  from giv_i : bad input: ix = 2815 
+	error  from giv_i : bad input: ix = 2816 
+	error  from giv_i : bad input: ix = 2817 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2823 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2823 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2822 
+
+
+	TestFCCCode c= (2.2900000000000000; 0.0000000000000000)	pixel = (2822;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2821 
+	center  pixel = (2822,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2823 
+	error  from giv_i : bad input: ix = 2821 
+	error  from giv_i : bad input: ix = 2822 
+	error  from giv_i : bad input: ix = 2823 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2829 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2829 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2828 
+
+
+	TestFCCCode c= (2.2999999999999998; 0.0000000000000000)	pixel = (2828;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2827 
+	center  pixel = (2828,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2829 
+	error  from giv_i : bad input: ix = 2827 
+	error  from giv_i : bad input: ix = 2828 
+	error  from giv_i : bad input: ix = 2829 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2835 
+	problem: FCCode not found 
+	error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2835 
+	problem: FCCode not found 
+	GiveAscent: bad FCCode = -1 
+ 	error  from giv_i : bad input: ix = 2834 
+
+
+	TestFCCCode c= (2.3100000000000001; 0.0000000000000000)	pixel = (2834;1050)	FCCodeEqual = -1	 FCCodeAsc = -1
+	CheckMooreNeighborhood 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2833 
+	center  pixel = (2834,1050) p0 = 0.0000000000000000 			error  from giv_i : bad input: ix = 2835 
+	error  from giv_i : bad input: ix = 2833 
+	error  from giv_i : bad input: ix = 2834 
+	error  from giv_i : bad input: ix = 2835 
+	dpMaxPos = 0.0000000000000000 so FCCodeAsc =  35282946
+	dpMaxNeg = -100.0000000000000000 so FCCodeDesc = 0
+	dpMin = 100.0000000000000000 so FCCodeEqual = 0
+	CheckMooreNeighborhood  end
+	bad asc
+	 bad 6 asc
+
+
+Parameter plane with Mandelbrot set
+	center c= (-0.750000;0.000000)	 radius = 1.800000	 mag = 0.555556
+	corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
+	corners: ixMin = 0	ixMax = 2099	 iyMin = 0	 iyMax 2099
+exterior = CPM/M
+IterationMax = 70000
+EscapeRadius = 101
+iPixelRadius = ixMax* 0.002 = 2 so big pixel = 16 (small) pixels 
+NoiseMeasureThreshold = 0.0450000000000000
+BoundaryMeasure = 1.1499999999999999

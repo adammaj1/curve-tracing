@@ -13,7 +13,7 @@ SOME code to this routine at one time or another, or contributed to one of
 the many massive restructurings.
 The following modules work very closely with CALCFRAC.C:
   FRACTALS.C    the fractal-specific code for escape-time fractals.
-  FRACSUBR.C    assorted subroutines belonging mainly to calcfrac.
+  FRACSUBR.C    assorted subroutines belonging mainly to calcfrac, like add_worklist
   CALCMAND.ASM  fast Mandelbrot/Julia integer implementation
 Additional fractal-specific modules are also invoked from CALCFRAC:
   LORENZ.C      engine level and fractal specific code for attractors.
@@ -50,6 +50,34 @@ enum direction going_to;
 int trail_row, trail_col;
 
 
+
+/*******************************************************************/
+/* take one step in the direction of going_to */
+static void step_col_row()
+    {
+    switch (going_to)
+        {
+        case North:
+            col = trail_col;
+            row = trail_row - 1;
+            break;
+        case East:
+            col = trail_col + 1;
+            row = trail_row;
+            break;
+        case South:
+            col = trail_col;
+            row = trail_row + 1;
+            break;
+        case West:
+            col = trail_col - 1;
+            row = trail_row;
+            break;
+        }
+    }
+
+
+
 static
 int  bound_trace_main(void)
     {
@@ -59,6 +87,8 @@ int  bound_trace_main(void)
     int max_putline_length;
     int right, left, length;
     static FCODE btm_cantbeused[]={"Boundary tracing cannot be used with "};
+    
+    
     if (inside == 0 || outside == 0)
         {
         static FCODE inside_outside[] = {"inside=0 or outside=0"};
@@ -68,6 +98,7 @@ int  bound_trace_main(void)
         stopmsg(0,msg);
         return(-1);
         }
+    
     if (colors < 16)
         {
         char msg[MSGLEN];
@@ -80,6 +111,8 @@ int  bound_trace_main(void)
 
     got_status = 2;
     max_putline_length = 0; /* reset max_putline_length */
+    
+    
     for (currow = iystart; currow <= iystop; currow++)
         {
         reset_periodicity = 1; /* reset for a new row */
@@ -251,31 +284,6 @@ whenever going_to is South or West
             }
         }
     return 0;
-    }
-
-/*******************************************************************/
-/* take one step in the direction of going_to */
-static void step_col_row()
-    {
-    switch (going_to)
-        {
-        case North:
-            col = trail_col;
-            row = trail_row - 1;
-            break;
-        case East:
-            col = trail_col + 1;
-            row = trail_row;
-            break;
-        case South:
-            col = trail_col;
-            row = trail_row + 1;
-            break;
-        case West:
-            col = trail_col - 1;
-            row = trail_row;
-            break;
-        }
     }
 
 /******************* end of boundary trace method *******************/

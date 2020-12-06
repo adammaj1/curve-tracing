@@ -8,7 +8,7 @@ run maxima :
  
 and then : 
 
-batch("grad_f.mac");
+batch("quiver_plot.mac");
 
 */
 
@@ -73,7 +73,7 @@ Potential(c):= block(
    	ER:1000,
    	t: cabs(z),
    	
-   	while ( i< iMax  and t< ER) 
+   	while  i< iMax  and t< ER 
     		do
     		( 
       			z : z*z+c, /* complex quadratic polynomial */
@@ -81,7 +81,9 @@ Potential(c):= block(
       			n : n*2,
      	 		i : i+1
     		),
-    	if (t>0) then t : log2(t)/n,
+    	if t>0 
+    		then t : log2(t)/n /* exterior = escaping */
+    		else t : 0, /* interior  and non escaping */
     	return (t)
  	
 )$
@@ -113,13 +115,21 @@ Gradient vector can be descibed by the
 output is a complex point cMax
 * on the circle with center = Center and radius = Radius
 * 
+--------------
+GradientPoint(0,0.1,2);
+
+Unrecoverable error: bind stack overflow.
+Przerwane
+
+
 
 */
 
 GradientPoint(Center, Radius, n) := block(
 
 	[	
-		pCenter, 
+		pCenter,
+		p, 
 		dp , /* finite difference of potential between center and circle point  */
 		dpMax, /* max dp */
 		c, /* point on the circle */
@@ -134,6 +144,7 @@ GradientPoint(Center, Radius, n) := block(
 	pCenter : Potential(Center),
 	dpMax : 0, 
 	dt : 1/n,
+	cMax : Center, /* in case when Center is in the interior */
 	
 	
 	
@@ -141,7 +152,10 @@ GradientPoint(Center, Radius, n) := block(
 	
 	while (t < 1) do ( /* compute values (of c and dp) for all points on the circle, it can be modified to search in increasing direction and stop when decreasing  */
 		c : give_circle_point(Center, Radius,t),
-		dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+		p : Potential(c),
+		if (p =0 and  pCenter=0 )
+			then dp :0
+			else dp : p - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
 		if (dp > dpMax) then (
 					dpMax : dp,
 					cMax : c,
@@ -151,17 +165,29 @@ GradientPoint(Center, Radius, n) := block(
 		t : t + dt		
 	),
 	
-	/* knowing good direction one can check 2 more points   */
+	
+	
+	/* knowing good direction one can check 2 more points around tMax: */
+	
+	/* first point : tMax + dt/2 */
 	c :  give_circle_point(Center, Radius,tMax + dt/2),
-	dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+	p : Potential(c),
+	if (p =0 and pCenter=0) 
+			then dp :0
+			else dp : p - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+			
 	if (dp > dpMax) then  (
 				dpMax : dp,
 				cMax : c,
 				tMax : t
 				),
 				
+	/* second point tMax -dt/2 */			
 	c : give_circle_point(Center, Radius,tMax - dt/2),
-	dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+	p : Potential(c),
+	if ( p =0 and pCenter=0) 
+			then dp :0
+			else dp : p - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
 	if (dp > dpMax) then  (
 				dpMax : dp,
 				cMax : c,
@@ -175,15 +201,59 @@ GradientPoint(Center, Radius, n) := block(
 )$
 
 
+/* 
+
+gives vector from c1 to c2 
+
+width = dp
+
+
+
+using: 
+from draw package : 
+vector([x, y], [dx,dy]) 
+
+http://maxima.sourceforge.net/docs/manual/maxima_52.html#Item_003a-vector
+plots vector 
+* with width [dx, dy] 
+* with origin in [x, y]. 
+
+
+ */
+ 
+
+
+give_vector(c1, c2 ):=block(
+	[x,y,dx,dy, s, t ],
+	
+	
+	s : [],
+	
+		 
+	x: realpart(c1),
+	y: imagpart(c1),
+	/* 
+	length =  cabs(c2-c1)  
+	angle is direction from c1 to c2 
+	*/
+	dx : realpart(c2) - x,
+	dy : imagpart(c2) - y,
+	
+	s : cons(s, [vector([x, y], [dx,dy])])
+
+
+)$
+
+
 
 
 /*  ====================================  ===================================*/
 
-c:-2.1;
+c:0;
 next_c : GradientPoint(c, 0.001, 101);
 
 
  
-ploteq(Potential,[x,-5,5],[y,-5,5],[fieldlines,"blue"])$
+
 
 

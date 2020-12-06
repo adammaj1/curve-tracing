@@ -1,0 +1,233 @@
+/*
+
+Batch file for Maxima CAS
+save as a o.mac
+run maxima :
+ 
+ maxima
+ 
+and then : 
+
+batch("grad_f.mac");
+
+*/
+
+
+
+kill(all);
+remvalue(all);
+ratprint:false; /*  It doesn't change the computing, just the warnings. */
+display2d:false;
+numer: true;
+
+
+
+/* functions */
+
+
+
+
+
+log2(x) := float(log(x) / log(2))$
+
+
+
+/* 
+ point of the unit circle D={w:abs(w)=1 } where w=l(t) 
+ t is angle in turns 
+ 1 turn = 360 degree = 2*Pi radians 
+*/
+give_unit_circle_point(t):= float(rectform(%e^(%i*t*2*%pi)))$
+
+/* circle points */
+give_circle_point(center, Radius, t) := float(rectform(center + Radius*give_unit_circle_point(t)))$
+
+
+
+
+
+
+
+/*
+
+
+(scalar) potential
+
+https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Complex_potential
+real potential 
+potential =  log(modulus)/2^iterations
+
+
+complex quadratic polynomial
+https://en.wikipedia.org/wiki/Complex_quadratic_polynomial
+
+*/
+Potential(c):= block(
+	[i, iMax, z, ER, n,t],
+	
+	
+	z:0,
+   	i:0,
+   	iMax : 1000,
+   	n:1,
+   	ER:1000,
+   	t: cabs(z),
+   	
+   	while ( i< iMax  and t< ER) 
+    		do
+    		( 
+      			z : z*z+c, /* complex quadratic polynomial */
+      			t : cabs(z),
+      			n : n*2,
+     	 		i : i+1
+    		),
+    	if (t>0) then t : log2(t)/n,
+    	return (t)
+ 	
+)$
+
+
+/*
+P(x+y*%i):=Potential(x+y*%i)$
+
+*/
+
+
+/*
+numerical aproximation of the potential ( scalar funtion)  gradient 
+on the parameter plane ( c-plane)
+https://en.wikipedia.org/wiki/Complex_quadratic_polynomial#Parameter_plane
+
+https://commons.wikimedia.org/wiki/File:Gradient_of_potential.svg
+
+input:
+* n = number of points (on the circle) to check 
+
+
+
+Gradient vector can be descibed by the 
+* target point cMax. When the origin of the vector is known  then target point describes the gradient vector 
+
+
+
+output is a complex point cMax
+* on the circle with center = Center and radius = Radius
+* 
+
+*/
+
+GradientPoint(Center, Radius, n) := block(
+
+	[	
+		pCenter, 
+		dp , /* finite difference of potential between center and circle point  */
+		dpMax, /* max dp */
+		c, /* point on the circle */
+		cMax, /* c : dp = dpMax */
+		t, /* angle in turns */
+		tMax,
+		dt /* angle step */
+	
+	],
+
+	/* */
+	pCenter : Potential(Center),
+	dpMax : 0, 
+	dt : 1/n,
+	
+	
+	
+	t : 0, /* start with t=0 ; it can be modified to start with previous direction ??? */
+	
+	while (t < 1) do ( /* compute values (of c and dp) for all points on the circle, it can be modified to search in increasing direction and stop when decreasing  */
+		c : give_circle_point(Center, Radius,t),
+		dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+		if (dp > dpMax) then (
+					dpMax : dp,
+					cMax : c,
+					tMax : t
+				),
+		
+		t : t + dt		
+	),
+	
+	/* knowing good direction one can check 2 more points   */
+	c :  give_circle_point(Center, Radius,tMax + dt/2),
+	dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+	if (dp > dpMax) then  (
+				dpMax : dp,
+				cMax : c,
+				tMax : t
+				),
+				
+	c : give_circle_point(Center, Radius,tMax - dt/2),
+	dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+	if (dp > dpMax) then  (
+				dpMax : dp,
+				cMax : c,
+				tMax : t
+				),
+				
+							
+	return(cMax)
+
+
+)$
+
+
+/* 
+
+gives vector from c1 to c2 
+
+width = dp
+
+
+
+using: 
+from draw package : 
+vector([x, y], [dx,dy]) 
+
+http://maxima.sourceforge.net/docs/manual/maxima_52.html#Item_003a-vector
+plots vector 
+* with width [dx, dy] 
+* with origin in [x, y]. 
+
+
+ */
+ 
+
+
+give_vector(c1, c2 ):=block(
+	[x,y,dx,dy, s, t ],
+	
+	
+	s : [],
+	
+		 
+	x: realpart(c1),
+	y: imagpart(c1),
+	/* 
+	length =  cabs(c2-c1)  
+	angle is direction from c1 to c2 
+	*/
+	dx : realpart(c2) - x,
+	dy : imagpart(c2) - y,
+	
+	s : cons(s, [vector([x, y], [dx,dy])])
+
+
+)$
+
+
+
+
+/*  ====================================  ===================================*/
+
+c:-2.1;
+next_c : GradientPoint(c, 0.001, 101);
+
+
+ 
+ploteq(Potential,[x,-5,5],[y,-5,5],[fieldlines,"blue"])$
+
+

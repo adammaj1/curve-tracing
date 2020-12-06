@@ -1,0 +1,524 @@
+        /*
+
+Batch file for Maxima CAS
+save as a o.mac
+run maxima : 
+ maxima
+and then : 
+
+
+batch("gradient.mac");
+
+
+
+------ result ------
+
+ Radius:0.1
+ n:202
+ Center:0.5+0.0*%i
+
+c =  0.5  Radius around center =  0.1 
+    number of points on the circle around center =  202 
+dpMax =  0.0467808610702102 
+iMax =  [202] 
+next point in the gradient direction cMax =  0.6  t =  202 
+dpMin =  4.907166291145126E-4 
+iMin =  48  next point in the equipotential direction cMin =  
+       0.5077683847289006-0.09969780438256293*%i  t =  24/101 
+iMin =  154  next point in the equipotential direction cMin =  
+       0.09940798309400527*%i+0.5108652150085474  t =  77/101 
+
+
+
+
+
+
+
+
+
+http://riotorto.users.sourceforge.net/Maxima/sesiones/numcomplejos/index.html
+
+http://www.enseignement.polytechnique.fr/informatique/INF478/docs/Cpp/en/c/numeric/math/atan2.html
+
+
+*/
+kill(all);
+remvalue(all);
+ratprint:false; /*  It doesn't change the computing, just the warnings. */
+display2d:false;
+numer: true;
+
+
+
+/* functions */
+
+/* 
+converts complex number z = x*y*%i 
+to the list in a draw format:  
+[x,y] 
+*/
+d(z):=[float(realpart(z)), float(imagpart(z))]$
+
+
+/* 
+converts complex number z = x*y*%i 
+to the list in a draw format:  
+[x,y] 
+*/
+
+/* give Draw List from one point*/
+DrawPoint(z):=points([[float(realpart(z)), float(imagpart(z))]])$
+
+
+
+
+log2(x) := float(log(x) / log(2))$
+
+
+
+/* 
+ point of the unit circle D={w:abs(w)=1 } where w=l(t) 
+ t is angle in turns 
+ 1 turn = 360 degree = 2*Pi radians 
+*/
+give_unit_circle_point(t):= float(rectform(%e^(%i*t*2*%pi)))$
+
+/* circle points */
+give_circle_point(center, Radius, t) := float(rectform(center + Radius*give_unit_circle_point(t)))$
+
+
+
+
+
+
+
+/*
+https://en.wikibooks.org/wiki/Fractals/Iterations_in_the_complex_plane/MandelbrotSetExterior#Complex_potential
+real potential 
+potential =  log(modulus)/2^iterations
+
+
+
+
+*/
+Potential(c):= block(
+	[i, z, n,t],
+	z:0,
+   	i:0,
+   	n:1,
+   	t: cabs(z),
+   	
+   	while ( i<1000  and t< 1000) 
+    		do
+    		( 
+      			z:z*z+c,
+      			t : cabs(z),
+      			n:n*2,
+     	 		i:i+1
+    		),
+    	if (t>0) then t : log2(t)/n,
+    	return (t)
+ 	
+)$
+
+/* 
+find roots : 
+second(List[i]) = 0
+in List
+
+ff : endcons([t, dp],ff),
+
+https://stackoverflow.com/questions/51543416/finding-the-root-of-the-function-from-the-list-of-function-values-in-maxima-cas
+
+*/
+
+GiveRoots(List,n):=block(
+	[i,  rr, ii],
+	
+	rr:[],
+	ii:[],
+	
+	for i:1 thru length(List)-1 step 1 do 
+		if (is (sign(second(List[i])) # sign(second(List[i+1]))))
+ 			then (
+ 				rr: endcons([first(List[i]), second(List[i])],rr),
+ 				ii: endcons(n-i,ii)),
+ 			
+ 			
+ 		
+	[rr,ii] /* return 2 lists */	
+	
+
+
+)$
+
+
+
+/* 
+
+gives vector from c1 to c2 
+
+width = dp
+
+
+
+using: 
+from draw package : 
+vector([x, y], [dx,dy]) 
+
+http://maxima.sourceforge.net/docs/manual/maxima_52.html#Item_003a-vector
+plots vector 
+* with width [dx, dy] 
+* with origin in [x, y]. 
+
+
+ */
+ 
+
+
+give_vector_color(c1, c2, r, Color, Key):=block(
+	[x,y,dx,dy, s, t ],
+	
+	
+	s : [color = Color, key = Key],
+	
+	/* p : abs(dp), */
+	
+	 
+	x: realpart(c1),
+	y: imagpart(c1),
+	/* 
+	length =  r*cabs(c2-c1)  
+	angle is direction from c1 to c2 
+	*/
+	dx : r * (realpart(c2) - x),
+	dy : r * (imagpart(c2) - y),
+	
+	s : cons(s, [vector([x, y], [dx,dy])])
+
+
+)$
+
+
+ 
+ 
+/*
+circle (Center, Radius )
+n points c on the above circle 
+
+
+*/
+
+
+give_vectors(Center, Radius, n):=block(
+	/* 
+	lists: 
+		vv = list of v
+		pp = list of dp
+		ppa = list of abs(p)
+		cc = list of c 
+		ff = list [t,dp]
+		fm = list 
+	
+	*/ 
+	[c, cc, cMax, cMin, iMin, iMax,  vv, v,dt, t, pCenter,  dp, pp, ppa,   dpMax, dpMin,  i, Color,r, HeadLength, ff, fm, fz, fzi],
+	
+	/* empty lists */
+	vv:[],
+	cc: [],
+	pp: [],
+	ff: [],
+	fm: [],
+	fz: [],
+	fzi : [],
+	
+	
+	/* */
+	pCenter : Potential(Center),
+	
+	
+	dt : 1/n,
+	t : 0,
+	while (t < 1) do ( /* compute values (of c and dp) for all points on the circle */
+		c : give_circle_point(Center, Radius,t),
+		dp : Potential(c) - pCenter, /* https://en.wikipedia.org/wiki/Finite_difference#Relation_with_derivatives */
+		/* save for the analysis and draw */
+		cc : cons(c,cc),
+		pp : cons(dp,pp),
+		ff : endcons([t, dp],ff),
+		t : t + dt		
+	),
+	
+	
+	
+	/* find dpMax (= max dp)  in pp list   */
+	dpMax : lmax(pp), 
+	print ("dpMax = ", dpMax),
+	/* if (not numberp(dpMax)) then print (" error : length(dpMax)>1 !!!!!!!"), */
+	
+	/* 
+	find iMax = index of dpMax 
+	https://stackoverflow.com/questions/43714455/find-maximum-value-and-index-in-a-maxima-list */
+	iMax : sublist_indices(pp, lambda([p], p = lmax(pp))),
+	print ("iMax = ", iMax),
+	iMax : first(iMax), 
+	cMax : cc[iMax], /* find cMax = c of dpMax */
+	print("next point in the gradient direction cMax = ", cMax, " t = ", dt*iMax),
+	
+	
+	fm: [[1-dt*(iMax-1), dpMax]], 	
+	
+	
+	
+	/* draw a gradient = vector for dpMax */
+	HeadLength : Radius/40, /*  dpMax* */
+	r : 1, /*  lenth of gradient vector = Radius */
+	v : give_vector_color(Center, cMax, r, red, "gradient vector"),
+	vv: cons([head_length = HeadLength] , vv),
+	vv: endcons(v, vv), 
+	
+	
+	/* remove gradient from lists */
+	pp : delete(dpMax, pp),
+	cc : delete (cMax, cc),
+	
+	
+	
+	
+	
+	/* find dpMin (= min dp)  in ppa list   */
+	ppa : map(abs, pp),
+	dpMin : lmin(ppa), 
+	print ("dpMin = ", dpMin),
+	
+	/* 
+	find iMin = index of dpMin 
+	https://stackoverflow.com/questions/43714455/find-maximum-value-and-index-in-a-maxima-list */
+	iMin : sublist_indices(ppa, lambda([p], p = lmin(ppa))),
+	
+	if notequal(length(iMin),2) 
+		then (
+			print(" error : length(iMin) != 2   !!!!!!!"),
+			fzi: GiveRoots(ff,n),
+			/* split the lists */
+			fz : first(fzi),
+			iMin : second(fzi)  
+		),
+	
+	cMin : [],	
+	for i:1 thru length(iMin) do (
+		
+		
+		print("iMin = ", iMin[i], " next point in the equipotential direction cMin = ", cc[iMin[i]], " t = ", dt*iMin[i] ),
+		cMin : cons(cc[iMin[i]], cMin),
+		/* draw a vector for dpMin  using dpmax */
+		r : 1, /*   */ 
+		if (i=1) 
+			then v : give_vector_color(Center, cc[iMin[i]], r, green, "equipotential")
+			else v : give_vector_color(Center, cc[iMin[i]], r, green, ""),
+		vv: endcons(v, vv),
+		
+		/* remove gradient from lists */
+		pp : delete(dpMin, pp),
+		cc : delete (cc[iMin[i]], cc)
+		
+		
+		), 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* draw rest of vectors */
+	
+	for i:1 thru length(cc) do (
+		/* */ 
+		dp : pp[i],
+		if (dp < 0) then Color: gray else Color : blue,
+		r : abs(dp)/dpMax, /* length of the vector is proportional to dp */
+		v : give_vector_color(Center, cc[i], r , Color, ""),
+		vv: cons(v, vv), /*  cons (expr, list)   */
+		vv: cons([head_length = HeadLength] , vv)
+	
+	),	
+		
+	/* conversion for draw format */	
+	cc : map(d,cc),	
+	cMax : map(d,[cMax] ),
+	cMin : map (d, cMin ),
+	
+	
+	/* output list */
+	[vv,ff, fm, fz, cc, cMax, cMin] /* returns list with 6 sublists */
+
+
+
+
+)$
+
+
+
+/*
+ compile( all); 
+ */
+
+
+
+ 
+
+/* 
+210 gives error : 2 max values
+0.1 gives only one green vector 
+*/
+
+Radius: 0.0001$ /* radius of the circel around center */
+n: 301$
+Center: -2.1+0.0*%i$
+
+print("c = ", Center, " Radius around center = ", Radius, "number of points on the circle around center = ", n )$
+
+
+/* vectors  and dp for draw */
+ll : give_vectors(Center, Radius, n)$
+
+
+/* 
+split the list ll
+see the last line of give_vectors
+for the structurre of output:
+[vv,ff, fm, fz, cc, cMax] /* returns list with 6 sublists */
+*/
+vv  : first(ll)$
+ff  : second(ll)$
+fm  : third(ll)$
+fz  : fourth(ll)$
+cc  : fifth(ll)$
+cMax: sixth(ll)$
+cMin: seventh(ll)$
+
+/* strings */
+path:"~/c/mandel/p_e_angle/trace_last/test5/gradient/g3/"$ /*  if empty then file is in a home dir , path should end with "/" */ 
+
+sc : sconcat(realpart(c),"_",imagpart(c))$
+sRadius :  printf(false,"~f",Radius);
+FileName:  sconcat(sc,"_",string(n), "_", sRadius)$
+FullFileName: sconcat(path, FileName)$
+
+
+load(draw)$
+
+draw2d(	/* http://riotorto.users.sourceforge.net/Maxima/gnuplot/index.html */
+	terminal      = svg,
+	file_name = FullFileName,
+	
+	title = sconcat("Numerical gradient: ",string(n)," vectors showing local differences of potential: gray = negative, blue = positive, red = max positive (gradient)"),
+	dimensions = [1000, 1000],
+	xlabel     = "cx ",
+  	ylabel     = "cy",
+
+	/*
+	xrange      = [-5,5],
+       	yrange      = [-5,5],
+           */
+     	
+        
+        
+        point_type = filled_circle,
+	point_size    =  0.5,
+        color = gray, 
+	key = "points on the circle around center",
+	points([first(cc)]),
+	key = "", 
+        points(cc), 
+        
+        /* circle https://math.stackexchange.com/questions/588180/how-to-plot-circle-with-maxima/588621#588621    */
+     	
+     	nticks = 100,
+     	fill_color  = white,
+        color       = gray,
+        transparent = true,
+        line_width  = 1,
+        key = "circle around center c ",
+        ellipse (realpart(Center), imagpart(Center), Radius, Radius, 0, 360), 
+        
+        /* vectors */
+        line_width = 2, 
+        line_type = solid,
+        head_angle = 10, /* the angle, in degrees, between the arrow heads and the segment. Default value: 45 */
+        head_both = false,
+        head_type = filled,
+        key = "",
+        /* color = blue,     */
+        vv,
+        
+        
+	/* */
+	point_size    =  1.5,
+	
+	color = green,
+	key = "equipotential points",
+	points([first(cMin)]),
+	key = "", 
+	points(cMin),
+	
+        color = red,
+	key = "gradient point",
+	points(cMax),
+	
+	color = black,
+	key = "center c",
+	DrawPoint(Center)
+	
+	
+	
+	
+	
+		            
+)$
+
+
+/* function graph */
+draw2d(	/* http://riotorto.users.sourceforge.net/Maxima/gnuplot/index.html */
+	terminal      = svg,
+	file_name = sconcat(FullFileName,"_s"),
+	
+	title = sconcat("numerical aproximation of the gradient as a maximal finite difference of points on the circle around center"),
+	dimensions = [1000, 1000],
+	xlabel     = "t = angle in turns of point on the circle around center",
+  	ylabel     = "dp = finite difference",
+
+	/*
+	xrange      = [-5,5],
+       	yrange      = [-5,5],
+           */
+     	grid = true,
+     	ytics = { 0, second(first(fm))},
+        xtics      = {0,first(first(fm)),first(first(fz)), 0.5,first(second(fz)),1}, /* set of numbers */
+        /*xtics_axis = true,             plot tics on x-axis */
+         xaxis       = true, 
+        axis_top         = false,
+  	axis_right       = false,
+  	color = blue,  
+        points(ff), 
+        key = "maximum", 
+        color = red,
+        points(fm),
+        key = "roots",
+        color = green,
+        points(fz)
+        
+	             
+	
+		            
+)$
+
+
+
+stringout(sconcat(path,FileName,".txt"),values)$
+print("files ", FileName, ".svg and .txt saved to the ", path, " directory")$
+
+

@@ -105,7 +105,7 @@ const int IterationMax=70000;
 
 /* bail-out value for the bailout test for exaping points
  radius of circle centered ad the origin, exterior of such circle is a target set  */
-const double EscapeRadius=10; // it should be >> 2 because then "equipotentials" are crossing at c= -2 
+const double EscapeRadius=101; // it should be >> 2 because then "equipotentials" are crossing at c= -2 
 double ER2; //  = EscapeRadius*EscapeRadius; 
 double K = log(2.0);
 
@@ -115,11 +115,11 @@ double K = log(2.0);
 //unsigned int ix, iy; // var
 unsigned int ixMin = 0; // Indexes of array starts from 0 not 1
 unsigned int ixMax ; //
-unsigned int iWidth = 2000 ; // horizontal dimension of array
+unsigned int iWidth = 2100; // horizontal dimension of array
  
 unsigned int iyMin = 0; // Indexes of array starts from 0 not 1
 unsigned int iyMax ; //
-unsigned int iHeight = 2000; //  odd number !!!!!! = (iyMax -iyMin + 1) = iyAboveAxisLength + iyBelowAxisLength +1
+unsigned int iHeight = 2100; //  odd number !!!!!! = (iyMax -iyMin + 1) = iyAboveAxisLength + iyBelowAxisLength +1
 // The size of array has to be a positive constant integer 
 unsigned int iSize ; // = iWidth*iHeight; 
 
@@ -142,6 +142,19 @@ double CyMin;
 double CyMax;
 double PixelWidth; // =(CxMax-CxMin)/iXmax;
 double PixelHeight; // =(CyMax-CyMin)/iYmax; 
+
+
+ 
+// memmory 1D arrays 
+unsigned char *AColor; 
+double *APotential;
+int *ABoundary; 
+
+
+double NoiseMeasureThreshold = 0.045; // arbitrary for c = 0.365000000000000  +0.000000000000000 i    period = 0 
+double BoundaryMeasure = 1.15; // higher value = thinner boundary
+
+
 
 /*
 
@@ -179,7 +192,7 @@ directional features(Chain Codes)
 	|(x-1,y-1) |          |          |
 	+----------+----------+----------
 	
-	only (dx,dy) 
+	only (dx,dy) = offset 
 	
 	+----------+----------+----------+
 	|          |          |          |
@@ -227,14 +240,16 @@ directional features(Chain Codes)
 	+----------+----------+----------
 	
 	
+	but note that y axis is inverted in give_c procedure !!!!!
 	
-	
-*/
 
 
-// offset[FCCode][0] = dx  offset[FCCode][1] = dy
-// 
-// starts from angle 0 ( = E) ang goes counterclockwise 
+
+offset[FCCode][0] = dx  offset[FCCode][1] = dy
+ 
+ starts from angle 0 ( = E) ang goes counterclockwise 
+ */
+ 
 int offset[8][2] = {// 
 	{ 1, 0}, // 0 = East 	= right center 
 	{ 1, 1}, // 1 = NE 	= right upper
@@ -244,15 +259,13 @@ int offset[8][2] = {//
 	{-1,-1}, // 5 = lower left
 	{ 0,-1}, // 6 = center lower
 	{+1,-1}};// 7 = lower right
- 
-// memmory 1D arrays 
-unsigned char *AColor; 
-double *APotential;
-int *ABoundary; 
 
 
-double NoiseMeasureThreshold = 0.045; // arbitrary for c = 0.365000000000000  +0.000000000000000 i    period = 0 
-double BoundaryMeasure = 1.15; // higher value = thinner boundary
+
+
+
+
+
 // ----------------------  functions ===========================================
 
  double cnorm(double complex z)
@@ -365,7 +378,7 @@ int dPlotPoint(complex double c, unsigned char iColor, unsigned char A[])
  double complex give_c(int iX, int iY){
   double Cx,Cy;
   Cy=CyMax - iY*PixelHeight; //  Invert 
-  if (fabs(Cy)< PixelHeight/2) Cy=0.0; /* Main antenna */
+  if (fabs(Cy)< PixelHeight/2.0) Cy=0.0; /* Main antenna */
   Cx=CxMin + iX*PixelWidth;
    
   return Cx+Cy*I;
@@ -574,6 +587,8 @@ double GiveNoiseMeasure (int ix0, int iy0, int i0){
 	return dpArithmeticMean/p0; // ratio
 }
 
+
+// input is a (double) complex number so D 
 double GiveNoiseMeasureD(double complex c){
 
 	int i;
@@ -592,39 +607,129 @@ double GiveNoiseMeasureD(double complex c){
 
 }
 
-int CheckMooreNeighborhood(int ix0, int iy0, double p0){
+
+
+/* 
+
+n to FCCode translation used in CheckMooreNeighborhood function
+number of cell from 8 point neighborhood
+ 	1,2,3
+	4,5,6
+	7,8,9
+
+	so 5 = center
+	
+*/
+
+int n2FCCode(int n){
+
+	int FCCode = -1;
+	if (n<1 || n> 9) {printf("\t bad n \t"); return -2;}
+	switch (n) {
+		case 1: FCCode = 3; break;
+		case 2: FCCode = 2; break;
+		case 3: FCCode = 1; break;
+		case 4: FCCode = 4; break;
+		case 5: FCCode = 8; break;
+		case 6: FCCode = 0; break;
+		case 7: FCCode = 5; break;
+		case 8: FCCode = 6; break;
+		case 9: FCCode = 7; break;
+		}
+
+	return FCCode;
+}
+
+
+/* used for testing 
+
+
+	CheckMooreNeighborhood 
+	FCCode = 3 , p = 0.0172499795393015 dp = -0.0014810494136638		FCCode = 2 , p = 0.0183472494146965 dp = -0.0003837795382688		FCCode = 1 , p = 0.0194811798131318 dp = 0.0007501508601665	
+	FCCode = 4 , p = 0.0172866177310314 dp = -0.0014444112219338		center  pixel = (1610,1000) p0 = 0.0187310289529653 		FCCode = 0 , p = 0.0195177500282344 dp = 0.0007867210752691	
+	FCCode = 5 , p = 0.0172911963906845 dp = -0.0014398325622808		FCCode = 6 , p = 0.0183884519130351 dp = -0.0003425770399302		FCCode = 7 , p = 0.0195223204303752 dp = 0.0007912914774100	
+	CheckMooreNeighborhood  end, dpMax = 0.0007912914774100 so FCCodeAsc = 7 
+
+
+
+*/
+
+
+int CheckMooreNeighborhood(int ix0, int iy0){
 
 
 	int FCCode;//
-	
+	int FCCodeAsc;//for dpMaxPos 
+	int FCCodeDesc;// for dpMaxNeg
+	int FCCodeEqual;// for dpMin
 	int i;
 	int ix, iy;
+	int n; // number of cell : 
+	/*  	1,2,3
+		4,5,6
+		7,8,9
+		so 5 = center
 	
-	double p; 
-	//double pp
+	*/
 	
-	printf("CheckMooreNeighborhood \n");
-	printf("center  p0 = %.16f \n", p0);
+	double p= 0.0; 
+	double p0;
+	//
+	double dpMaxPos = 	0.0;
+	double dpMaxNeg =    -100.0;
+	double dpMin = 	      100.0;
+	double dpTemp =         0.0;
+	
+	printf("\tCheckMooreNeighborhood \n");
+	
+	// (ix,iy) -> i
+	i = give_i(ix0,iy0);// center
+	p0 = APotential[i];
 	
 	
-	
-	
-	for (FCCode = 0; FCCode < 8; FCCode ++){
-	
-		// translate FCCode t0 ix, iy
-		ix = ix0 + offset[FCCode][0];
-		iy = iy0 + offset[FCCode][1];
+	for (n = 1; n < 10; n ++){
 		
-		// (ix,iy) -> i
-		i = give_i(ix,iy);// new point
+		// translate n to FCCode
+		FCCode = n2FCCode( n);
+		
+		
+		//printf("\tFCCode = %d , p = %.16f dp = %.16f\t", FCCode,p, fabs(p-p0) );
+		if (FCCode !=8)
+			{
+			// translate FCCode t0 ix, iy
+			ix = ix0 + offset[FCCode][0];
+			iy = iy0 + offset[FCCode][1];
+		
+			// (ix,iy) -> i
+			i = give_i(ix,iy);// new point
+			
 	
-		if (i>0){ // inside bounds of 1D array 
-		if( ABoundary[i]!=0) printf(" point was visited \n");
-		p = APotential[i];
-		if (p ==  FP_ZERO) p = 0.0; // 
-		printf("FCCode = %d , p = %.16f dp = %.16f\n", FCCode,p, fabs(p-p0) );}
-	
-	
+			if (i>0){ // inside bounds of 1D array 
+				//if( ABoundary[i]!=0) printf(" point was visited \n");
+				p = APotential[i];
+				if (p ==  FP_ZERO) p = 0.0; // 
+				
+				dpTemp = p - p0;
+				//
+				if ( dpTemp > dpMaxPos ) {
+					dpMaxPos = dpTemp;	
+					FCCodeAsc = FCCode;}
+				//	
+				if ( dpTemp < 0.0 && dpTemp < dpMaxNeg ) {
+					dpMaxNeg = dpTemp;	
+					FCCodeDesc = FCCode;}
+				//	
+				if ( fabs(dpTemp) < dpMin ) {
+					dpMin = dpTemp;	
+					FCCodeEqual = FCCode;}	
+					
+				 
+				printf("\tFCCode = %d , p = %.16f dp = %.16f\t", FCCode,p,dpTemp  );
+				if (n % 3 == 0 ) printf("\n");// change row
+				}
+			
+			}
+			else printf("\tcenter  pixel = (%d,%d) p0 = %.16f \t\t", ix0, iy0, p0);
 	
 	}
 	
@@ -633,8 +738,10 @@ int CheckMooreNeighborhood(int ix0, int iy0, double p0){
 	
 	
 	
-	printf("\nCheckMooreNeighborhood  end\n\n\n");
-	
+	printf("\tdpMaxPos = %.16f so FCCodeAsc =  %d\n", dpMaxPos, FCCodeAsc);
+	printf("\tdpMaxNeg = %.16f so FCCodeDesc = %d\n", dpMaxNeg, FCCodeDesc);
+	printf("\tdpMin = %.16f so FCCodeEqual = %d\n", dpMin, FCCodeEqual);
+	printf("\tCheckMooreNeighborhood  end\n");
 	return 0;
 
 }
@@ -788,6 +895,8 @@ int DrawEquipotential(double complex c, unsigned char iColor, unsigned char A[])
   Gives direction ( coded in FCCode) to the pixel with most greater potential 
   gradient ascent, hill climbing
   External ray out 
+  !!!!!! not works !!!!!
+  
  */
 int GiveNextChainCodeAscent(int ix0, int iy0, double p0){
 	
@@ -810,10 +919,14 @@ int GiveNextChainCodeAscent(int ix0, int iy0, double p0){
 		ix = ix0 + offset[FCCode][0];
 		iy = iy0 + offset[FCCode][1];
 		
+		// check border
+		if (ix == 0 || ix == ixMax) {printf("\tend of image, stop : ix = %d \n", ix); return -2;} 
+		if (iy == 0 || iy == iyMax) {printf("\tend of image, stop : iy = %d \n", iy); return -3;} 
+		
 		// (ix,iy) -> i
 		i = give_i(ix,iy);// new point
 	
-		if (i>0 && ABoundary[i]==0){ // inside bounds of 1D array and not visited 
+		if (i>0 ){ // inside bounds of 1D array and not visited 
 			p = APotential[i];
 			if (p != FP_ZERO) { // not interior
 				dpTemp = (p - p0);
@@ -829,23 +942,274 @@ int GiveNextChainCodeAscent(int ix0, int iy0, double p0){
 		
 	if (f == -1) {printf("\tproblem from GiveNextChainCodeAscent: FCCode not found \n"); return -2;}	
 		
-	if(i<0 ) f = -2;
-	 else if( ABoundary[i]>0) FCCode = -3; // check if point was visitred
+	//if(i<0 ) f = -2;
+	 //else if( ABoundary[i]>0) FCCode = -3; // check if point was visitred
 	
 	return f;
 	
 }
 
+/*
 
-int DrawExtRayOut(double complex c, unsigned char A[]){
 
-	double potential;
-	potential = GivePotential(c);
-	if (potential == FP_ZERO) { printf("c is inside\n"); return 1;}
-	//GiveNoiseMeasureD(c);
-	//else 
+cases: 
+* A = ascending
+* E = equal
+* D = descending
+* C = center
+
+
+* A *
+E C E
+* D *
+
+E A E
+* C * 
+* D *
+
+
+* A *
+* C *
+E D E 
+
+
+
+
+*/
+
+
+int GiveAscent(int ix0, int iy0, double p0){
+
+	int FCCode;//
+	
+	int ix, iy, i;
+	double p;
+	
+	
+	// equipotential
+	FCCode = GiveNextChainCodeEqual(ix0,iy0,p0);
+	if (FCCode <0 || FCCode>7) {printf("\tGiveAscent: bad FCCode = %d \n ", FCCode); return -1;}
+		
+	// perpendicular to equipotential
+	// but it not works in case of concave/convex 
+	// compute bot equal code and find code between them !!!!
+	// see cases : normal = ( e_left + e_right )/2
+	FCCode = (FCCode - 2) ;
+	if (FCCode < 0) FCCode += 7;
+	
+	
+	// check if p grows
+	// translate FCCode t0 ix, iy
+	ix = ix0 + offset[FCCode][0];
+	iy = iy0 + offset[FCCode][1];
+	// check border
+	if (ix == 0 || ix == ixMax) {printf("\tend of image, stop : ix = %d \n", ix); return -2;} 
+	if (iy == 0 || iy == iyMax) {printf("\tend of image, stop : iy = %d \n", iy); return -3;} 
+	// (ix,iy) -> i
+	i = give_i(ix,iy);// new point
+	
+	p = APotential[i];
+	if (p<p0) FCCode +=4; // if p not grows then reverse direction
+	if (FCCode >7 ) FCCode -= 7;
+	
+	
+	
+	
+	
+	
+	return FCCode;  
+}
+
+
+
+int TestFCCCode(complex double c){
+
+
+	int ix0, iy0;
+	int ix,iy;
+	double p0;
+	double p;
+	int i0;
+	int i;
+	int FCCodeEqual ; //= GiveNextChainCodeEqual(ix0,iy0,p0);
+	int FCCodeAsc; // = GiveAscent(ix0,iy0,p0);
+	
+	// world to screen conversion
+	ix0 = (int)round((creal(c)-CxMin)/PixelWidth);
+      	iy0 = (int)round((CyMax-cimag(c))/PixelHeight); // reverse y axis
+	i0 = give_i(ix0, iy0);
+	p0 = APotential[i0];
+	//
+	FCCodeEqual = GiveNextChainCodeEqual(ix0,iy0,p0);
+	FCCodeAsc = GiveAscent(ix0,iy0,p0);
+	
+	
+	// translate FCCode t0 ix, iy
+	ix = ix0 + offset[FCCodeAsc][0];
+	iy = iy0 + offset[FCCodeAsc][1];
+	// check border
+	if (ix == 0 || ix == ixMax) {printf("\tend of image, stop : ix = %d \n", ix); return -2;} 
+	if (iy == 0 || iy == iyMax) {printf("\tend of image, stop : iy = %d \n", iy); return -3;} 
+	// (ix,iy) -> i
+	i = give_i(ix,iy);// new point
+	
+	p = APotential[i];
+	if (p<p0) FCCodeAsc +=4;
+	if (FCCodeAsc >7 ) FCCodeAsc -= 7;
+	
+	
+	
+	printf("\n\n\tTestFCCCode c= (%.16f; %.16f)\tpixel = (%d;%d)\tFCCodeEqual = %d\t FCCodeAsc = %d\n",creal(c), cimag(c), ix0, iy0, FCCodeEqual, FCCodeAsc);
+	CheckMooreNeighborhood(ix0,iy0);
+	
+	
+	return FCCodeAsc;
+
+}
+
+
+int TestRay0(){
+
+	int f;
+	int e = 0; // errors
+	double dc = 0.1; // dc = c_(n+1) - c_n
+	double c = 0.45; // c = c0; then c += dc;
+	int i; 
+
+	printf("\ntest for tracing  external ray 0 : fccode should be: 0 for ascening (out) , or 4 for descending ( in), 2 and 6 for equal\n");
+	
+	for (i = 0; i<10; i++){
+	
+		f = TestFCCCode(c);	
+		if (f ==0) 
+			printf("\tgood asc\n"); 
+			else {printf("\tbad asc\n"); e +=1;}
+		c += dc;
+		if (c > CxMax) break;
+	
+	}
+	
+  	  	 	
+  	if (e ==0) 
+  		printf("\n\tAll ascending good from GiveAscent. Test passed !!!! \n\n\n"); 
+  		else printf("\t bad %d asc from GiveAscent\n\n\n", e);
+  	
+  	return e;
+
+}
+
+
+
+
+
+int TestRay1over2(){
+
+	int f;
+	int e = 0; // errors
+
+	printf("\ntest for tracing  external ray 1/2 : fccode should be:  4 for ascening (out) , or 0 for descending ( in), 2 and 6 for equal\n");
+  	f = TestFCCCode(2.26);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+  	f = TestFCCCode(2.27);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+  	f = TestFCCCode(2.28);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+  	f = TestFCCCode(2.29);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+  	f = TestFCCCode(2.30);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+  	f = TestFCCCode(2.31);	if (f ==4) printf("\tgood asc\n"); else {printf("\tbad asc\n"); e +=1;}
+
+	if (e ==0) 
+		printf("\n\tAll ascending good. Test passed !!!\n"); 
+		else printf("\t bad %d asc\n", e);
+		
+	return e;
+}
+
+
+
+
+
+
+
+
+/*
+
+
+angle ( agument) of complex number in turns
+https://en.wikipedia.org/wiki/Turn_(geometry)
+*/
+double GiveTurn( double complex z){
+double t;
+
+  t =  carg(z);
+  t /= TwoPi; // now in turns
+  if (t<0.0) t += 1.0; // map from (-1/2,1/2] to [0, 1) 
+  return (t);
+}
+
+int DrawExtRayOut(double complex c,  unsigned char iColor, unsigned char A[]){
+
+	double p;
+	double p0; // potential of the whole equipotential line 
+	
+	// world to screen conversion
+	int ix0 = (int)round((creal(c)-CxMin)/PixelWidth);
+      	int iy0 = (int)round((CyMax-cimag(c))/PixelHeight); // reverse y axis
+  	//int i0; // = 
+  	int i;
+  	
+  	int ix = ix0;
+  	int iy = iy0;
+  	
+  	int n=0;
+  	int nMax = 2000;
+  	int FCCode;
+  	double t;
+  	double NoiseMeasure;
+  	
+  	
+  	printf("draw external ray\n");
+	p0 = GivePotential(c);
+	printf("\tstart point c = (%.16f;%.16f) \tpotential = %f\tpixel = (%d,%d)\n",creal(c), cimag(c),p0, ix, iy);
+	if (p0 == FP_ZERO) { printf("\tbad start point : c is inside\n"); return 1;}
+	NoiseMeasure = GiveNoiseMeasure (ix,iy,give_i(ix0,iy0));
+	if (NoiseMeasure< NoiseMeasureThreshold) {printf("\tprobably bad start point: noise = %.16f\n ", NoiseMeasure); //return 1;
+		} 
+	
+	//CheckMooreNeighborhood(ix, iy);
 	dPlotPoint(c, 0,  A);
-	printf(" exterior p = %f \n",potential);
+	
+	
+	p = p0;
+		
+	// draw next points   
+	for(n=0; n<nMax; n++){
+	
+		// choose next point
+		FCCode = GiveAscent( ix,  iy,  p);
+		if (FCCode <0 || FCCode>7) {printf("\tdrawing stopped because of bad FCCode = %d after %d steps ( pixels)\n ", FCCode, n); return 1;}
+		//
+		
+		// translate FCCode t0 ix, iy
+		ix += offset[FCCode][0];
+		iy += offset[FCCode][1];
+		// test for ray 0
+		//if (FCCode !=0 ) CheckMooreNeighborhood(ix, iy);
+		
+		
+		// (ix,iy) -> i
+		i = give_i(ix,iy); // new point
+		if ( i<0){ printf("\tpoint out of drawing rectangle. End. \n"); return 1;}
+	
+		//
+		p = APotential[i];
+		iPlotBigPoint(ix, iy, iColor, A);
+		c = give_c(ix,iy);
+	   	t = GiveTurn(c);
+		printf("\tnew point c = (%.16f;%.16f) \t pixel = (%d;%d)\tFCCode = %d\tpotential = %f\texternal angle = %.16f\n",creal(c), cimag(c), ix,iy, FCCode, p, t);
+		//printf("\tnew point: potential = %.16f\t pixel = (%d,%d)\n", p, ix, iy);
+	}
+	
+	c = give_c(ix,iy);
+	t = GiveTurn(c);
+	printf("\tend point c = (%.16f;%.16f) \t pixel = (%d;%d)\tpotential = %f\texternal angle = %.16f\n",creal(c), cimag(c), ix,iy, p, t);
 	return 0;
 
 }
@@ -871,7 +1235,12 @@ int SetPlane(complex double center, double radius){
 // 
 int setup(){
 
+
+
+
 	unsigned int i; // index of 1D array
+
+	printf("setup start\n");
 	
 	ER2 = EscapeRadius*EscapeRadius; 
 		
@@ -893,10 +1262,10 @@ int setup(){
   	
   	if (AColor == NULL || APotential ==NULL || ABoundary== NULL)
     	{
-      		fprintf(stderr,"Could not allocate memory\n");
+      		fprintf(stderr,"\tCould not allocate memory\n");
       		return 1;
     	}
-  	else fprintf(stderr,"memory is OK \n");
+  	else fprintf(stderr,"\tmemory is OK \n");
   	
 
   	// clear array
@@ -904,7 +1273,7 @@ int setup(){
 
 	
 	
-	
+	printf("setup end\n");
 		
 	return 0;
 }
@@ -949,6 +1318,7 @@ int info(){
 
 
 	printf("\n\nParameter plane with Mandelbrot set\n");
+	printf("\tcenter c= (%f;%f)\t radius = %f\t mag = %f\n",creal(center), cimag(center), radius,1.0/radius);
 	printf("\tcorners: CxMin = %f\tCxMax = %f\t CyMin = %f\t CyMax %f\n",CxMin, CxMax, CyMin, CyMax);
 	printf("\tcorners: ixMin = %d\tixMax = %d\t iyMin = %d\t iyMax %d\n",ixMin, ixMax, iyMin, iyMax);
 	printf("exterior = CPM/M\n");
@@ -1070,7 +1440,7 @@ int SaveArray2PGMFile( unsigned char A[], double ER,int IterationMax , char* com
   FILE * fp;
   const unsigned int MaxColorComponentValue=255; /* color component is coded from 0 to 255 ;  it is 8 bit color file */
   char name [100]; /* name of file */
-  snprintf(name, sizeof name, "%d_%d_",(int)ER, IterationMax); /*  */
+  snprintf(name, sizeof name, "%d_%d",(int)ER, IterationMax); /*  */
   char *filename =strncat(name,".pgm", 4);
   
   
@@ -1111,17 +1481,31 @@ int main()
 
 		
 	setup(); // corners: CxMin = -2.550000	CxMax = 1.050000	 CyMin = -1.800000	 CyMax 1.800000
+	
+	
+	
+	// images 
 	ClearArray(AColor); // all black
 	MakeImage(AColor);
 	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+1, NULL,  iWidth, iHeight, iSize );
+	
+	//
 	ClearExterior(AColor); // make exterior white
 	
 	
-	DrawExtRayOut( 0.5+0.9*I, AColor);
+	
+	
+	
+	
+	
+	
 	//DrawEquipotential( 1.03+1.7*I,	0, AColor); // bad because of image boundary 
 	//DrawEquipotential( 1.05, 	0, AColor); // bad on boundary:  error  from giv_i : bad input: ix = 2000 
+	DrawEquipotential( 1.0, 	0, AColor); // bad on boundary:  error  from giv_i : bad input: ix = 2000 
 	DrawEquipotential( 0.9, 	0, AColor); //good
+	DrawEquipotential( 0.8, 	0, AColor); // good
 	DrawEquipotential( 0.7, 	0, AColor); // good
+	DrawEquipotential( 0.6, 	0, AColor); // good
 	DrawEquipotential( 0.5, 	0, AColor); // good
 	DrawEquipotential( 0.4, 	0, AColor); // good 
 	// DrawEquipotential( 0.35, 	0, AColor); // bad because of chaotic data
@@ -1129,17 +1513,30 @@ int main()
 	
 	//CheckOrientation(AColor) ;
 	 
-	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+2, NULL,  iWidth, iHeight, iSize ); 	
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+2, NULL,  iWidth, iHeight, iSize );
+	
+	
+	//DrawExtRayOut( 0.4+0.7*I, 0, AColor);
+	//DrawExtRayOut( -0.5+0.76*I, 0, AColor);
+	DrawExtRayOut( 0.7, 0, AColor); // ray 0 
+	DrawExtRayOut( -2.01, 0, AColor); // ray 1/2 , good 	
+	
+	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+3, NULL,  iWidth, iHeight, iSize );
 	
   	ClearArray(AColor); // all black
   	FindBoundary(AColor);
-  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+3, NULL,  iWidth, iHeight, iSize ); 
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+4, NULL,  iWidth, iHeight, iSize ); 
   	//
   	ClearArray(AColor); // all black
   	FindNoisyPixels(AColor);
-  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+4, NULL,  iWidth, iHeight, iSize ); 
+  	SaveArray2PGMFile( AColor, EscapeRadius, IterationMax+5, NULL,  iWidth, iHeight, iSize ); 
   	
-  	//test to find limits of NoiseMeasure
+  	
+  	
+  	
+  	// tests
+  	
+  	printf("\ntest to find limits of NoiseMeasure\n");
   	GiveNoiseMeasureD(0.0);
   	GiveNoiseMeasureD(0.1);
   	GiveNoiseMeasureD(0.2);
@@ -1158,6 +1555,12 @@ int main()
   	GiveNoiseMeasureD(0.8);
   	GiveNoiseMeasureD(0.9);
   	GiveNoiseMeasureD(1.0);
+  	
+  	//TestRay0();
+  	//TestRay1over2();
+  	
+  	
+  	
   	
   	
   	
