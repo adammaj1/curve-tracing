@@ -56,10 +56,10 @@ p = log(potential)/K;
 color = 255* (1+cos(TwoPi*p))/2.0;
 ```  
 
-![](10_99991.png)  
+![](./images/10_99991.png)  
 
 Exterior is white with black equipotential curves    
-![](10_99981.png)  
+![](./images/10_99981.png)  
 
 Boundary using noise detection  
 
@@ -68,7 +68,7 @@ double BoundaryMeasure = 1.15; // higher value = thinner boundary
 // FindBoundary
 if (NoiseMeasure> BoundaryMeasure) A[i] = 255 ;	// white
 ```  
-![](10_99971.png)  
+![](./images/10_99971.png)  
      
 Noise pixels  
 ```c
@@ -77,7 +77,7 @@ double NoiseMeasureThreshold = 0.045; // arbitrary for c = 0.365000000000000  +0
 if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
 ```  
 
-![](10_99961.png)  
+![](./images/10_99961.png)  
 
 
 ## field lines = external rays 
@@ -189,7 +189,7 @@ C -->|Yes| D[End]
 
 
 Tracing a curve on the triangular grid  
-![Tracing a curve on the triangular grid](Simplicial.gif)   
+![Tracing a curve on the triangular grid](./images/Simplicial.gif)   
 [Image by Michael E. Henderson](https://commons.wikimedia.org/wiki/File:Simplicial.gif) 
 
 "scanning means to check every pixel". Other names : detection, extraction
@@ -292,9 +292,14 @@ code
 
 
 
-## numerical differentiation = numerically computing the gradient of a function
+## numerical differentiation = numerically computing the gradient of a field
+gradient = "direction and rate of fastest increase". If at a point p, the gradient of a function of several variables is not the zero vector
+*  the direction of the gradient is the direction of fastest increase of the function at p
+* its magnitude is the rate of increase in that direction
 
+discrete differential geometry
 
+### 1D
 In 1D case derivative of the function f at point x gives [the slope](https://en.wikipedia.org/wiki/Slope) of the tangent line at the point x
 
 $` f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h} =  \tan (\theta)`$
@@ -304,17 +309,48 @@ It is aproximated by the maximal finite differnce:
 $` f'(x) \approx  \max \lbrace \frac{f(x+h) - f(x)}{h} \rbrace `$
 
 
+### 2D
+
 In 2D case gradient (generalization of the derivative) of function f at point (x,y) gives the slope of the plane (flat surface) tangent to the 3D surface z = f(x,y) 
-
-Methods
-* checking n points on the circle around center = n-th order method 
+* Numerical Differentiation in two variables ( complex number = x+y*i) by approximation by [centered finite differences scheme](https://uk.mathworks.com/help/matlab/ref/gradient.html)
 
 
 
-![](c_0_301_0.0001.png)  
+#### FED
+
+[Finite-Difference Method = FDM](https://ebrary.net/7100/business_finance/what_finite-difference_method)
 
 
-![](c_0_301_0.0001_s.png)  
+$` \frac{f(x_{m+1}, y_n) - f(x_{m-1}, y_n)}{2h_x} , \frac{f(xm, yn+1) − f(xm, yn−1)}{2h_y} `$
+
+
+
+
+
+Example code : "gradient direction computation based on image brightness. I've made a matrix bright[width][height] containing brightness values for every pixel of the image"
+```c
+	// https://stackoverflow.com/questions/4003615/gradient-direction-computation
+   double grad_x(int x,int y){
+    	if(x==width-1 || x==0) return bright[x][y];
+    	return bright[x+1][y]-bright[x-1][y];
+    }
+    double grad_y(int x,int y){
+    	if(y==height-1 || y==0) return bright[x][y];
+    	return bright[x][y+1]-bright[x][y-1];
+    }
+```
+
+
+
+
+#### checking n points on the circle around center = n-th order method 
+
+
+
+![](./images/c_0_301_0.0001.png)  
+
+
+![](./images/c_0_301_0.0001_s.png)  
 
 
 
@@ -330,10 +366,36 @@ Modifications:
 * Adaptive step size  
 
 
+[Edge Handling](https://en.wikipedia.org/wiki/Kernel_(image_processing)#Edge_Handling)
+* Corner cases 
+[Description by Nils Pipenbrinck](https://stackoverflow.com/questions/4003615/gradient-direction-computation)
+
+>>>
+
+The corner cases are a problem because you don't have enough data to calculate a gradient in the same way as the other pixels. One way to deal with them is to simply not calculate the corner cases and live with a slightly smaller image.
+
+If this is not an option you can also extrapolate the missing data. If you assume that the gradient changes smoothly it works like this:
+
+In your x-gradient calculations you may have calculated the derivate A for pixel 1 and B for pixel 2. If you want to extrapolate a value for pixel 0 (the corner case) 
+the value a-(b-a) could be used.
+
+pixel1: gradient = 100
+pixel2: gradient = 80
+
+extrapolate using a-(b-a): 
+
+pixel0: gradient = 100 - (80-100)) = 120
+```
+
+
+>>>
+
 
 
 
 Links:
+* [math.stackexchange question: how-to-approximate-numerically-the-gradient-of-the-function-on-a-triangular-mesh](https://math.stackexchange.com/questions/2627946/how-to-approximate-numerically-the-gradient-of-the-function-on-a-triangular-mesh/2628057#2628057)
+* [Numerical differentiation by Gonzalo Galiano Casas and Esperanza Garcia Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
 * [gradient of the potential by Linas Vepstas](https://gitlab.com/adammajewski/LinasArtGallery_MandelbrotSet/blob/master/README.md#gradient-of-the-potential)
 * [PYTHON LABS by Gonzalo Galiano Casas and Esperanza García Gonzalo](https://www.unioviedo.es/compnum/labs/lab07_der_int/lab07_der_int.html)
 * [Finite-difference approximation  by Tim Vieira](https://timvieira.github.io/blog/post/2017/04/21/how-to-test-gradient-implementations/)
@@ -354,6 +416,8 @@ Methods
 
 
 # Key words
+* discrete differential geometry
+** mesh
 * Digital Topology
 * digital image processing
 * binary 2D image
