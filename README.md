@@ -371,7 +371,6 @@ Modifications:
 [Description by Nils Pipenbrinck](https://stackoverflow.com/questions/4003615/gradient-direction-computation)
 
 >>>
-
 The corner cases are a problem because you don't have enough data to calculate a gradient in the same way as the other pixels. One way to deal with them is to simply not calculate the corner cases and live with a slightly smaller image.
 
 If this is not an option you can also extrapolate the missing data. If you assume that the gradient changes smoothly it works like this:
@@ -385,9 +384,6 @@ pixel2: gradient = 80
 extrapolate using a-(b-a): 
 
 pixel0: gradient = 100 - (80-100)) = 120
-```
-
-
 >>>
 
 
