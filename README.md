@@ -1,26 +1,5 @@
 TOC
 
-# code 
-* [s.c](./src/s.c) - trace equipotential curves on the parameter plane ( my own code))
-* [boundary.c](./src/boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
-* [lines.c](./src/lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
-* [y.c](./src/y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
-* [jung.c](./src/jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
-* [fractint.c](./src/fractint.c) - code for the bound_trace from fractint 
-* [gradient.mac](./src/gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
-* [grad_f.mac](./src/grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
-
-
-## in other repositories
-* [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
-* [dynamic_external_angle](https://gitlab.com/adammajewski/dynamic_external_angle)
-* [m_d_exray_in](https://gitlab.com/adammajewski/m_d_exray_in)
-* [ray-backward-iteration](https://gitlab.com/adammajewski/ray-backward-iteration)
-* [NonInteractiveParameterRayInMPFR](https://gitlab.com/adammajewski/NonInteractiveParameterRayInMPFR)
-* [dynamic_ray_newton](https://gitlab.com/c_files/dynamic_ray_newton)
-* [parameter_ray_in_newton_mpfr](https://gitlab.com/c_files/parameter_ray_in_newton_mpfr)
-
-
 
 
 # cases
@@ -197,6 +176,27 @@ Tracing a curve on the triangular grid
 Gradient
 * The gradient of a scalar field  is a vector that represents the magnitude and the direction of the greatest increase rate of the field 
 
+
+
+# code 
+* [s.c](./src/s.c) - trace equipotential curves on the parameter plane ( my own code))
+* [boundary.c](./src/boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
+* [lines.c](./src/lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
+* [y.c](./src/y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
+* [jung.c](./src/jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
+* [fractint.c](./src/fractint.c) - code for the bound_trace from fractint 
+* [gradient.mac](./src/gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
+* [grad_f.mac](./src/grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
+
+
+## in other repositories
+* [mandelbrot-ex_ray-out](https://gitlab.com/adammajewski/mandelbrot-ex_ray-out)
+* [dynamic_external_angle](https://gitlab.com/adammajewski/dynamic_external_angle)
+* [m_d_exray_in](https://gitlab.com/adammajewski/m_d_exray_in)
+* [ray-backward-iteration](https://gitlab.com/adammajewski/ray-backward-iteration)
+* [NonInteractiveParameterRayInMPFR](https://gitlab.com/adammajewski/NonInteractiveParameterRayInMPFR)
+* [dynamic_ray_newton](https://gitlab.com/c_files/dynamic_ray_newton)
+* [parameter_ray_in_newton_mpfr](https://gitlab.com/c_files/parameter_ray_in_newton_mpfr)
 
 
 
