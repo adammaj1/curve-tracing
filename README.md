@@ -1,14 +1,14 @@
 TOC
 
 # code 
-* [s.c](s.c) - trace equipotential curves on the parameter plane ( my own code))
-* [boundary.c](boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
-* [lines.c](lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
-* [y.c](y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
-* [jung.c](jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
-* [fractint.c](fractint.c) - code for the bound_trace from fractint 
-* [gradient.mac](gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
-* [grad_f.mac](grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
+* [s.c](./src/s.c) - trace equipotential curves on the parameter plane ( my own code))
+* [boundary.c](./src/boundary.c) - Boundary Tracing Generation Method, traces the outline of areas of a single color and fills them in. Copyright (c) 1994-1997 Michael R. Ganss. All Rights Reserved.
+* [lines.c](./src/lines.c) - detect-lines, extract lines and their width from images. Copyright (C) 1996-1998 Carsten Steger. from [GRASP](http://www.lsc-group.phys.uwm.edu/~ballen/grasp-distribution/)
+* [y.c](./src/y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
+* [jung.c](./src/jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
+* [fractint.c](./src/fractint.c) - code for the bound_trace from fractint 
+* [gradient.mac](./src/gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
+* [grad_f.mac](./src/grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
 
 
 ## in other repositories
