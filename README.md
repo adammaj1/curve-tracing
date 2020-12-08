@@ -1,33 +1,11 @@
-TOC
+2D ( time independent) scalar field ( potential). Draw time field lines and equipotential lines
+
+# TOC
+* [equipotentials](README.md#equipotentials)
+* [filed lines]()
 
 
-
-# cases
-* dimension : 2D / 3D / ...
-* input
-  * trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
-  * trace a curve in complex 2D plane ( compute each point)
-* curve types 
-  * closed / not closed ( ray)
-  * simple,   
-  * critical points / [singularities ](https://en.wikipedia.org/wiki/Singular_point_of_a_curve)
-* grid
-  * structured / unstructured
-  * quadratic / triangular ( Coxeter-Freudenthal decomposition (triangulation))
-* [pixel connectivity](https://en.wikipedia.org/wiki/Pixel_connectivity)
-* stoping criteria
-  * boundary of the Grid ( image)
-  * maximal curve length
-  * Maximum compute time 
-* trace 
-  * forward / backward   or clockwise/counterclockwise
-  * how many seed points
-  * [fixed step / change ](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient)
-  * algorithm  
-  
-
-
-## equipotentials
+# equipotentials
 
 Exterior is coloured with potential ( grayscale)   
 ```c
@@ -59,13 +37,13 @@ if (NoiseMeasure> NoiseMeasureThreshold) A[i] = 255 ;	// white
 ![](./images/10_99961.png)  
 
 
-## field lines = external rays 
+
+
+# field lines = external rays 
 
 here field lines are [external rays](https://en.wikipedia.org/wiki/External_ray)
 * do not cross with each other but 2 or more lines may land on the same point ( root or Misiurewicz point)  
 * are [perpendicular ( normal)](https://www.intmath.com/applications-differentiation/1-tangent-normal.php) to equipotential lines  = are gradient lines of potential ( scalar field)
-
-
 
 
 
@@ -153,6 +131,47 @@ iPixelRadius = ixMax* 0.002 = 1 so big pixel = 4 (small) pixels
 
 [Why real time is lower then user time ? ](https://unix.stackexchange.com/questions/40694/why-real-time-can-be-lower-than-user-time)
 
+# cases
+* dimension : 2D / 3D / ...
+* input
+  * trace a curve in the array of precomputed values ( read value of new point from the array). Array = image 
+  * trace a curve in complex 2D plane ( compute each point)
+* curve types 
+  * closed / not closed ( ray)
+  * simple,   
+  * critical points / [singularities ](https://en.wikipedia.org/wiki/Singular_point_of_a_curve)
+* grid
+  * structured / unstructured
+  * quadratic / triangular ( Coxeter-Freudenthal decomposition (triangulation))
+* [pixel connectivity](https://en.wikipedia.org/wiki/Pixel_connectivity)
+* stoping criteria
+  * boundary of the Grid ( image)
+  * maximal curve length
+  * Maximum compute time 
+* trace 
+  * forward / backward   or clockwise/counterclockwise
+  * how many seed points
+  * [fixed step / change ](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient)
+  * algorithm  
+
+# algorithm
+
+Input: 
+* plane (parameter plane or dynamic plane)
+* scalar function ( potential)
+* vector function 
+
+Steps:
+* create scalar field using scalar function ( potential)
+* create vector field from scalar field using vector function ( gradient of the potential)
+* compute/draw :
+  * filed lines ( stream lines )
+  * contour lines ( [[Fractals/Iterations_in_the_complex_plane/equipotetential|equipotential lines]] )
+  * map whole field using Line Integral Convolution (LIC) 
+
+
+  
+
 # dictionary
 
 tracing a curve means compute successive points on the curve, one by one, until stopping criteria are met
@@ -185,7 +204,7 @@ Gradient
 * [y.c](./src/y.c) - Mandelbrot boundary tracing example for [Youtube video : Writing a Mandelbrot Fractal Renderer with Boundary Tracing Algorithm](https://www.youtube.com/watch?v=rVQMaiz0ydk) – © Joel Yliluoma
 * [jung.c](./src/jung.c) - code by [Wolf Jung](http://www.mndynamics.com/indexp.html) (C) 2007-2017  
 * [fractint.c](./src/fractint.c) - code for the bound_trace from fractint 
-* [gradient.mac](./src/gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](c_0_301_0.0001.txt)
+* [gradient.mac](./src/gradient.mac) - Maxima CAS code for numerical aproximation of gradient, equiopotential direction and making images [text output of the program](./src/c_0_301_0.0001.txt)
 * [grad_f.mac](./src/grad_f.mac) - Maxima CAS code for numerical aproximation of gradient
 
 
@@ -482,6 +501,27 @@ git add .
 git commit -m "Initial commit"
 git push -u origin master
 ```
+
+### Subdirectory
+
+```git
+mkdir images
+git add *.png
+git mv  *.png ./images
+git commit -m "move"
+git push -u origin master
+```
+then link the images:
+
+```txt
+![](./images/n.png "description") 
+
+```
+
+```git
+gitm mv -f 
+```
+
 
 
 
