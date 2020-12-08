@@ -1,4 +1,4 @@
-2D ( time independent) scalar field ( potential). Draw time field lines and equipotential lines
+2D ( time independent) scalar field ( potential). Create [vector field](https://en.wikibooks.org/wiki/Fractals/Mathematics/Vector_field) and draw field lines and equipotential lines
 
 # TOC
 * [equipotentials](README.md#equipotentials)
